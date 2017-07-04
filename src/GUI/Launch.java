@@ -1,7 +1,9 @@
-package controller;
+package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -10,9 +12,10 @@ import java.io.IOException;
  * Created by Dell on 7/3/2017.
  */
 public class Launch {
-    public static void main(String[] args) throws IOException {
-        JFrame jFrame = new JFrame();
-        JPanel topPanel = new JPanel();
+//    JFrame jFrame;
+    public Launch(JFrame jFrame) {
+   JPanel topPanel = new JPanel();
+
         JPanel botttomPanel = new JPanel();
         JPanel middlePanel = new JPanel();
         JLabel homeLabel=new JLabel();
@@ -126,6 +129,16 @@ public class Launch {
         middlePanel.add(showHotelName2);
         middlePanel.add(tagline);
         middlePanel.add(loginButton);
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                botttomPanel.setVisible(false);
+                middlePanel.setVisible(false);
+                topPanel.setVisible(false);
+                new LogInScreen(jFrame);
+            }
+        });
 
         botttomPanel.setLayout(null);
         botttomPanel.setOpaque(false);

@@ -2,6 +2,8 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 /**
@@ -9,8 +11,8 @@ import java.io.IOException;
  */
 public class LogInScreen
 {
-    public static void main(String[] args) throws IOException {
-        JFrame jFrame = new JFrame();
+    public LogInScreen(JFrame jFrame) {
+
         JPanel topPanel = new JPanel();
         JPanel botttomPanel = new JPanel();
         JPanel middlePanel = new JPanel();
@@ -22,6 +24,12 @@ public class LogInScreen
        Color skyblue=Color.decode("#74a8d3");
         JLabel bottomLabel=new JLabel();
 
+        JLabel userIdLabel=new JLabel();
+        JLabel passwordLabel =new JLabel();
+        JTextField edituserId=new JTextField();
+        JPasswordField editPassword=new JPasswordField();
+        JButton logInButton=new JButton();
+
 
 
         homeLabel.setText("Home");
@@ -30,6 +38,9 @@ public class LogInScreen
         contactUslabel.setText("Contacts");
         policyLabel.setText("Policy");
        bottomLabel.setText("Copyright \u00a9 Hotel Holla 2016-17 All rights reserved.");
+       userIdLabel.setText("Username");
+       passwordLabel.setText("Password");
+       logInButton.setText("LogIn");
 
 
         jFrame.setTitle("Holla Hotel");
@@ -42,10 +53,18 @@ public class LogInScreen
         aboutus.setBounds(950,70,100,30);
         faqslabel.setBounds(1080,70,100,30);
         contactUslabel.setBounds(1170,70,150,30);
+
+        userIdLabel.setBounds(500,150,200,30);
+        passwordLabel.setBounds(500,200,200,30);
+       edituserId.setBounds(700,150,200,30);
+        editPassword.setBounds(700,200,200,30);
+        logInButton.setBounds(650,300,150,40);
+
+
         bottomLabel.setBounds(500,45,450,40);
 
         // jFrame.setLayout(new BorderLayout());
-        jFrame.setContentPane(new JLabel(new ImageIcon("")));
+        jFrame.setContentPane(new JLabel(new ImageIcon("src/Images/holla.jpg")));
 
         // jFrame.setLayout(new FlowLayout());
 
@@ -59,10 +78,30 @@ public class LogInScreen
         faqslabel.setForeground(Color.WHITE);
         policyLabel.setFont(new Font("Century Gothic", Font.BOLD, 22));
         policyLabel.setForeground(Color.WHITE);
+
+        userIdLabel.setFont(new Font("Century Gothic", Font.BOLD, 22));
+        userIdLabel.setForeground(Color.WHITE);
+        passwordLabel.setFont(new Font("Century Gothic", Font.BOLD, 22));
+        passwordLabel.setForeground(Color.WHITE);
+        logInButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
+        logInButton.setBackground(skyblue);
+        logInButton.setForeground(Color.WHITE);
+
+
        bottomLabel.setFont(new Font("Calisto MT", Font.ITALIC, 20));
         bottomLabel.setForeground(Color.WHITE);
 
 
+
+        logInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                botttomPanel.setVisible(false);
+                middlePanel.setVisible(false);
+                topPanel.setVisible(false);
+                new Launch(jFrame);
+            }
+        });
 
 
         jFrame.add(topPanel);
@@ -78,6 +117,11 @@ public class LogInScreen
 
         middlePanel.setLayout(null);
         middlePanel.setOpaque(false);
+        middlePanel.add(passwordLabel);
+        middlePanel.add(userIdLabel);
+        middlePanel.add(editPassword);
+        middlePanel.add(edituserId);
+        middlePanel.add(logInButton);
 
         botttomPanel.setLayout(null);
         botttomPanel.setOpaque(false);
