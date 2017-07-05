@@ -72,7 +72,7 @@ public class ReceptionistHomePanel {
     }
 
     private void setBounds() {
-        receptionistHomePanel.setBounds(5,140,1400,550);
+        receptionistHomePanel.setBounds(0,140,1400,550);
         showOptionsPanel.setBounds(1100,0,300,550);
         roomBoking.setBounds(50,100,300,30);
         addGuest.setBounds(50,150,300,30);
