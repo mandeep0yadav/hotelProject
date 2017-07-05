@@ -2,6 +2,8 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by nirmit on 4/7/17.
@@ -239,6 +241,18 @@ public class RegisterPanel {
         selectPost.addItem(postType);
 
         register.setText("Register");
+        register.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                validate();
+            }
+        });
+
+    }
+
+    private void validate() {
+
+        if (editFirstName.getText() == "" || )
 
     }
 
