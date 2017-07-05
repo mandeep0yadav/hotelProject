@@ -1,9 +1,8 @@
 package controller;
 
 import javax.swing.*;
-import GUI.HeaderPanel;
-import GUI.FooterPanel;
-import GUI.LaunchPanel;
+
+import GUI.*;
 
 /**
  * Created by nirmit on 4/7/17.
@@ -19,15 +18,19 @@ public class LaunchController {
         HeaderPanel headerPanel = new HeaderPanel();
         FooterPanel footerPanel = new FooterPanel();
         LaunchPanel launchPanel = new LaunchPanel();
+        //LogInScreenPanel logInScreenPanel=new LogInScreenPanel();
+        //ReceptionistHomePanel receptionistHomePanel=new ReceptionistHomePanel();
 
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/living_style_interior_furniture_modern_39286_1920x1200.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/redwall.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
 
         initialFrame.add(headerPanel.getHeaderPanel());
         initialFrame.add(launchPanel.getLaunchPanel());
+        //initialFrame.add(receptionistHomePanel.getReceptionistHomePanel());
+        //initialFrame.add(logInScreenPanel.getlogInScreenPanel());
         initialFrame.add(footerPanel.getfooterPanel());
 
         initialFrame.setVisible(true);

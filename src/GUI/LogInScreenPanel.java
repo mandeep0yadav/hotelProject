@@ -1,5 +1,7 @@
 package GUI;
 
+import controller.LaunchController;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -60,6 +62,7 @@ public class LogInScreenPanel
         logInButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
         logInButton.setBackground(skyBlue);
         logInButton.setForeground(Color.WHITE);
+
 
     }
 
