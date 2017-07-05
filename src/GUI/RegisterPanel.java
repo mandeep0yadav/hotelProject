@@ -231,6 +231,8 @@ public class RegisterPanel {
         jobLabel.setFont(new Font("comic sans", Font.BOLD,22));
         jobLabel.setForeground(Color.blue);
 
+
+
         String[] genderType = {"Male" , "Female"};
         selectGender.addItem(genderType);
 
@@ -244,16 +246,11 @@ public class RegisterPanel {
         register.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                validate();
+               
             }
         });
 
     }
 
-    private void validate() {
-
-        if (editFirstName.getText() == "" || )
-
-    }
 
 }
