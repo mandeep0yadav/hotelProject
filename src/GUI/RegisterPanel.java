@@ -183,7 +183,7 @@ public class RegisterPanel {
         editPostalCode.setBounds(720,240,150,25);
 
         loginLabel.setBounds(100,280,100,30);
-        empIDLabel.setBounds(100,310,100,25);
+        empIDLabel.setBounds(100,310,150,25);
         editEmpID.setBounds(220,310,150,25);
         passwordLabel.setBounds(600,310,100,25);
         editPassword.setBounds(720,310,150,25);
@@ -278,8 +278,6 @@ public class RegisterPanel {
         String[] genderType = {"Male" , "Female"};
         selectGender.addItem(genderType);
 
-        editStreetAddress.setRows(2);
-        editStreetAddress.setColumns(10);
 
         String[] postType = {"Receptionist","Manager","Admin"};
         selectPost.addItem(postType);

@@ -32,7 +32,7 @@ public class FooterPanel {
         footerPanel.setOpaque(false);
 
         //setting text to the components added
-        bottomLabel.setText("Copyright \u00a9 Hotel Holla 2016-17 All rights reserved.");
+        bottomLabel.setText("Copyright \u00a9 2017 Hotel Holla,Inc.  All rights reserved.");
 
         //applying properties to the label
 
