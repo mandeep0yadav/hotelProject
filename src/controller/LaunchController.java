@@ -20,6 +20,8 @@ public class LaunchController {
         LaunchPanel launchPanel = new LaunchPanel();
         //LogInScreenPanel logInScreenPanel=new LogInScreenPanel();
         //ReceptionistHomePanel receptionistHomePanel=new ReceptionistHomePanel();
+        //ManagerHomePanel managerHomePanel=new ManagerHomePanel();
+        //AdminHomePanel adminHomePanel=new AdminHomePanel();
 
 
         //adding frame properties
@@ -28,10 +30,12 @@ public class LaunchController {
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
 
         initialFrame.add(headerPanel.getHeaderPanel());
+        initialFrame.add(footerPanel.getfooterPanel());
         initialFrame.add(launchPanel.getLaunchPanel());
         //initialFrame.add(receptionistHomePanel.getReceptionistHomePanel());
         //initialFrame.add(logInScreenPanel.getlogInScreenPanel());
-        initialFrame.add(footerPanel.getfooterPanel());
+        //initialFrame.add(managerHomePanel.getManagerHomePanel());
+       // initialFrame.add(adminHomePanel.getAdminHomePanel());
 
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);

@@ -8,6 +8,7 @@ import java.awt.*;
  */
 public class ReceptionistHomePanel {
         private JPanel receptionistHomePanel;
+        private JPanel showOptionsPanel;
 
 
     private JLabel roomBoking;
@@ -16,16 +17,19 @@ public class ReceptionistHomePanel {
     private JLabel roomView;
     private JLabel issueBill;
     private JLabel deleteGuest;
+    private JLabel welcome;
 
 
     public ReceptionistHomePanel() {
         receptionistHomePanel=new JPanel();
+        showOptionsPanel=new JPanel();
         roomBoking = new JLabel();
         addGuest = new JLabel();
         updateBooking = new JLabel();
         roomView = new JLabel();
         issueBill = new JLabel();
         deleteGuest = new JLabel();
+        welcome=new JLabel();
 
 
         setProperty();
@@ -43,6 +47,10 @@ public class ReceptionistHomePanel {
         roomView.setText("Room View");
         issueBill.setText("Issue Bill");
         deleteGuest.setText("Delete Guest");
+        welcome.setText("Welcome Receptionist");
+
+        showOptionsPanel.setLayout(null);
+        showOptionsPanel.setOpaque(false);
         receptionistHomePanel.setLayout(null);
         receptionistHomePanel.setOpaque(false);
 
@@ -58,29 +66,33 @@ public class ReceptionistHomePanel {
         issueBill.setForeground(Color.WHITE);
         deleteGuest.setFont(new Font("Century Gothic",Font.BOLD, 20));
         deleteGuest.setForeground(Color.WHITE);
+        welcome.setFont(new Font("Century Gothic",Font.BOLD, 40));
+        welcome.setForeground(Color.WHITE);
 
     }
 
     private void setBounds() {
         receptionistHomePanel.setBounds(5,140,1400,550);
-        roomBoking.setBounds(70,100,300,30);
-        addGuest.setBounds(70,150,300,30);
-        updateBooking.setBounds(70,200,300,30);
-        issueBill.setBounds(70,250,300,30);
-        deleteGuest.setBounds(70,300,300,30);
-        roomView.setBounds(70,350,300,30);
+        showOptionsPanel.setBounds(1100,0,300,550);
+        roomBoking.setBounds(50,100,300,30);
+        addGuest.setBounds(50,150,300,30);
+        updateBooking.setBounds(50,200,300,30);
+        issueBill.setBounds(50,250,300,30);
+        deleteGuest.setBounds(50,300,300,30);
+        roomView.setBounds(50,350,300,30);
+        welcome.setBounds(350,100,500,200);
 
     }
 
     private void addComponentToPanel() {
-        receptionistHomePanel.add(roomBoking);
-        receptionistHomePanel.add(addGuest);
-        receptionistHomePanel.add(updateBooking);
-        receptionistHomePanel.add(issueBill);
-        receptionistHomePanel.add(deleteGuest);
-        receptionistHomePanel.add(issueBill);
-        receptionistHomePanel.add(roomView);
-
+        showOptionsPanel.add(roomBoking);
+        showOptionsPanel.add(addGuest);
+        showOptionsPanel.add(updateBooking);
+        showOptionsPanel.add(deleteGuest);
+        showOptionsPanel.add(issueBill);
+        showOptionsPanel.add(roomView);
+        receptionistHomePanel.add(welcome);
+        receptionistHomePanel.add(showOptionsPanel);
     }
 public JPanel getReceptionistHomePanel(){
         return this.receptionistHomePanel;
