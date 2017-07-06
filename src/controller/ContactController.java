@@ -1,24 +1,24 @@
 package controller;
 
-import javax.swing.*;
-
-import GUI.*;
+import GUI.ContactsPanel;
+import GUI.LaunchPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
 
-/**
- * Created by nirmit on 4/7/17.
- */
-public class LaunchController {
+import javax.swing.*;
 
+/**
+ * Created by Himanshu on 06-07-2017.
+ */
+public class ContactController {
 
     private JFrame initialFrame;
-    private LaunchPanel launchPanel;
+    private ContactsPanel contactsPanel;
 
-    public LaunchController(){
+    public ContactController(){
 
-        launchPanel = new LaunchPanel();
+        contactsPanel = new ContactsPanel();
         initialFrame = JframeSingleTon.getjFrame();
 
         setproperty();
@@ -41,9 +41,8 @@ public class LaunchController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderPanel().getHeaderPanel());
-        initialFrame.add(launchPanel.getLaunchPanel());
+        initialFrame.add(contactsPanel.getContactUsPanel());
         initialFrame.add(FooterSingleTon.getFooterPanel().getfooterPanel());
 
     }
-
 }

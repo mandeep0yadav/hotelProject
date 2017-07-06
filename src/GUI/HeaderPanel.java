@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.HeaderPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -18,6 +20,9 @@ public class HeaderPanel {
     private JLabel contactUs;
     private JLabel policy;
 
+    //listeners
+    private HeaderPanelListeners headerPanelListeners;
+
     public HeaderPanel(){
         HeaderPanel    =   new JPanel();
         homeLabel   =   new JLabel();
@@ -26,11 +31,15 @@ public class HeaderPanel {
         contactUs   =   new JLabel();
         policy      =   new JLabel();
 
+        headerPanelListeners = new HeaderPanelListeners();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
+
+        addListeners();
     }
 
     private void setProperty(){
@@ -93,32 +102,11 @@ public class HeaderPanel {
     }
 
 
-    /*working on listner
+   private void addListeners() {
 
-        contactUs.addMouseListener(new MouseAdapter() {
-        *
-         * {@inheritDoc}
-         *
-         * @param e
+        headerPanelListeners.contactLabelListener(contactUs);
 
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            contactUs.setForeground(skyblue);
-        }
-    });
-        contactUs.addMouseListener(new MouseAdapter() {
-        *
-         * {@inheritDoc}
-         *
-         * @param e
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            contactUs.setForeground(Color.WHITE);
-        }
-    });
-
-    */
+   }
 
 
 

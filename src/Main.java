@@ -1,3 +1,4 @@
+import GUI.ContactsPanel;
 import GUI.FooterPanel;
 import GUI.HeaderPanel;
 import controller.LaunchController;

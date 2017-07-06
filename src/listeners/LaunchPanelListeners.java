@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  */
 public class LaunchPanelListeners{
 
-    JButton button;
+    private JButton button;
 
     public void loginButtonListeners(JButton button, LaunchPanel launchPanel){
         this.button = button;
