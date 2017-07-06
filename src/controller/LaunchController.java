@@ -31,7 +31,7 @@ public class LaunchController {
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
-        //initialFrame.setResizable(false);
+        initialFrame.setResizable(false);
 
     }
 

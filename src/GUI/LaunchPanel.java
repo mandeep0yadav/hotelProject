@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.LaunchPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -20,19 +22,27 @@ public class LaunchPanel {
     private Color skyBlue;
     private JButton loginButton;
 
+    //Listeners
+    private LaunchPanelListeners launchPanelListeners;
+
     public LaunchPanel() {
         launchPanel = new JPanel();
+
         showHotelName1 = new JLabel();
         showHotelName2 = new JLabel();
         tagLine = new JLabel();
         skyBlue = Color.decode("#ef0000");
         loginButton = new JButton();
 
+        launchPanelListeners = new LaunchPanelListeners();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
+
+        addListeners();
     }
 
     private void setProperty() {
@@ -88,6 +98,28 @@ public class LaunchPanel {
     public JPanel getLaunchPanel() {
         return this.launchPanel;
     }
+
+    public void destroy() {
+        launchPanel.setVisible(false);
+    }
+
+    private void addListeners(){
+
+        launchPanelListeners.loginButtonListeners(loginButton,this);
+
+    }
+    /* listeners
+    loginButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            botttomPanel.setVisible(false);
+            logInScreenPanel.setVisible(false);
+            topPanel.setVisible(false);
+            new Launch(jFrame);
+        }
+    });
+
+    */
 
 }
 
