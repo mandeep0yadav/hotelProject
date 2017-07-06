@@ -81,6 +81,11 @@ public class AdminHomePanel {
         adminHomePanel.add(welcomeLabel);
         adminHomePanel.add(showOptionsPanel);
     }
+
+    public void destroy() {
+        adminHomePanel.setVisible(false);
+    }
+
     public JPanel getAdminHomePanel(){
         return this.adminHomePanel;
     }

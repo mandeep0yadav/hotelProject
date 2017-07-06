@@ -94,6 +94,11 @@ public class ManagerHomePanel {
         managerHomePanel.add(welcomeLabel);
         managerHomePanel.add(showOptionsPanel);
     }
+
+    public void destroy() {
+        managerHomePanel.setVisible(false);
+    }
+
     public JPanel getManagerHomePanel(){
         return this.managerHomePanel;
     }

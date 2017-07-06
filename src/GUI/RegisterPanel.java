@@ -286,6 +286,11 @@ public class RegisterPanel {
 
 
     }
+
+    public void destroy() {
+        registerPanel.setVisible(false);
+    }
+
     public JPanel RegisterPanel(){
         return this.getRegisterPanel();
     }

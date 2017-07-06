@@ -94,6 +94,11 @@ public class ReceptionistHomePanel {
         receptionistHomePanel.add(welcome);
         receptionistHomePanel.add(showOptionsPanel);
     }
+
+    public void destroy() {
+        receptionistHomePanel.setVisible(false);
+    }
+
 public JPanel getReceptionistHomePanel(){
         return this.receptionistHomePanel;
 }

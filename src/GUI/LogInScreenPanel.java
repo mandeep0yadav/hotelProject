@@ -89,6 +89,10 @@ public class LogInScreenPanel
 
     }
 
+    public void destroy() {
+        logInScreenPanel.setVisible(false);
+    }
+
     public JPanel getlogInScreenPanel(){
         return this.logInScreenPanel;
     }
