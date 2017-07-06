@@ -3,44 +3,43 @@ package controller;
 import javax.swing.*;
 
 import GUI.*;
+import singleton.JframeSingleTon;
 
 /**
  * Created by nirmit on 4/7/17.
  */
 public class LaunchController {
 
-    public static void main(String args[]){
 
-        //creating new initialFrame for the first time
-        JFrame initialFrame = new JFrame();
+    private JFrame initialFrame;
+    private LaunchPanel launchPanel;
 
-        //initialising all the panels that needs tobe used
-        HeaderPanel headerPanel = new HeaderPanel();
-        FooterPanel footerPanel = new FooterPanel();
-        LaunchPanel launchPanel = new LaunchPanel();
-        //LogInScreenPanel logInScreenPanel=new LogInScreenPanel();
-        //ReceptionistHomePanel receptionistHomePanel=new ReceptionistHomePanel();
-        //ManagerHomePanel managerHomePanel=new ManagerHomePanel();
-        //AdminHomePanel adminHomePanel=new AdminHomePanel();
-        RegisterPanel registerPanel=new RegisterPanel();
+    public LaunchController(){
 
+        launchPanel = new LaunchPanel();
+        initialFrame = JframeSingleTon.getjFrame();
+
+        setproperty();
+
+        addComponent();
+    }
+
+    private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/redwall.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/redWall.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
-
-        initialFrame.add(headerPanel.getHeaderPanel());
-        initialFrame.add(footerPanel.getfooterPanel());
-        //initialFrame.add(launchPanel.getLaunchPanel());
-        //initialFrame.add(receptionistHomePanel.getReceptionistHomePanel());
-        //initialFrame.add(logInScreenPanel.getlogInScreenPanel());
-        //initialFrame.add(managerHomePanel.getManagerHomePanel());
-       // initialFrame.add(adminHomePanel.getAdminHomePanel());
-        initialFrame.add(registerPanel.getRegisterPanel());
-
         initialFrame.setVisible(true);
-        initialFrame.setResizable(false);
+        //initialFrame.setResizable(false);
 
     }
+
+    private void addComponent(){
+
+        //adding panel to frame
+        initialFrame.add(launchPanel.getLaunchPanel());
+
+    }
+
 }
