@@ -1,8 +1,7 @@
 package controller;
 
-import GUI.FooterPanel;
-import GUI.LaunchPanel;
-import GUI.LogInScreenPanel;
+import GUI.ContactsPanel;
+import GUI.PolicyPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -10,18 +9,19 @@ import singleton.JframeSingleTon;
 import javax.swing.*;
 
 /**
- * Created by nirmit on 4/7/17.
+ * Created by Dell on 7/7/2017.
  */
-public class LoginController {
+public class PolicyController {
+
 
     private JFrame initialFrame;
-    private LogInScreenPanel logInScreenPanel;
+    private PolicyPanel policyPanel;
 
-    public LoginController(){
+    public PolicyController(){
 
-        System.out.println("Controls in Login Controller...");
+        System.out.println("Controls in policy Controller...");
 
-        logInScreenPanel = new LogInScreenPanel();
+        policyPanel = new PolicyPanel();
         initialFrame = JframeSingleTon.getjFrame();
 
         setproperty();
@@ -32,11 +32,11 @@ public class LoginController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/guestRoomSofa.jpg")));
-        initialFrame.setTitle("Login In");
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/bedRoomTeddy.jpg")));
+        initialFrame.setTitle("Holla Hotel");
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
-        //initialFrame.setResizable(false);
+        initialFrame.setResizable(false);
 
     }
 
@@ -44,7 +44,7 @@ public class LoginController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(logInScreenPanel.getlogInScreenPanel());
+        initialFrame.add(policyPanel.getPolicyPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
