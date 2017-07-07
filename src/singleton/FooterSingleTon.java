@@ -18,7 +18,7 @@ public class FooterSingleTon {
         System.out.println("Footer Panel Created...");
     }
 
-    public static FooterPanel getFooterPanel() {
+    public static FooterPanel getFooterSingleTon() {
         return  footerPanel;
     }
 

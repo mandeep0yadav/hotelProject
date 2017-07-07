@@ -18,6 +18,8 @@ public class ContactController {
 
     public ContactController(){
 
+        System.out.println("Controls in Contact Controller");
+
         contactsPanel = new ContactsPanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -40,9 +42,9 @@ public class ContactController {
     private void addComponent(){
 
         //adding panel to frame
-        initialFrame.add(HeaderSingleTon.getHeaderPanel().getHeaderPanel());
+        initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(contactsPanel.getContactUsPanel());
-        initialFrame.add(FooterSingleTon.getFooterPanel().getfooterPanel());
+        initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
 }

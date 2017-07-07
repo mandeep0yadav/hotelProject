@@ -55,7 +55,7 @@ public class FooterPanel {
         footerPanel.add(bottomLabel);
     }
 
-    public JPanel getfooterPanel(){
+    public JPanel getFooterPanel(){
         return this.footerPanel;
     }
 

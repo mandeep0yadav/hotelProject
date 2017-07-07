@@ -19,6 +19,8 @@ public class LoginController {
 
     public LoginController(){
 
+        System.out.println("Controls in Login Controller");
+
         logInScreenPanel = new LogInScreenPanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -41,9 +43,9 @@ public class LoginController {
     private void addComponent(){
 
         //adding panel to frame
-        initialFrame.add(HeaderSingleTon.getHeaderPanel().getHeaderPanel());
+        initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(logInScreenPanel.getlogInScreenPanel());
-        initialFrame.add(FooterSingleTon.getFooterPanel().getfooterPanel());
+        initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
 }

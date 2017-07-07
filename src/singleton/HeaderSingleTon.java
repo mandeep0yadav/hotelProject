@@ -18,7 +18,7 @@ public class HeaderSingleTon {
         System.out.println("Header Panel Created...");
     }
 
-    public static HeaderPanel getHeaderPanel() {
+    public static HeaderPanel getHeaderSingleTon() {
         return  headerPanel;
     }
 

@@ -18,6 +18,8 @@ public class LaunchController {
 
     public LaunchController(){
 
+        System.out.println("Controls in Launch Controller");
+
         launchPanel = new LaunchPanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -40,9 +42,9 @@ public class LaunchController {
     private void addComponent(){
 
         //adding panel to frame
-        initialFrame.add(HeaderSingleTon.getHeaderPanel().getHeaderPanel());
+        initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(launchPanel.getLaunchPanel());
-        initialFrame.add(FooterSingleTon.getFooterPanel().getfooterPanel());
+        initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
 
