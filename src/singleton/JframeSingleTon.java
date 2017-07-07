@@ -1,6 +1,6 @@
 package singleton;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  * Created by nirmit on 6/7/17.
@@ -28,6 +28,7 @@ public class JframeSingleTon {
         //if singleton object is not created
         if(jframeSingleTon == null){
             jframeSingleTon = new JframeSingleTon();
+            jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         }
 
     }
