@@ -1,6 +1,5 @@
 package controller;
 
-import GUI.ContactsPanel;
 import GUI.PolicyPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;

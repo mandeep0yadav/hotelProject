@@ -1,9 +1,6 @@
 package listeners;
 
-import controller.ContactController;
-import controller.FAQsController;
-import controller.LaunchController;
-import controller.PolicyController;
+import controller.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +20,7 @@ public class HeaderPanelListeners {
 
     private JLabel policyLabel;
 
-    private JLabel aboutUs;
+    private JLabel aboutUsLabel;
 
     public void contactLabelListener(JLabel contactLabel){
         this.contactLabel = contactLabel;
@@ -35,9 +32,9 @@ public class HeaderPanelListeners {
 
                 //for color change to show which panel is launched
 
-                homeLabel.setForeground(Color.WHITE);
-                policyLabel.setForeground(Color.WHITE);
-                //aboutUs.setForeground(Color.white);
+                homeLabel.setForeground(Color.white);
+                policyLabel.setForeground(Color.white);
+                aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.blue);
             }
@@ -56,9 +53,9 @@ public class HeaderPanelListeners {
 
                 //for color change to show which panel is launched
 
-                homeLabel.setForeground(Color.WHITE);
-                policyLabel.setForeground(Color.BLUE);
-               // aboutUs.setForeground(Color.white);
+                homeLabel.setForeground(Color.white);
+                policyLabel.setForeground(Color.blue);
+                aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
 
@@ -77,10 +74,10 @@ public class HeaderPanelListeners {
 
                 //for color change to show which panel is launched
 
-                homeLabel.setForeground(Color.WHITE);
-                policyLabel.setForeground(Color.WHITE);
-                //aboutUs.setForeground(Color.white);
-                faqsLabel.setForeground(Color.BLUE);
+                homeLabel.setForeground(Color.white);
+                policyLabel.setForeground(Color.white);
+                aboutUsLabel.setForeground(Color.white);
+                faqsLabel.setForeground(Color.blue);
                 contactLabel.setForeground(Color.white);
             }
         });
@@ -96,12 +93,32 @@ public class HeaderPanelListeners {
 
                 //for color change to show which panel is launched
 
-                homeLabel.setForeground(Color.RED);
-                policyLabel.setForeground(Color.WHITE);
-                //aboutUs.setForeground(Color.white);
+                homeLabel.setForeground(Color.red);
+                policyLabel.setForeground(Color.white);
+                aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
             }
         });
     }
+
+    public void aboutusLabelListener(JLabel aboutUsLabel) {
+        this.aboutUsLabel = aboutUsLabel;
+        this.aboutUsLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Listener on About Us Label");
+                new AboutUsController();
+
+                //for color change to show which panel is launched
+
+                homeLabel.setForeground(Color.white);
+                policyLabel.setForeground(Color.white);
+                aboutUsLabel.setForeground(Color.blue);
+                faqsLabel.setForeground(Color.white);
+                contactLabel.setForeground(Color.white);
+            }
+        });
+    }
+
 }

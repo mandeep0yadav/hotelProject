@@ -1,7 +1,6 @@
 package controller;
 
 import GUI.ContactsPanel;
-import GUI.LaunchPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
