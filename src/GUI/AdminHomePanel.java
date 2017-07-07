@@ -20,6 +20,7 @@ public class AdminHomePanel {
 
 
     public AdminHomePanel() {
+        System.out.println("Creating Admin panel...");
         adminHomePanel =new JPanel();
         showOptionsPanel=new JPanel();
         viewDetails = new JLabel();
@@ -34,6 +35,8 @@ public class AdminHomePanel {
         setBounds();
 
         addComponentToPanel();
+
+        System.out.println("Admin Panel Created...");
 
     }
 

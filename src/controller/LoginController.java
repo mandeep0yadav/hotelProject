@@ -19,7 +19,7 @@ public class LoginController {
 
     public LoginController(){
 
-        System.out.println("Controls in Login Controller");
+        System.out.println("Controls in Login Controller...");
 
         logInScreenPanel = new LogInScreenPanel();
         initialFrame = JframeSingleTon.getjFrame();

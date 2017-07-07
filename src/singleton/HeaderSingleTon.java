@@ -15,7 +15,7 @@ public class HeaderSingleTon {
     //singleton constructor
     private HeaderSingleTon(){
         headerPanel = new HeaderPanel();
-        System.out.println("Header Panel Created...");
+        System.out.println("Header SingleTon Created...");
     }
 
     public static HeaderPanel getHeaderSingleTon() {

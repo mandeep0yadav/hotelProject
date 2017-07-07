@@ -21,6 +21,9 @@ public class ReceptionistHomePanel {
 
 
     public ReceptionistHomePanel() {
+
+        System.out.println("Creating Receptionist Panel...");
+
         receptionistHomePanel=new JPanel();
         showOptionsPanel=new JPanel();
         roomBoking = new JLabel();
@@ -37,6 +40,8 @@ public class ReceptionistHomePanel {
         setBounds();
 
         addComponentToPanel();
+
+        System.out.println("Receptionist Home Panel Created...");
 
     }
 
@@ -97,6 +102,7 @@ public class ReceptionistHomePanel {
 
     public void destroy() {
         receptionistHomePanel.setVisible(false);
+        System.out.println("Receptionist Home Panel Destroyed...");
     }
 
 public JPanel getReceptionistHomePanel(){

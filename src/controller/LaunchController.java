@@ -18,7 +18,7 @@ public class LaunchController {
 
     public LaunchController(){
 
-        System.out.println("Controls in Launch Controller");
+        System.out.println("Controls in Launch Controller...");
 
         launchPanel = new LaunchPanel();
         initialFrame = JframeSingleTon.getjFrame();

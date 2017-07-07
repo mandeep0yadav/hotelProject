@@ -24,6 +24,9 @@ public class HeaderPanel {
     private HeaderPanelListeners headerPanelListeners;
 
     public HeaderPanel(){
+
+        System.out.println("Creating Header Panel...");
+
         HeaderPanel    =   new JPanel();
         homeLabel   =   new JLabel();
         aboutUs     =   new JLabel();
@@ -40,6 +43,8 @@ public class HeaderPanel {
         addComponentToPanel();
 
         addListeners();
+
+        System.out.println("Header Panel Created...");
     }
 
     private void setProperty(){

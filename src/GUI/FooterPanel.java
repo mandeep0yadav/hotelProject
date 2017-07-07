@@ -15,6 +15,7 @@ public class FooterPanel {
 
     public FooterPanel(){
 
+        System.out.println("Creating Footer Panel...");
         footerPanel    =   new JPanel();
         bottomLabel    =   new JLabel();
 
@@ -23,6 +24,7 @@ public class FooterPanel {
         setBounds();
 
         addComponentToPanel();
+        System.out.println("Footer Panel Created...");
     }
 
     private void setProperty(){

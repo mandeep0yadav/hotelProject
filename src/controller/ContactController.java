@@ -18,7 +18,7 @@ public class ContactController {
 
     public ContactController(){
 
-        System.out.println("Controls in Contact Controller");
+        System.out.println("Controls in Contact Controller...");
 
         contactsPanel = new ContactsPanel();
         initialFrame = JframeSingleTon.getjFrame();

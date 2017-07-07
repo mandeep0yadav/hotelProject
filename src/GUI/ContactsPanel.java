@@ -23,6 +23,8 @@ public class ContactsPanel {
 
     public ContactsPanel() {
 
+        System.out.println("Creating Contacts Panel...");
+
         contactUsPanel = new JPanel();
 
         contactUsLabel = new JLabel();
@@ -45,6 +47,8 @@ public class ContactsPanel {
         setBounds();
 
         addComponentToPanel();
+
+        System.out.println("Contacts Panel Created...");
 
     }
 

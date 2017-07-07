@@ -53,6 +53,8 @@ public class RegisterPanel {
 
     public RegisterPanel() {
 
+        System.out.println("Creating Register Panel...");
+
         registerPanel = new JPanel();
 
         registrationLabel = new JLabel();
@@ -106,6 +108,8 @@ public class RegisterPanel {
 
         addComponentToPanel();
 
+        System.out.println("Register Panel Created...");
+
     }
 
     public JPanel getRegisterPanel() {
@@ -137,7 +141,8 @@ public class RegisterPanel {
         registerPanel.add(editDobDay);
         registerPanel.add(editDobMonth);
         registerPanel.add(editDobYear);
-//        registerPanel.add(selectDob);
+
+
         registerPanel.add(editPhone);
         registerPanel.add(editEmail);
         registerPanel.add(editStreetAddress);
@@ -289,6 +294,7 @@ public class RegisterPanel {
 
     public void destroy() {
         registerPanel.setVisible(false);
+        System.out.println("Register Panel destroyed...");
     }
 
     public JPanel RegisterPanel(){

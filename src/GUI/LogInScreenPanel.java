@@ -23,7 +23,9 @@ public class LogInScreenPanel
 
 
     public LogInScreenPanel(){
-        
+
+        System.out.println("Creating Login Panel...");
+
         logInScreenPanel = new JPanel();
         
         skyBlue = Color.decode("#74a8d3");
@@ -38,6 +40,8 @@ public class LogInScreenPanel
         setBounds();
 
         addComponentToPanel();
+
+        System.out.println("Login Panel Created...");
 
     }
 
@@ -91,6 +95,7 @@ public class LogInScreenPanel
 
     public void destroy() {
         logInScreenPanel.setVisible(false);
+        System.out.println("Login Panel Destroyed...");
     }
 
     public JPanel getlogInScreenPanel(){

@@ -21,6 +21,9 @@ public class ManagerHomePanel {
 
 
     public ManagerHomePanel() {
+
+        System.out.println("Creating Manager Home Panel...");
+
         managerHomePanel =new JPanel();
         showOptionsPanel=new JPanel();
         addRoom = new JLabel();
@@ -37,6 +40,8 @@ public class ManagerHomePanel {
         setBounds();
 
         addComponentToPanel();
+
+        System.out.println("Manager Home Panel Created...");
 
     }
 
@@ -97,6 +102,7 @@ public class ManagerHomePanel {
 
     public void destroy() {
         managerHomePanel.setVisible(false);
+        System.out.println("Manager Home Panle Destroyed...");
     }
 
     public JPanel getManagerHomePanel(){

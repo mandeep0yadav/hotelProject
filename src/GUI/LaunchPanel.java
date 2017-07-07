@@ -26,6 +26,9 @@ public class LaunchPanel {
     private LaunchPanelListeners launchPanelListeners;
 
     public LaunchPanel() {
+
+        System.out.println("Creating Launch panel...");
+
         launchPanel = new JPanel();
 
         showHotelName1 = new JLabel();
@@ -43,6 +46,8 @@ public class LaunchPanel {
         addComponentToPanel();
 
         addListeners();
+
+        System.out.println("Launch Panel Created");
     }
 
     private void setProperty() {
@@ -101,6 +106,7 @@ public class LaunchPanel {
 
     public void destroy() {
         launchPanel.setVisible(false);
+        System.out.println("Launch Panel Destroyed...");
     }
 
     private void addListeners(){

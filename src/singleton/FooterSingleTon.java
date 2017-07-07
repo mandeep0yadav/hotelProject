@@ -15,7 +15,7 @@ public class FooterSingleTon {
     //singleton constructor
     private FooterSingleTon(){
         footerPanel = new FooterPanel();
-        System.out.println("Footer Panel Created...");
+        System.out.println("Footer SingleTon Created...");
     }
 
     public static FooterPanel getFooterSingleTon() {
