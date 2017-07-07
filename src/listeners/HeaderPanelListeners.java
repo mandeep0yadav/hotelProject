@@ -3,6 +3,7 @@ package listeners;
 import GUI.HeaderPanel;
 import GUI.LaunchPanel;
 import controller.ContactController;
+import controller.FAQsController;
 import controller.LoginController;
 
 import javax.swing.*;
@@ -15,6 +16,9 @@ import java.awt.event.MouseEvent;
 public class HeaderPanelListeners {
 
     private JLabel contactLabel;
+
+    private JLabel faqsLabel;
+
     public void contactLabelListener(JLabel contactLabel){
         this.contactLabel = contactLabel;
         this.contactLabel.addMouseListener(new MouseAdapter() {
@@ -25,4 +29,16 @@ public class HeaderPanelListeners {
             }
         });
     }
+
+    public void faqsLabelListener(JLabel faqsLabel) {
+        this.faqsLabel = faqsLabel;
+        this.faqsLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new LaunchPanel().destroy();
+                new FAQsController();
+            }
+        });
+    }
+
 }

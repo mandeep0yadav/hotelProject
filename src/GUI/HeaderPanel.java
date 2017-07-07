@@ -111,6 +111,8 @@ public class HeaderPanel {
 
         headerPanelListeners.contactLabelListener(contactUs);
 
+        headerPanelListeners.faqsLabelListener(faqs);
+
    }
 
 

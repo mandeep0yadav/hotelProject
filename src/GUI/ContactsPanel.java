@@ -76,7 +76,7 @@ public class ContactsPanel {
         contactUsLabel.setBounds(100,40,200,40);
 
         addressImageLabel.setBounds(100,100,25,25);
-        addressLabel.setBounds(130,100,200,25);
+        addressLabel.setBounds(130,100,200,65);
 
         phoneImageLabel.setBounds(100,190,25,25);
         phone1Label.setBounds(130,190,200,25);
@@ -94,32 +94,33 @@ public class ContactsPanel {
         contactUsPanel.setOpaque(false);
 
         contactUsLabel.setText("Contact Us");
-        contactUsLabel.setFont(new Font("verdana",Font.BOLD,22));
+        contactUsLabel.setFont(new Font("verdana",Font.BOLD,25));
         contactUsLabel.setForeground(Color.BLACK);
 
         emailImageLabel.setIcon(emailImage);
         phoneImageLabel.setIcon(phoneImage);
         addressImageLabel.setIcon(addressImage);
 
-        addressLabel.setText("ABES Engineering College\n" + "NH-24\n" + "Ghaziabad");
-        addressLabel.setFont(new Font("verdana",Font.PLAIN,14));
+        addressLabel.setText("<html>ABES Engineering College<br>NH-24<br>Ghaziabad</html>");
+        addressLabel.setFont(new Font("verdana",Font.PLAIN,15));
         addressLabel.setForeground(Color.DARK_GRAY);
+        addressLabel.setVerticalTextPosition(SwingConstants.TOP);
 
         phone1Label.setText("0000000000");
-        phone1Label.setFont(new Font("verdana",Font.PLAIN,14));
-        phone1Label.setForeground(Color.lightGray);
+        phone1Label.setFont(new Font("verdana",Font.PLAIN,15));
+        phone1Label.setForeground(Color.LIGHT_GRAY);
 
         phone2Label.setText("0000000000");
-        phone2Label.setFont(new Font("verdana",Font.PLAIN,14));
-        phone2Label.setForeground(Color.lightGray);
+        phone2Label.setFont(new Font("verdana",Font.PLAIN,15));
+        phone2Label.setForeground(Color.LIGHT_GRAY);
 
         phone3Label.setText("0000000000");
-        phone3Label.setFont(new Font("verdana",Font.PLAIN,14));
-        phone3Label.setForeground(Color.lightGray);
+        phone3Label.setFont(new Font("verdana",Font.PLAIN,15));
+        phone3Label.setForeground(Color.LIGHT_GRAY);
 
         emailLabel.setText("emailus@hola");
-        emailLabel.setFont(new Font("verdana",Font.PLAIN,14));
-        emailLabel.setForeground(Color.lightGray);
+        emailLabel.setFont(new Font("verdana",Font.PLAIN,15));
+        emailLabel.setForeground(Color.LIGHT_GRAY);
 
     }
 
