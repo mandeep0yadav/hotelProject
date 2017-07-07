@@ -113,6 +113,7 @@ public class HeaderPanel {
 
         headerPanelListeners.faqsLabelListener(faqs);
 
+        headerPanelListeners.homeLabelListener(homeLabel);
    }
 
 
