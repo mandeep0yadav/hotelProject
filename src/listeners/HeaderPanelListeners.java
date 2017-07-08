@@ -38,7 +38,7 @@ public class HeaderPanelListeners {
                 policyLabel.setForeground(Color.white);
                 aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
-                contactLabel.setForeground(Color.blue);
+                contactLabel.setForeground(Color.red);
             }
         });
     }
@@ -56,7 +56,7 @@ public class HeaderPanelListeners {
                 //for color change to show which panel is launched
 
                 homeLabel.setForeground(Color.white);
-                policyLabel.setForeground(Color.blue);
+                policyLabel.setForeground(Color.red);
                 aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
@@ -79,7 +79,7 @@ public class HeaderPanelListeners {
                 homeLabel.setForeground(Color.white);
                 policyLabel.setForeground(Color.white);
                 aboutUsLabel.setForeground(Color.white);
-                faqsLabel.setForeground(Color.blue);
+                faqsLabel.setForeground(Color.red);
                 contactLabel.setForeground(Color.white);
             }
         });
@@ -116,14 +116,14 @@ public class HeaderPanelListeners {
 
                 homeLabel.setForeground(Color.white);
                 policyLabel.setForeground(Color.white);
-                aboutUsLabel.setForeground(Color.blue);
+                aboutUsLabel.setForeground(Color.red);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
             }
         });
 
     }
-    public void hollaLogoListener(JLabel homeLabel) {
+    public void hollaLogoListener(JLabel logoImageLabel) {
         this.logoImageLabel = logoImageLabel;
         this.logoImageLabel.addMouseListener(new MouseAdapter() {
             @Override
