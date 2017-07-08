@@ -22,6 +22,8 @@ public class HeaderPanelListeners {
 
     private JLabel aboutUsLabel;
 
+    private JLabel logoImageLabel;
+
     public void contactLabelListener(JLabel contactLabel){
         this.contactLabel = contactLabel;
         this.contactLabel.addMouseListener(new MouseAdapter() {
@@ -115,6 +117,25 @@ public class HeaderPanelListeners {
                 homeLabel.setForeground(Color.white);
                 policyLabel.setForeground(Color.white);
                 aboutUsLabel.setForeground(Color.blue);
+                faqsLabel.setForeground(Color.white);
+                contactLabel.setForeground(Color.white);
+            }
+        });
+
+    }
+    public void hollaLogoListener(JLabel homeLabel) {
+        this.logoImageLabel = logoImageLabel;
+        this.logoImageLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Listener on logo Label");
+                new LaunchController();
+
+                //for color change to show which panel is launched
+
+                homeLabel.setForeground(Color.red);
+                policyLabel.setForeground(Color.white);
+                aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
             }

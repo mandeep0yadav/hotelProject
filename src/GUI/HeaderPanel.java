@@ -19,6 +19,9 @@ public class HeaderPanel {
     private JLabel faqs;
     private JLabel contactUs;
     private JLabel policy;
+    private JLabel logoImageLabel;
+
+    private ImageIcon hollaLogo;
 
     //listeners
     private HeaderPanelListeners headerPanelListeners;
@@ -33,6 +36,10 @@ public class HeaderPanel {
         faqs        =   new JLabel();
         contactUs   =   new JLabel();
         policy      =   new JLabel();
+
+        logoImageLabel  =  new JLabel();
+
+        hollaLogo  = new ImageIcon("src/Images/hollalogo2.png");
 
         headerPanelListeners = new HeaderPanelListeners();
 
@@ -78,6 +85,8 @@ public class HeaderPanel {
         policy.setFont(new Font("Century Gothic", Font.BOLD, 22));
         policy.setForeground(Color.WHITE);
 
+        logoImageLabel.setIcon(hollaLogo);
+
     }
 
     private void setBounds(){
@@ -90,6 +99,7 @@ public class HeaderPanel {
         aboutUs.setBounds(950,70,100,30);
         faqs.setBounds(1080,70,100,30);
         contactUs.setBounds(1170,70,150,30);
+        logoImageLabel.setBounds(30,20,300,135);
 
     }
 
@@ -100,6 +110,7 @@ public class HeaderPanel {
         HeaderPanel.add(contactUs);
         HeaderPanel.add(faqs);
         HeaderPanel.add(policy);
+        HeaderPanel.add(logoImageLabel);
     }
 
     public JPanel getHeaderPanel(){
@@ -118,6 +129,8 @@ public class HeaderPanel {
         headerPanelListeners.policyLabelListener(policy);
 
         headerPanelListeners.aboutusLabelListener(aboutUs);
+
+        headerPanelListeners.homeLabelListener(logoImageLabel);
 
    }
 

@@ -18,6 +18,8 @@ public class PolicyPanel {
 
 
 
+
+
     public PolicyPanel() {
         policyPanel=new JPanel();
         policyTextArea = new JTextArea();
