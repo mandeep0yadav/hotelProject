@@ -1,6 +1,6 @@
 package controller;
 
-import GUI.FAQSPanel;
+import GUI.AboutUsPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -8,18 +8,18 @@ import singleton.JframeSingleTon;
 import javax.swing.*;
 
 /**
- * Created by Himanshu on 07-07-2017.
+ * Created by Himanshu on 08-07-2017.
  */
-public class FAQsController {
+public class AboutUsController {
 
     private JFrame initialFrame;
-    private FAQSPanel faqsPanel;
+    private AboutUsPanel aboutUsPanel;
 
-    public FAQsController(){
+    public AboutUsController(){
 
-        System.out.println("Controls in FAQs Controller...");
+        System.out.println("Controls in About Us Controller...");
 
-        faqsPanel = new FAQSPanel();
+        aboutUsPanel = new AboutUsPanel();
         initialFrame = JframeSingleTon.getjFrame();
 
         setproperty();
@@ -30,7 +30,7 @@ public class FAQsController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/bedRoom.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/reception.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
@@ -42,8 +42,9 @@ public class FAQsController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(faqsPanel.getFaqsPanel());
+        initialFrame.add(aboutUsPanel.getAboutUsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
+
 }

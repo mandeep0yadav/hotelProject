@@ -48,7 +48,7 @@ public class FAQSPanel {
 
         faqsHeadingLabel.setText("FAQs");
         faqsHeadingLabel.setFont(new Font("verdana",Font.BOLD,25));
-        faqsHeadingLabel.setForeground(Color.DARK_GRAY);
+        faqsHeadingLabel.setForeground(Color.white);
         faqsHeadingLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
         question1Label.setText("1. How do I cancel my hotel booking?");

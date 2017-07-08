@@ -116,6 +116,9 @@ public class HeaderPanel {
         headerPanelListeners.homeLabelListener(homeLabel);
 
         headerPanelListeners.policyLabelListener(policy);
+
+        headerPanelListeners.aboutusLabelListener(aboutUs);
+
    }
 
 
