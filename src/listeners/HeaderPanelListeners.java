@@ -28,7 +28,7 @@ public class HeaderPanelListeners {
         this.contactLabel = contactLabel;
         this.contactLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on CONTACT Label");
                 new ContactController();
 
@@ -48,7 +48,7 @@ public class HeaderPanelListeners {
         this.policyLabel = policyLabel;
         this.policyLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on policy Label");
                 new PolicyController();
 
@@ -61,6 +61,7 @@ public class HeaderPanelListeners {
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
 
+
             }
         });
     }
@@ -69,7 +70,7 @@ public class HeaderPanelListeners {
         this.faqsLabel = faqsLabel;
         this.faqsLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on FAQS Label");
                 new FAQsController();
 
@@ -89,7 +90,7 @@ public class HeaderPanelListeners {
         this.homeLabel = homeLabel;
         this.homeLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on HOME Label");
                 new LaunchController();
 
@@ -108,7 +109,7 @@ public class HeaderPanelListeners {
         this.aboutUsLabel = aboutUsLabel;
         this.aboutUsLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on About Us Label");
                 new AboutUsController();
 
@@ -127,7 +128,7 @@ public class HeaderPanelListeners {
         this.logoImageLabel = logoImageLabel;
         this.logoImageLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on logo Label");
                 new LaunchController();
 

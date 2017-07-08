@@ -14,20 +14,15 @@ public class PolicyPanel {
 
     private JTextArea policyTextArea;
     private JScrollPane jScrollPane;
-    private Color colorForPanelText;
 
 
 
 
 
     public PolicyPanel() {
-        policyPanel=new JPanel();
+        policyPanel=new JPanel(new GridLayout());
         policyTextArea = new JTextArea();
         jScrollPane=new JScrollPane(policyTextArea,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        colorForPanelText=Color.decode("#B8CDFF");
-
-
-
 
         setProperty();
 
@@ -169,32 +164,39 @@ public class PolicyPanel {
                 "While this Policy alone does not create contractual rights, Holla has ensured compliance with some of its legal obligations in some countries in relation to personal information by creating a set of binding standards and policies (known in some countries as binding corporate rules), approved by a number of national privacy regulators. As a result, depending on your circumstances and location, you may be able to enforce your privacy rights using those standards or policies through that regulator or a court. If you would like to know more about these standards and policies, please contact Holla Hotels & Resorts at the address above or the Chief Privacy Officer at the email address above.\n" +
                 "All requests for access to your personal information must be submitted in writing by letter or email. We may respond to your request by letter, email, telephone or any other suitable method.\n" +
                 "Effective Date: July 30, 2015\n" +
-                "In the event of any inconsistencies between the English version of this Policy and any version of this Policy in any other language, the English version shall prevail (to the fullest extent permitted under applicable law).");
+                "In the event of any inconsistencies between the English version of this Policy and any version of this Policy in any other language, the English version shall prevail (to the fullest extent permitted under applicable law)." +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n");
         policyPanel.setLayout(null);
         policyPanel.setOpaque(false);
 
-
-        policyTextArea.setFont(new Font("Century Gothic",Font.BOLD, 17));
-        policyTextArea.setForeground(colorForPanelText);
-        policyTextArea.setSize(30,30);
+        policyTextArea.setFont(new Font("Century Gothic",Font.PLAIN, 15));
+        policyTextArea.setForeground(Color.white);
         policyTextArea.setOpaque(false);
         policyTextArea.setLineWrap(true);
         policyTextArea.setWrapStyleWord(true);
+        policyTextArea.setEditable(false);
+
+
+
 
         jScrollPane.setOpaque(false);
         jScrollPane.getViewport().setOpaque(false);
-    }
+        jScrollPane.setBorder(null);
+
+        }
 
     private void setBounds() {
         policyPanel.setBounds(0,140,1400,550);
-        // welcome.setBounds(60,20,1250,550);
-        jScrollPane.setBounds(50,00,1300,550);
+        jScrollPane.setBounds(40,30,1300,500);
 
     }
 
     private void addComponentToPanel() {
-//        policyPanel.add(welcome);
         policyPanel.add(jScrollPane);
+
     }
     public JPanel getPolicyPanel(){
         return this.policyPanel;
