@@ -1,6 +1,7 @@
 package controller;
 
 import GUI.FooterPanel;
+import GUI.HeaderPanel;
 import GUI.LaunchPanel;
 import GUI.LogInScreenPanel;
 import singleton.FooterSingleTon;
@@ -37,6 +38,8 @@ public class LoginController {
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
         //initialFrame.setResizable(false);
+
+
 
     }
 

@@ -30,7 +30,7 @@ public class AboutUsController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/reception.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/doubleRoom2.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
