@@ -1,5 +1,8 @@
 package dao;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  * Created by nirmit on 7/7/17.
  */
@@ -11,19 +14,27 @@ public abstract class DAOFactory
     public static final int MYSQL = 2;
 
     // implement these methods.
-    //public abstract CustomerDAO getCustomerDAO();
-    //public abstract AccountDAO getAccountDAO();
-   // public abstract OrderDAO getOrderDAO();
+    //in respective database class
+
+    public abstract AllottedRoomDAO getAllottedRoomDAO();
+    public abstract CustomerAddressProofDAO getCustomerAddressDAO();
+    public abstract CustomerDetailsDAO getCustomerDetailsDAO();
+    public abstract CustomerStayInformationDAO getCustomerStayInformationDAO();
+    public abstract EmployeeDetailsDAO getEmployeeDetailsDAO();
+    public abstract EmployeeLoginDAO getEmployeeLoginDAO();
+    public abstract RoomDetailsDAO getRoomDetailsDAO();
 
     public static DAOFactory getDAOFactory(int whichFactory) {
 
         switch (whichFactory) {
             case ORACLE    :
-                return new OracleDAOFactory();
+                 return OracleDAOFactory.getOracleDAOFactory();
             case MYSQL     :
-                return new MysqlDAOFactory();
+                 return MysqlDAOFactory.getMysqlDAOFactory();
             default        :
                 return null;
         }
     }
+
+    public abstract Connection createConnection() throws SQLException;
 }
