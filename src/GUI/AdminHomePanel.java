@@ -68,10 +68,10 @@ public class AdminHomePanel {
     private void setBounds() {
         adminHomePanel.setBounds(5,140,1400,550);
         showOptionsPanel.setBounds(1100,0,300,550);
-        viewDetails.setBounds(50,100,300,30);
-        addEmployee.setBounds(50,150,300,30);
-        deleteEmployee.setBounds(50,200,300,30);
-        updateEmployee.setBounds(50,350,300,30);
+        viewDetails.setBounds(50,150,300,30);
+        addEmployee.setBounds(50,200,300,30);
+        deleteEmployee.setBounds(50,250,300,30);
+        updateEmployee.setBounds(50,300,300,30);
         welcomeLabel.setBounds(360,100,500,200);
 
     }

@@ -1,6 +1,7 @@
 package GUI;
 
 import controller.LaunchController;
+import listeners.LogInPanelListeners;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,6 +21,8 @@ public class LogInScreenPanel
     private JPasswordField editPassword;
     private JButton logInButton;
 
+    private LogInPanelListeners logInPanelListeners;
+
 
     public LogInScreenPanel(){
 
@@ -33,11 +36,17 @@ public class LogInScreenPanel
         editPassword=new JPasswordField();
         logInButton=new JButton();
 
+        logInPanelListeners=new LogInPanelListeners();
+
+
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
+
+        addListeners();
 
         System.out.println("Login Panel Created...");
 
@@ -99,18 +108,10 @@ public class LogInScreenPanel
     public JPanel getlogInScreenPanel(){
         return this.logInScreenPanel;
     }
-    /* listner
-                    logInButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    botttomPanel.setVisible(false);
-                    logInScreenPanel.setVisible(false);
-                    topPanel.setVisible(false);
-                    new Launch(jFrame);
-                }
-            });
+    private void addListeners(){
 
+        logInPanelListeners.loginButtonListeners(logInButton,this);
 
-     */
+    }
 
 }
