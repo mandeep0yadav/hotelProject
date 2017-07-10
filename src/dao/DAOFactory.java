@@ -28,7 +28,7 @@ public abstract class DAOFactory
 
         switch (whichFactory) {
             case ORACLE    :
-                return new OracleDAOFactory();
+                 return OracleDAOFactory.getOracleDAOFactory();
             case MYSQL     :
                  return MysqlDAOFactory.getMysqlDAOFactory();
             default        :
