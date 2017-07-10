@@ -20,6 +20,15 @@ public class LogInPanelListeners {
             LoginController.validateInput();
         });
     }
+    public void launchReceptionist(){
+        new ReceptionistHomeController();
+    }
+    public  void launchManager(){
+
+    }
+    public void launchAdmin(){
+
+    }
 
 
 }

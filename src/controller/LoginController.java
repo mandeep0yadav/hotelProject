@@ -4,6 +4,7 @@ import GUI.FooterPanel;
 import GUI.HeaderPanel;
 import GUI.LaunchPanel;
 import GUI.LogInScreenPanel;
+import listeners.LogInPanelListeners;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -18,7 +19,7 @@ public class LoginController {
     private JFrame initialFrame;
     private static LogInScreenPanel logInScreenPanel;
 
-    public LoginController(){
+    public LoginController() {
 
         System.out.println("Controls in Login Controller...");
 
@@ -30,7 +31,7 @@ public class LoginController {
         addComponent();
     }
 
-    private void setproperty(){
+    private void setproperty() {
 
         //adding frame properties
         initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/guestRoomSofa.jpg")));
@@ -40,10 +41,9 @@ public class LoginController {
         //initialFrame.setResizable(false);
 
 
-
     }
 
-    private void addComponent(){
+    private void addComponent() {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
@@ -52,10 +52,37 @@ public class LoginController {
 
     }
 
-    public static void validateInput(){
-        System.out.println("\n\n\n\n\n");
-        System.out.println(logInScreenPanel.edituserId.getText());
-        System.out.println(logInScreenPanel.editPassword.getPassword());
+    public static void validateInput() {
 
+        if (logInScreenPanel.edituserId.getText().trim().length() > 0 &&
+                String.valueOf(logInScreenPanel.editPassword.getPassword()).trim().length() > 0) {
+
+            //do database validation and perform the action whatever you want
+
+
+
+            //for just testing
+            if (logInScreenPanel.edituserId.getText().equals("123") &&
+                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("123")){
+                logInScreenPanel.alertLabel.setText("");
+                //launch the next screen according to usertype
+
+                LogInPanelListeners obj =new LogInPanelListeners();
+                obj.launchReceptionist();
+
+            }
+            else{
+                logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
+            }
+
+        } else {
+            if (logInScreenPanel.edituserId.getText().trim().length() == 0) {
+                logInScreenPanel.alertLabel.setText("Please enter your Userid");
+            }
+            else if (String.valueOf(logInScreenPanel.editPassword.getPassword()).trim().length() == 0) {
+                logInScreenPanel.alertLabel.setText("Please enter your Password");
+            }
+
+        }
     }
 }

@@ -20,6 +20,9 @@ public class LogInScreenPanel
     public JTextField edituserId;
     public JPasswordField editPassword;
     private JButton logInButton;
+    public JLabel alertLabel;
+    public JLabel forgotPassword;
+    private Color color;
 
     private LogInPanelListeners logInPanelListeners;
 
@@ -35,6 +38,12 @@ public class LogInScreenPanel
         edituserId = new JTextField();
         editPassword=new JPasswordField();
         logInButton=new JButton();
+        alertLabel=new JLabel("",SwingConstants.CENTER);
+        forgotPassword=new JLabel();
+
+        color=Color.decode("#adc3ff");
+
+
 
         logInPanelListeners=new LogInPanelListeners();
 
@@ -62,6 +71,7 @@ public class LogInScreenPanel
         userIdLabel.setText("Username");
         passwordLabel.setText("Password");
         logInButton.setText("LogIn");
+        forgotPassword.setText("Forgot Password ?");
 
         //applying properties to the label
         userIdLabel.setFont(new Font("Century Gothic", Font.BOLD, 22));
@@ -73,6 +83,14 @@ public class LogInScreenPanel
         logInButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
         logInButton.setBackground(Color.red);
         logInButton.setForeground(Color.WHITE);
+
+        alertLabel.setFont(new Font("Century Gothic",Font.BOLD,15));
+        alertLabel.setForeground(Color.RED);
+        alertLabel.setBackground(Color.black);
+
+
+        forgotPassword.setFont(new Font("Century Gothic",Font.PLAIN,15));
+        forgotPassword.setForeground(color);
 
 
     }
@@ -86,7 +104,9 @@ public class LogInScreenPanel
         passwordLabel.setBounds(500,200,200,30);
         edituserId.setBounds(700,150,200,30);
         editPassword.setBounds(700,200,200,30);
+        alertLabel.setBounds(550,260,340,20);
         logInButton.setBounds(650,300,150,40);
+        forgotPassword.setBounds(660,350,150,20);
 
     }
 
@@ -96,7 +116,10 @@ public class LogInScreenPanel
         logInScreenPanel.add(userIdLabel);
         logInScreenPanel.add(editPassword);
         logInScreenPanel.add(edituserId);
+
+        logInScreenPanel.add(alertLabel);
         logInScreenPanel.add(logInButton);
+        logInScreenPanel.add(forgotPassword);
 
     }
 
