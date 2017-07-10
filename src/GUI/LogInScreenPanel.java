@@ -17,8 +17,8 @@ public class LogInScreenPanel
     //component in LogInScreenPanel
     private JLabel userIdLabel;
     private JLabel passwordLabel;
-    private JTextField edituserId;
-    private JPasswordField editPassword;
+    public JTextField edituserId;
+    public JPasswordField editPassword;
     private JButton logInButton;
 
     private LogInPanelListeners logInPanelListeners;
@@ -108,9 +108,10 @@ public class LogInScreenPanel
     public JPanel getlogInScreenPanel(){
         return this.logInScreenPanel;
     }
+
     private void addListeners(){
 
-        logInPanelListeners.loginButtonListeners(logInButton,this);
+        logInPanelListeners.loginButtonListeners(logInButton);
 
     }
 

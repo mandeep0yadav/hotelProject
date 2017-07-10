@@ -16,7 +16,7 @@ import javax.swing.*;
 public class LoginController {
 
     private JFrame initialFrame;
-    private LogInScreenPanel logInScreenPanel;
+    private static LogInScreenPanel logInScreenPanel;
 
     public LoginController(){
 
@@ -49,6 +49,13 @@ public class LoginController {
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(logInScreenPanel.getlogInScreenPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
+
+    }
+
+    public static void validateInput(){
+        System.out.println("\n\n\n\n\n");
+        System.out.println(logInScreenPanel.edituserId.getText());
+        System.out.println(logInScreenPanel.editPassword.getPassword());
 
     }
 }
