@@ -22,11 +22,13 @@ public class HeaderPanelListeners {
 
     private JLabel aboutUsLabel;
 
+    private JLabel logoImageLabel;
+
     public void contactLabelListener(JLabel contactLabel){
         this.contactLabel = contactLabel;
         this.contactLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on CONTACT Label");
                 new ContactController();
 
@@ -36,7 +38,7 @@ public class HeaderPanelListeners {
                 policyLabel.setForeground(Color.white);
                 aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
-                contactLabel.setForeground(Color.blue);
+                contactLabel.setForeground(Color.red);
             }
         });
     }
@@ -46,7 +48,7 @@ public class HeaderPanelListeners {
         this.policyLabel = policyLabel;
         this.policyLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on policy Label");
                 new PolicyController();
 
@@ -54,10 +56,11 @@ public class HeaderPanelListeners {
                 //for color change to show which panel is launched
 
                 homeLabel.setForeground(Color.white);
-                policyLabel.setForeground(Color.blue);
+                policyLabel.setForeground(Color.red);
                 aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
+
 
             }
         });
@@ -67,7 +70,7 @@ public class HeaderPanelListeners {
         this.faqsLabel = faqsLabel;
         this.faqsLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on FAQS Label");
                 new FAQsController();
 
@@ -77,7 +80,7 @@ public class HeaderPanelListeners {
                 homeLabel.setForeground(Color.white);
                 policyLabel.setForeground(Color.white);
                 aboutUsLabel.setForeground(Color.white);
-                faqsLabel.setForeground(Color.blue);
+                faqsLabel.setForeground(Color.red);
                 contactLabel.setForeground(Color.white);
             }
         });
@@ -87,7 +90,7 @@ public class HeaderPanelListeners {
         this.homeLabel = homeLabel;
         this.homeLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on HOME Label");
                 new LaunchController();
 
@@ -106,7 +109,7 @@ public class HeaderPanelListeners {
         this.aboutUsLabel = aboutUsLabel;
         this.aboutUsLabel.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on About Us Label");
                 new AboutUsController();
 
@@ -114,7 +117,26 @@ public class HeaderPanelListeners {
 
                 homeLabel.setForeground(Color.white);
                 policyLabel.setForeground(Color.white);
-                aboutUsLabel.setForeground(Color.blue);
+                aboutUsLabel.setForeground(Color.red);
+                faqsLabel.setForeground(Color.white);
+                contactLabel.setForeground(Color.white);
+            }
+        });
+
+    }
+    public void hollaLogoListener(JLabel logoImageLabel) {
+        this.logoImageLabel = logoImageLabel;
+        this.logoImageLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on logo Label");
+                new LaunchController();
+
+                //for color change to show which panel is launched
+
+                homeLabel.setForeground(Color.red);
+                policyLabel.setForeground(Color.white);
+                aboutUsLabel.setForeground(Color.white);
                 faqsLabel.setForeground(Color.white);
                 contactLabel.setForeground(Color.white);
             }

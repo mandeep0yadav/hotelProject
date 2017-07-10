@@ -1,6 +1,7 @@
 package GUI;
 
 import listeners.HeaderPanelListeners;
+import listeners.HeaderPanelMouseListners;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,9 +20,14 @@ public class HeaderPanel {
     private JLabel faqs;
     private JLabel contactUs;
     private JLabel policy;
+    private JLabel logoImageLabel;
+
+    private ImageIcon hollaLogo;
 
     //listeners
     private HeaderPanelListeners headerPanelListeners;
+
+    private HeaderPanelMouseListners headerPanelMouseListners;
 
     public HeaderPanel(){
 
@@ -34,7 +40,12 @@ public class HeaderPanel {
         contactUs   =   new JLabel();
         policy      =   new JLabel();
 
+        logoImageLabel  =  new JLabel();
+
+        hollaLogo  = new ImageIcon("src/Images/hollalogo2.png");
+
         headerPanelListeners = new HeaderPanelListeners();
+        headerPanelMouseListners = new HeaderPanelMouseListners();
 
         setProperty();
 
@@ -64,7 +75,7 @@ public class HeaderPanel {
         //applying properties to the label
 
         homeLabel.setFont(new Font("Century Gothic",Font.BOLD, 22));
-        homeLabel.setForeground(Color.WHITE);
+        homeLabel.setForeground(Color.RED);
 
         contactUs.setFont(new Font("Century Gothic", Font.BOLD, 22));
         contactUs.setForeground(Color.WHITE);
@@ -78,6 +89,8 @@ public class HeaderPanel {
         policy.setFont(new Font("Century Gothic", Font.BOLD, 22));
         policy.setForeground(Color.WHITE);
 
+        logoImageLabel.setIcon(hollaLogo);
+
     }
 
     private void setBounds(){
@@ -86,10 +99,11 @@ public class HeaderPanel {
 
         //adding bounds to other components;
         homeLabel.setBounds(740,70,100,30);
-        policy.setBounds(840,70,100,30);
-        aboutUs.setBounds(950,70,100,30);
-        faqs.setBounds(1080,70,100,30);
-        contactUs.setBounds(1170,70,150,30);
+        policy.setBounds(850,70,100,30);
+        aboutUs.setBounds(970,70,150,30);
+        faqs.setBounds(1110,70,100,30);
+        contactUs.setBounds(1210,70,150,30);
+        logoImageLabel.setBounds(30,20,300,135);
 
     }
 
@@ -100,6 +114,7 @@ public class HeaderPanel {
         HeaderPanel.add(contactUs);
         HeaderPanel.add(faqs);
         HeaderPanel.add(policy);
+        HeaderPanel.add(logoImageLabel);
     }
 
     public JPanel getHeaderPanel(){
@@ -118,6 +133,21 @@ public class HeaderPanel {
         headerPanelListeners.policyLabelListener(policy);
 
         headerPanelListeners.aboutusLabelListener(aboutUs);
+
+        headerPanelListeners.hollaLogoListener(logoImageLabel);
+
+
+       headerPanelMouseListners.contactLabelMouseListener(contactUs);
+
+       headerPanelMouseListners.faqsLabelMouseListener(faqs);
+
+       headerPanelMouseListners.homeLabelMouseListener(homeLabel);
+
+       headerPanelMouseListners.policyLabelMouseListener(policy);
+
+       headerPanelMouseListners.aboutusLabelListener(aboutUs);
+
+
 
    }
 

@@ -14,7 +14,6 @@ public class LogInScreenPanel
     private JPanel logInScreenPanel;
 
     //component in LogInScreenPanel
-    private Color skyBlue;
     private JLabel userIdLabel;
     private JLabel passwordLabel;
     private JTextField edituserId;
@@ -27,8 +26,7 @@ public class LogInScreenPanel
         System.out.println("Creating Login Panel...");
 
         logInScreenPanel = new JPanel();
-        
-        skyBlue = Color.decode("#74a8d3");
+
         userIdLabel = new JLabel();
         passwordLabel = new JLabel();
         edituserId = new JTextField();
@@ -64,7 +62,7 @@ public class LogInScreenPanel
         passwordLabel.setForeground(Color.WHITE);
         
         logInButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
-        logInButton.setBackground(skyBlue);
+        logInButton.setBackground(Color.red);
         logInButton.setForeground(Color.WHITE);
 
 
