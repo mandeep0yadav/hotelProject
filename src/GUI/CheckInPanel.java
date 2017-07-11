@@ -47,7 +47,7 @@ public class CheckInPanel {
 
     private void setBounds() {
 
-        checkInPanel.setBounds(0,140,1400,550);
+        checkInPanel.setBounds(0,140,1000,550);
 
         checkInLabel.setBounds(450,0,200,39);
 
