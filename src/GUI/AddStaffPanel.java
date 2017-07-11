@@ -45,7 +45,7 @@ public class AddStaffPanel {
     private JPasswordField editPassword;
 
     // Separator
-    private JSeparator registrationLabelSeparator ;
+    private JSeparator addStaffLabelSeparator ;
     private JSeparator personalLabelSeparator , loginLabelSeparator , jobLabelSeparator ;
 
     // Button
@@ -60,7 +60,7 @@ public class AddStaffPanel {
         addStaffPanel = new JPanel();
 
         addStaffLabel = new JLabel();
-        registrationLabelSeparator = new JSeparator();
+        addStaffLabelSeparator = new JSeparator();
 
         // Under Personal Details
         personalLabel = new JLabel();
@@ -132,6 +132,7 @@ public class AddStaffPanel {
         addStaffLabel.setText("Add New Staff");
         addStaffLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
         addStaffLabel.setForeground(Color.red);
+        addStaffLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
         personalLabel.setText("Personal Details");
         personalLabel.setFont(new Font("Century Gothic", Font.BOLD,16));
@@ -227,6 +228,7 @@ public class AddStaffPanel {
         dobYearList.setSelectedItem(1990);
 
         registerButton.setText("Register");
+        registerButton.setFont(new Font("Century Gothic", Font.BOLD,12));
 
     }
 
@@ -236,7 +238,7 @@ public class AddStaffPanel {
 
         addStaffLabel.setBounds(400,0,200,39);
 
-        registrationLabelSeparator.setBounds(50,39,900,1);
+        addStaffLabelSeparator.setBounds(50,39,900,1);
 
         // Personal Details Bounds
         personalLabel.setBounds(100,40,200,29);
@@ -291,7 +293,7 @@ public class AddStaffPanel {
 
         // Adding all labels to Panel
         addStaffPanel.add(addStaffLabel);
-        addStaffPanel.add(registrationLabelSeparator);
+        addStaffPanel.add(addStaffLabelSeparator);
 
         addStaffPanel.add(personalLabel);
         addStaffPanel.add(personalLabelSeparator);

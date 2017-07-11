@@ -15,6 +15,8 @@ public class IssueBillPanel {
     private JLabel customerIdLabel;
     private JTextField editCustomerId;
 
+    private JSeparator issueBillLabelSeparator;
+
     private JButton generateBill;
 
     public IssueBillPanel() {
@@ -27,6 +29,8 @@ public class IssueBillPanel {
 
         customerIdLabel = new JLabel();
         editCustomerId = new JTextField();
+
+        issueBillLabelSeparator = new JSeparator();
 
         generateBill = new JButton();
 
@@ -46,11 +50,16 @@ public class IssueBillPanel {
         issueBillPanel.setLayout(null);
 
         issueBillLabel.setText("Issue Bill");
+        issueBillLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
         issueBillLabel.setForeground(Color.white);
+        issueBillLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
         customerIdLabel.setText("Customer ID");
+        customerIdLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
         customerIdLabel.setForeground(Color.white);
 
+        generateBill.setText("Generate Bill");
+        generateBill.setFont(new Font("Century Gothic", Font.BOLD,12));
 
     }
 
@@ -58,13 +67,27 @@ public class IssueBillPanel {
 
         issueBillPanel.setBounds(0,140,1000,550);
 
-        issueBillLabel.setBounds(100,100,100,25);
+        issueBillLabel.setBounds(450,0,200,39);
+
+        issueBillLabelSeparator.setBounds(50,39,900,1);
+
+        customerIdLabel.setBounds(400,100,100,25);
+        editCustomerId.setBounds(500,100,120,25);
+
+        generateBill.setBounds(440,140,125,25);
 
     }
 
     private void addComponentToPanel() {
 
         issueBillPanel.add(issueBillLabel);
+
+        issueBillPanel.add(issueBillLabelSeparator);
+
+        issueBillPanel.add(customerIdLabel);
+        issueBillPanel.add(editCustomerId);
+
+        issueBillPanel.add(generateBill);
 
     }
 
