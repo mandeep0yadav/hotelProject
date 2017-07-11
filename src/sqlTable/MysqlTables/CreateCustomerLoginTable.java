@@ -1,4 +1,4 @@
-package sqlTable;
+package sqlTable.MysqlTables;
 
 import dao.DAOFactory;
 
@@ -9,13 +9,13 @@ import java.sql.Statement;
 /**
  * Created by nirmit on 8/7/17.
  */
-public class CreateCustomerAddProofTable {
+public class CreateCustomerLoginTable {
     private DAOFactory mysqlDatabase;
     private Connection connection;
     private Statement statement;
 
-    public CreateCustomerAddProofTable(){
-        System.out.println("Creating Customer Address proof table");
+    public CreateCustomerLoginTable(){
+        System.out.println("Creating Customer login table");
         mysqlDatabase = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
         try {
             connection = mysqlDatabase.createConnection();
@@ -30,17 +30,13 @@ public class CreateCustomerAddProofTable {
         try {
             statement = connection.createStatement();
 
-            String sql = "CREATE TABLE CUSTOMERADDRESSPROFF" +
+            String sql = "CREATE TABLE CUSTOMERLOGIN" +
                     "(customerid varchar(36) not NULL, " +
-                    " idtype VARCHAR(255) not NULL, " +
-                    " idnumber INT(20) not NULL, " +
-                    " sex VARCHAR(10) not NULL, " +
-                    " FOREIGN KEY (customerid) REFERENCES CUSTOMERLOGIN(customerid))";
-
-            //addition blob later ***addressScan           blob        not null,***
+                    " name VARCHAR(255) not NULL, " +
+                    " PRIMARY KEY ( customerid ))";
 
             statement.executeUpdate(sql);
-            System.out.println("Created Customer Address proof table");
+            System.out.println("Created Customer login table");
         }catch (SQLException se){
             se.printStackTrace();
         }catch (Exception e){

@@ -1,4 +1,7 @@
-package dao;
+package dao.MysqlDAO;
+
+import dao.*;
+import dao.DAOInterface.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +13,7 @@ import java.sql.SQLException;
 public class MysqlDAOFactory extends DAOFactory {
 
     private static MysqlDAOFactory mysqlDAOFactory;
+    private Connection connection;
 
     public static final String DRIVER=
             "com.mysql.jdbc.Driver";
@@ -37,51 +41,18 @@ public class MysqlDAOFactory extends DAOFactory {
     }
     // method to create mysql connection connections
     public Connection createConnection() throws SQLException {
-        try {
-            Class.forName(DRIVER);
-        }catch (ClassNotFoundException e){
-            e.printStackTrace();
-        }
+
         // Use DRIVER and DBURL to create a connection
         // Recommend connection pool implementation/usage
-        Connection connection = null;
-        connection = DriverManager.getConnection(DBURL,user,pass);
+        if(connection == null) {
+            try {
+                Class.forName(DRIVER);
+            }catch (ClassNotFoundException e){
+                e.printStackTrace();
+            }
+            connection = DriverManager.getConnection(DBURL, user, pass);
+        }
         return connection;
-    }
-
-    @Override
-    public AllottedRoomDAO getAllottedRoomDAO() {
-        return null;
-    }
-
-    @Override
-    public CustomerAddressProofDAO getCustomerAddressDAO() {
-        return null;
-    }
-
-    @Override
-    public CustomerDetailsDAO getCustomerDetailsDAO() {
-        return null;
-    }
-
-    @Override
-    public CustomerStayInformationDAO getCustomerStayInformationDAO() {
-        return null;
-    }
-
-    @Override
-    public EmployeeDetailsDAO getEmployeeDetailsDAO() {
-        return null;
-    }
-
-    @Override
-    public EmployeeLoginDAO getEmployeeLoginDAO() {
-        return null;
-    }
-
-    @Override
-    public RoomDetailsDAO getRoomDetailsDAO() {
-        return null;
     }
 
 }

@@ -1,4 +1,7 @@
-package dao;
+package dao.OracleDAO;
+
+import dao.DAOFactory;
+import dao.DAOInterface.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -49,38 +52,4 @@ public class OracleDAOFactory extends DAOFactory {
         return connection;
     }
 
-    @Override
-    public AllottedRoomDAO getAllottedRoomDAO() {
-        return null;
-    }
-
-    @Override
-    public CustomerAddressProofDAO getCustomerAddressDAO() {
-        return null;
-    }
-
-    @Override
-    public CustomerDetailsDAO getCustomerDetailsDAO() {
-        return null;
-    }
-
-    @Override
-    public CustomerStayInformationDAO getCustomerStayInformationDAO() {
-        return null;
-    }
-
-    @Override
-    public EmployeeDetailsDAO getEmployeeDetailsDAO() {
-        return null;
-    }
-
-    @Override
-    public EmployeeLoginDAO getEmployeeLoginDAO() {
-        return null;
-    }
-
-    @Override
-    public RoomDetailsDAO getRoomDetailsDAO() {
-        return null;
-    }
 }

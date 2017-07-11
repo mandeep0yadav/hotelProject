@@ -4,6 +4,7 @@ import GUI.FooterPanel;
 import GUI.HeaderPanel;
 import GUI.LaunchPanel;
 import GUI.LogInScreenPanel;
+import dao.MysqlDAO.MysqlEmployeeLoginDAO;
 import listeners.LogInPanelListeners;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
@@ -58,7 +59,7 @@ public class LoginController {
 
             //do database validation and perform the action whatever you want
 
-
+            //new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
 
             //for just testing
             if (logInScreenPanel.edituserId.getText().equals("123") &&

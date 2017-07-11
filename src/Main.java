@@ -1,11 +1,8 @@
-import GUI.ContactsPanel;
-import GUI.FooterPanel;
-import GUI.HeaderPanel;
 import controller.LaunchController;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
-import sqlTable.*;
+import sqlTable.MysqlTables.*;
 
 import javax.swing.*;
 import java.util.Scanner;
@@ -53,8 +50,9 @@ public class Main {
 
 
         new CreateAllottedRoomTable();
-        new CreateEmployeeLevelTable();
         new CreateEmployeeLevelTaskTable();
+        new CreateEmployeeLevelTable();
+
 
 
     }

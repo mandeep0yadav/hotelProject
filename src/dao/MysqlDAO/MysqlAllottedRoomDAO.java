@@ -1,6 +1,7 @@
-package dao;
+package dao.MysqlDAO;
 
 import ValueObjects.AllottedRoom;
+import dao.DAOInterface.AllottedRoomDAO;
 
 /**
  * Created by nirmit on 10/7/17.

@@ -1,6 +1,7 @@
-package dao;
+package dao.MysqlDAO;
 
 import ValueObjects.CustomerDetails;
+import dao.DAOInterface.CustomerDetailsDAO;
 
 /**
  * Created by nirmit on 10/7/17.

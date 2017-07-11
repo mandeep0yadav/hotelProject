@@ -1,4 +1,4 @@
-package sqlTable;
+package sqlTable.MysqlTables;
 
 import dao.DAOFactory;
 
@@ -9,20 +9,21 @@ import java.sql.Statement;
 /**
  * Created by nirmit on 8/7/17.
  */
-public class CreateEmployeeDetailTable {
+public class CreateEmployeeLogInTable {
+
     private DAOFactory mysqlDatabase;
     private Connection connection;
     private Statement statement;
 
-    public CreateEmployeeDetailTable(){
-        System.out.println("Creating Employee Details table");
+    public CreateEmployeeLogInTable(){
+        System.out.println("Creating Employee Level table");
         mysqlDatabase = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
         try {
             connection = mysqlDatabase.createConnection();
         }catch (SQLException e){
             e.printStackTrace();
         }
-
+        
         createTable();
     }
 
@@ -30,26 +31,18 @@ public class CreateEmployeeDetailTable {
         try {
             statement = connection.createStatement();
 
-            String sql = "CREATE TABLE EMPLOYEEDETAIL" +
+            String sql = "CREATE TABLE EMPLOYEELOGIN" +
                     "(empid varchar(36) not NULL, " +
-                    " name VARCHAR(255) not NULL, " +
-                    " housenumber INT(5), " +
-                    " street VARCHAR(50), " +
-                    " city VARCHAR(50) , " +
-                    " postalcode INT(10), " +
-                    " country VARCHAR(50), " +
-                    " salary INT(8) not NULL, " +
-                    " dob DATE not NULL, " +
-                    " email VARCHAR(255) not NULL, " +
-                    " mob INT(10) not NULL, " +
-                    " FOREIGN KEY (empid) REFERENCES EMPLOYEELOGIN(empid))";
+                    " password VARCHAR(255) not NULL, " +
+                    " PRIMARY KEY ( empid ))";
 
             statement.executeUpdate(sql);
-            System.out.println("Created Employee details table");
+            System.out.println("Created Employee Level table");
         }catch (SQLException se){
             se.printStackTrace();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
+
 }

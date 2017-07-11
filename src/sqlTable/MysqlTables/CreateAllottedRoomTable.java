@@ -1,4 +1,4 @@
-package sqlTable;
+package sqlTable.MysqlTables;
 
 import dao.DAOFactory;
 

@@ -1,4 +1,4 @@
-package sqlTable;
+package sqlTable.MysqlTables;
 
 import dao.DAOFactory;
 
@@ -7,15 +7,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Created by nirmit on 8/7/17.
+ * Created by nirmit on 10/7/17.
  */
-public class CreateEmployeeLogInTable {
+public class CreateEmployeeLevelTable {
 
     private DAOFactory mysqlDatabase;
     private Connection connection;
     private Statement statement;
 
-    public CreateEmployeeLogInTable(){
+    public CreateEmployeeLevelTable(){
         System.out.println("Creating Employee Login table");
         mysqlDatabase = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
         try {
@@ -23,7 +23,7 @@ public class CreateEmployeeLogInTable {
         }catch (SQLException e){
             e.printStackTrace();
         }
-        
+
         createTable();
     }
 
@@ -31,10 +31,11 @@ public class CreateEmployeeLogInTable {
         try {
             statement = connection.createStatement();
 
-            String sql = "CREATE TABLE EMPLOYEELOGIN" +
+            String sql = "CREATE TABLE EMPLOYEELEVEL" +
                     "(empid varchar(36) not NULL, " +
-                    " password VARCHAR(255) not NULL, " +
-                    " PRIMARY KEY ( empid ))";
+                    " level VARCHAR(36) not NULL, " +
+                    " FOREIGN KEY (level) REFERENCES EMPLOYEELEVELTASK(level),"+
+                    " FOREIGN KEY (empid) REFERENCES EMPLOYEELOGIN( empid ))";
 
             statement.executeUpdate(sql);
             System.out.println("Created Employee Login table");
@@ -44,5 +45,4 @@ public class CreateEmployeeLogInTable {
             e.printStackTrace();
         }
     }
-
 }

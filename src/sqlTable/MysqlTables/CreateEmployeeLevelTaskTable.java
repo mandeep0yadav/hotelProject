@@ -1,4 +1,4 @@
-package sqlTable;
+package sqlTable.MysqlTables;
 
 import dao.DAOFactory;
 
@@ -16,7 +16,7 @@ public class CreateEmployeeLevelTaskTable {
     private Statement statement;
 
     public CreateEmployeeLevelTaskTable(){
-        System.out.println("Creating Employee Login table");
+        System.out.println("Creating Employee Level Task table");
         mysqlDatabase = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
         try {
             connection = mysqlDatabase.createConnection();
@@ -37,7 +37,7 @@ public class CreateEmployeeLevelTaskTable {
                     " PRIMARY KEY ( level ))";
 
             statement.executeUpdate(sql);
-            System.out.println("Created Employee Login table");
+            System.out.println("Created Employee Level Task table");
         }catch (SQLException se){
             se.printStackTrace();
         }catch (Exception e){
