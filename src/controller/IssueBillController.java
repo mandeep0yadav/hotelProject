@@ -2,6 +2,7 @@ package controller;
 
 import GUI.IssueBillPanel;
 import GUI.ManagerHomePanel;
+import GUI.ReceptionistHomePanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -16,11 +17,15 @@ public class IssueBillController {
     private JFrame initialFrame;
     private IssueBillPanel issueBillPanel;
 
+    //for showing receptionist options
+    private ReceptionistHomePanel receptionistHomePanel;
+
     public IssueBillController(){
 
         System.out.println("Controls in Issue Controller...");
 
         issueBillPanel = new IssueBillPanel();
+        receptionistHomePanel = new ReceptionistHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
 
         setproperty();
@@ -31,7 +36,7 @@ public class IssueBillController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/hotel.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/receptionWritten.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);
@@ -43,6 +48,7 @@ public class IssueBillController {
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(issueBillPanel.getIssueBillPanel());
+        initialFrame.add(receptionistHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }

@@ -43,6 +43,7 @@ public class ReceptionistHomeController {
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(receptionistHomePanel.getReceptionistHomePanel());
+        initialFrame.add(receptionistHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
