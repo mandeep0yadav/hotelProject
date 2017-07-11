@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.AddStaffPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -50,6 +52,9 @@ public class AddStaffPanel {
 
     // Button
     private JButton registerButton;
+
+    // Listeners
+    private AddStaffPanelListeners addStaffPanelListeners;
 
 
     // Constructor
@@ -113,11 +118,15 @@ public class AddStaffPanel {
 
         registerButton = new JButton();
 
+        addStaffPanelListeners = new AddStaffPanelListeners();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
+
+        addListeners();
 
         System.out.println("Register Panel Created...");
 
@@ -337,6 +346,12 @@ public class AddStaffPanel {
         addStaffPanel.add(editPassword);
         addStaffPanel.add(postList);
         addStaffPanel.add(registerButton);
+
+    }
+
+    private void addListeners() {
+
+        addStaffPanelListeners.registerButtonListener(registerButton);
 
     }
 
