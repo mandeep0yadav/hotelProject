@@ -82,9 +82,10 @@ public class ManagerHomePanel {
         addRoom.setBounds(50,100,300,30);
         updateRoom.setBounds(50,150,300,30);
         deleteRoom.setBounds(50,200,300,30);
-        updateStaff.setBounds(50,250,300,30);
+        addStaff.setBounds(50,250,300,30);
         deleteStaff.setBounds(50,300,300,30);
-        addStaff.setBounds(50,350,300,30);
+        updateStaff.setBounds(50,350,300,30);
+
         welcomeLabel.setBounds(360,100,500,200);
 
     }

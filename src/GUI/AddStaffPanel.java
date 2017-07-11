@@ -6,9 +6,9 @@ import java.awt.*;
 /**
  * Created by nirmit on 4/7/17.
  */
-public class RegisterPanel {
+public class AddStaffPanel {
 
-    private JPanel registerPanel;
+    private JPanel addStaffPanel;
 
     //components in panel
 
@@ -51,11 +51,11 @@ public class RegisterPanel {
 
     private JButton registerButton;
 
-    public RegisterPanel() {
+    public AddStaffPanel() {
 
-        System.out.println("Creating Register Panel...");
+        System.out.println("Creating Add Staff...");
 
-        registerPanel = new JPanel();
+        addStaffPanel = new JPanel();
 
         registrationLabel = new JLabel();
         personalLabel = new JLabel();
@@ -102,57 +102,57 @@ public class RegisterPanel {
 
         addComponentToPanel();
 
-        System.out.println("Register Panel Created...");
+        System.out.println("Add staff Created...");
 
     }
 
-    public JPanel getRegisterPanel() {
-        return this.registerPanel;
+    public JPanel getAddStaffPanel() {
+        return this.addStaffPanel;
     }
 
     private void addComponentToPanel() {
 
-        registerPanel.add(registrationLabel);
-        registerPanel.add(personalLabel);
-        registerPanel.add(firstNameLabel);
-        registerPanel.add(lastNameLabel);
-        registerPanel.add(genderLabel);
-        registerPanel.add(dobLabel);
-        registerPanel.add(phoneLabel);
-        registerPanel.add(emailLabel);
-        registerPanel.add(streetAddressLabel);
-        registerPanel.add(countryLabel);
-        registerPanel.add(cityLabel);
-        registerPanel.add(postalCodeLabel);
-        registerPanel.add(loginLabel);
-        registerPanel.add(empIDLabel);
-        registerPanel.add(passwordLabel);
-        registerPanel.add(jobLabel);
-        registerPanel.add(postLabel);
-        registerPanel.add(editFirstName);
-        registerPanel.add(editLastName);
-        registerPanel.add(selectGender);
-        registerPanel.add(editDobDay);
-        registerPanel.add(editDobMonth);
-        registerPanel.add(editDobYear);
+        addStaffPanel.add(registrationLabel);
+        addStaffPanel.add(personalLabel);
+        addStaffPanel.add(firstNameLabel);
+        addStaffPanel.add(lastNameLabel);
+        addStaffPanel.add(genderLabel);
+        addStaffPanel.add(dobLabel);
+        addStaffPanel.add(phoneLabel);
+        addStaffPanel.add(emailLabel);
+        addStaffPanel.add(streetAddressLabel);
+        addStaffPanel.add(countryLabel);
+        addStaffPanel.add(cityLabel);
+        addStaffPanel.add(postalCodeLabel);
+        addStaffPanel.add(loginLabel);
+        addStaffPanel.add(empIDLabel);
+        addStaffPanel.add(passwordLabel);
+        addStaffPanel.add(jobLabel);
+        addStaffPanel.add(postLabel);
+        addStaffPanel.add(editFirstName);
+        addStaffPanel.add(editLastName);
+        addStaffPanel.add(selectGender);
+        addStaffPanel.add(editDobDay);
+        addStaffPanel.add(editDobMonth);
+        addStaffPanel.add(editDobYear);
 
 
-        registerPanel.add(editPhone);
-        registerPanel.add(editEmail);
-        registerPanel.add(editStreetAddress);
-        registerPanel.add(editCountry);
-        registerPanel.add(editCity);
-        registerPanel.add(editPostalCode);
-        registerPanel.add(editEmpID);
-        registerPanel.add(editPassword);
-        registerPanel.add(selectPost);
-        registerPanel.add(registerButton);
+        addStaffPanel.add(editPhone);
+        addStaffPanel.add(editEmail);
+        addStaffPanel.add(editStreetAddress);
+        addStaffPanel.add(editCountry);
+        addStaffPanel.add(editCity);
+        addStaffPanel.add(editPostalCode);
+        addStaffPanel.add(editEmpID);
+        addStaffPanel.add(editPassword);
+        addStaffPanel.add(selectPost);
+        addStaffPanel.add(registerButton);
 
     }
 
     private void setBounds() {
 
-        registerPanel.setBounds(0,140,1400,550);
+        addStaffPanel.setBounds(0,140,1100,550);
 
         registrationLabel.setBounds(600,0,200,30);
 
@@ -201,8 +201,8 @@ public class RegisterPanel {
 
     private void setProperty() {
 
-        registerPanel.setLayout(null);
-        registerPanel.setOpaque(false);
+        addStaffPanel.setLayout(null);
+        addStaffPanel.setOpaque(false);
 
         registrationLabel.setText("Registration Page");
         registrationLabel.setFont(new Font("comic sans", Font.BOLD,22));
@@ -287,13 +287,10 @@ public class RegisterPanel {
     }
 
     public void destroy() {
-        registerPanel.setVisible(false);
+        addStaffPanel.setVisible(false);
         System.out.println("Register Panel destroyed...");
     }
 
-    public JPanel RegisterPanel(){
-        return this.getRegisterPanel();
-    }
 
 
 }

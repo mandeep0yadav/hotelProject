@@ -1,6 +1,9 @@
 package listeners;
 
-import controller.EmployeeViewController;
+import controller.AddStaffController;
+import controller.DeleteStaffController;
+import controller.UpdateStaffController;
+import controller.ViewStaffController;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -12,27 +15,66 @@ import java.awt.event.MouseEvent;
 public class AdminOptionPanelListeners {
 
 
-    private JLabel employeeUpdate;
+    private JLabel updateStaff;
 
-    private JLabel viewDetails;
+    private JLabel deleteStaff;
 
-    private JLabel employeeView;
+    private JLabel viewStaff;
 
-    private JLabel empolyeeDelete;
+    private JLabel addStaff;
 
 
-    public void employeeViewListeners(JLabel employeeView){
-        this.employeeView = employeeView;
-        this.employeeView.addMouseListener(new MouseAdapter() {
+    public void viewStaffListener(JLabel viewStaff){
+        this.viewStaff = viewStaff;
+        this.viewStaff.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on view emplloyee Label");
-                new EmployeeViewController();
+                new ViewStaffController();
 
-                //for color change to show which panel is launched
 
             }
         });
     }
+    public void addStaffListener(JLabel addStaff) {
+        this.addStaff = addStaff;
+        this.addStaff.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on add staff Label");
+                new AddStaffController();
+
+
+
+            }
+        });
+    }
+    public void deleteStaffListener(JLabel deleteStaff) {
+        this.deleteStaff = deleteStaff;
+        this.deleteStaff.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on deleteStaff Label");
+                new DeleteStaffController();
+
+
+
+            }
+        });
+    }
+    public void updateStaffListener(JLabel updateStaff) {
+        this.updateStaff = updateStaff;
+        this.updateStaff.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on UpdateStaff Label");
+                new UpdateStaffController();
+
+
+
+            }
+        });
+    }
+
 
 }

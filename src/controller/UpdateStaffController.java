@@ -1,7 +1,8 @@
 package controller;
 
 import GUI.AdminHomePanel;
-import GUI.EmployeeViewPanel;
+import GUI.UpdateStaffPanel;
+import GUI.ViewStaffPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -9,21 +10,20 @@ import singleton.JframeSingleTon;
 import javax.swing.*;
 
 /**
- * Created by jatin kumar vimal on 11/07/2017.
+ * Created by Dell on 7/11/2017.
  */
-public class EmployeeViewController
-{
+public class UpdateStaffController {
     private JFrame initialFrame;
-    private EmployeeViewPanel employeeViewPanel;
+    private UpdateStaffPanel updateStaffPanel;
 
-    //for showing receptionist options
+
     private AdminHomePanel adminHomePanel;
 
-    public EmployeeViewController(){
+    public UpdateStaffController(){
 
-        System.out.println("Controls in employee Controller...");
+        System.out.println("Controls in updateStaff Controller...");
 
-        employeeViewPanel = new EmployeeViewPanel();
+        updateStaffPanel = new UpdateStaffPanel();
         adminHomePanel = new AdminHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -35,7 +35,7 @@ public class EmployeeViewController
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/receptionWritten.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/room.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);
@@ -46,7 +46,7 @@ public class EmployeeViewController
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(employeeViewPanel.getEmployeeViewPanel());
+        initialFrame.add(updateStaffPanel.getUpdateStaffPanel());
         initialFrame.add(adminHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 

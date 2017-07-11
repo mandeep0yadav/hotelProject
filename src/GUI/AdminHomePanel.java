@@ -52,7 +52,14 @@ public class AdminHomePanel {
     }
 
     private void addListeners() {
-        adminOptionPanelListeners.employeeViewListeners(viewStaff);
+        adminOptionPanelListeners.viewStaffListener(viewStaff);
+
+        adminOptionPanelListeners.addStaffListener(addStaff);
+
+        adminOptionPanelListeners.deleteStaffListener(deleteStaff);
+
+        adminOptionPanelListeners.updateStaffListener(updateStaff);
+
     }
 
     private void setProperty() {
