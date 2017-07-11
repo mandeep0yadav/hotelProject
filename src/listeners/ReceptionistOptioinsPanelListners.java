@@ -1,6 +1,6 @@
 package listeners;
 
-import controller.IssueBillController;
+import controller.*;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -11,7 +11,9 @@ import java.awt.event.MouseEvent;
  */
 public class ReceptionistOptioinsPanelListners {
 
-    private JLabel addGuest;
+    private JLabel checkInlabel;
+
+    private JLabel checkOutLabel;
 
     private JLabel updateBooking;
 
@@ -19,7 +21,6 @@ public class ReceptionistOptioinsPanelListners {
 
     private JLabel issueBill;
 
-    private JLabel deleteGuest;
 
 
     public void issueBillListener(JLabel issueBill){
@@ -30,10 +31,59 @@ public class ReceptionistOptioinsPanelListners {
                 System.out.println("Listener on Issue Bill Label");
                 new IssueBillController();
 
-                //for color change to show which panel is launched
 
             }
         });
     }
+    public void roomViewListener(JLabel roomView){
+        this.roomView = roomView;
+        this.roomView.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on roomview Label");
+                new ViewRoomController();
+
+
+            }
+        });
+    }
+    public void updateBookingListener(JLabel updateBooking){
+        this.updateBooking = updateBooking;
+        this.updateBooking.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on updatebooking Label");
+                new UpdateBookingController();
+
+
+            }
+        });
+    }
+    public void checkInListener(JLabel checkInlabel){
+        this.checkInlabel = checkInlabel;
+        this.checkInlabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on checkIn Label");
+                new CheckInController();
+
+
+            }
+        });
+    }
+    public void checkOutListener(JLabel checkOutLabel){
+        this.checkOutLabel = checkOutLabel;
+        this.checkOutLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                System.out.println("Listener on check out Label");
+                new CheckOutController();
+
+
+            }
+        });
+    }
+
+
 
 }

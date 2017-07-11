@@ -27,7 +27,6 @@ public class RoomViewPanel {
 
         addComponentToPanel();
 
-        System.out.println("Issue Bill Panel Created...");
 
     }
 
@@ -57,7 +56,7 @@ public class RoomViewPanel {
 
     }
 
-    public JPanel getIssueBillPanel() {
+    public JPanel getRoomViewPanel() {
         return this.roomViewPanel;
     }
 

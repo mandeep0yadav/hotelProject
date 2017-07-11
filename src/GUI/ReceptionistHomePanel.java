@@ -14,12 +14,11 @@ public class ReceptionistHomePanel {
     private JPanel showOptionsPanel;
 
 
-    private JLabel roomBoking;
-    private JLabel addGuest;
+    private JLabel checkInlabel;
+    private JLabel checkOutLabel;
     private JLabel updateBooking;
     private JLabel roomView;
     private JLabel issueBill;
-    private JLabel deleteGuest;
     private JLabel welcome;
 
 
@@ -33,12 +32,11 @@ public class ReceptionistHomePanel {
 
         receptionistHomePanel=new JPanel();
         showOptionsPanel=new JPanel();
-        roomBoking = new JLabel();
-        addGuest = new JLabel();
+        checkInlabel = new JLabel();
+        checkOutLabel = new JLabel();
         updateBooking = new JLabel();
         roomView = new JLabel();
         issueBill = new JLabel();
-        deleteGuest = new JLabel();
         welcome=new JLabel();
 
         receptionistOptioinsPanelListners = new ReceptionistOptioinsPanelListners();
@@ -59,15 +57,22 @@ public class ReceptionistHomePanel {
 
         receptionistOptioinsPanelListners.issueBillListener(issueBill);
 
+        receptionistOptioinsPanelListners.checkInListener(checkInlabel);
+
+        receptionistOptioinsPanelListners.checkOutListener(checkOutLabel);
+
+        receptionistOptioinsPanelListners.roomViewListener(roomView);
+
+        receptionistOptioinsPanelListners.updateBookingListener(updateBooking);
+
     }
 
     private void setProperty() {
-        roomBoking.setText("Room Booking");
-        addGuest.setText("Add Guest");
+        checkInlabel.setText("Check-In");
+        checkOutLabel.setText("Check-Out");
         updateBooking.setText("Update Booking");
-        roomView.setText("Room View");
+        roomView.setText("View Rooms");
         issueBill.setText("Issue Bill");
-        deleteGuest.setText("Delete Guest");
         welcome.setText("Welcome Receptionist");
 
         showOptionsPanel.setLayout(null);
@@ -75,18 +80,16 @@ public class ReceptionistHomePanel {
         receptionistHomePanel.setLayout(null);
         receptionistHomePanel.setOpaque(false);
 
-        roomBoking.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        roomBoking.setForeground(Color.WHITE);
-        addGuest.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        addGuest.setForeground(Color.WHITE);
+        checkInlabel.setFont(new Font("Century Gothic",Font.BOLD, 20));
+        checkInlabel.setForeground(Color.WHITE);
+        checkOutLabel.setFont(new Font("Century Gothic",Font.BOLD, 20));
+        checkOutLabel.setForeground(Color.WHITE);
         updateBooking.setFont(new Font("Century Gothic",Font.BOLD, 20));
         updateBooking.setForeground(Color.WHITE);
         roomView.setFont(new Font("Century Gothic",Font.BOLD, 20));
         roomView.setForeground(Color.WHITE);
         issueBill.setFont(new Font("Century Gothic",Font.BOLD, 20));
         issueBill.setForeground(Color.WHITE);
-        deleteGuest.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        deleteGuest.setForeground(Color.WHITE);
         welcome.setFont(new Font("Century Gothic",Font.BOLD, 40));
         welcome.setForeground(Color.WHITE);
 
@@ -95,25 +98,22 @@ public class ReceptionistHomePanel {
     private void setBounds() {
         receptionistHomePanel.setBounds(0,140,1000,550);
         showOptionsPanel.setBounds(1100,140,300,550);
-        roomBoking.setBounds(50,100,300,30);
-        addGuest.setBounds(50,150,300,30);
-        updateBooking.setBounds(50,200,300,30);
-        issueBill.setBounds(50,250,300,30);
-        deleteGuest.setBounds(50,300,300,30);
-        roomView.setBounds(50,350,300,30);
+        checkInlabel.setBounds(50,100,300,30);
+        checkOutLabel.setBounds(50,160,300,30);
+        updateBooking.setBounds(50,220,300,30);
+        issueBill.setBounds(50,280,300,30);
+        roomView.setBounds(50,340,300,30);
         welcome.setBounds(350,100,500,200);
 
     }
 
     private void addComponentToPanel() {
-        showOptionsPanel.add(roomBoking);
-        showOptionsPanel.add(addGuest);
+        showOptionsPanel.add(checkInlabel);
+        showOptionsPanel.add(checkOutLabel);
         showOptionsPanel.add(updateBooking);
-        showOptionsPanel.add(deleteGuest);
         showOptionsPanel.add(issueBill);
         showOptionsPanel.add(roomView);
         receptionistHomePanel.add(welcome);
-//        receptionistHomePanel.add(showOptionsPanel);
     }
 
     public void destroy() {
