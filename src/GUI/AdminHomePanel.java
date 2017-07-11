@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.AdminOptionPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,22 +14,26 @@ public class AdminHomePanel {
     private JPanel showOptionsPanel;
 
 
-    private JLabel viewDetails;
-    private JLabel addEmployee;
-    private JLabel deleteEmployee;
-    private JLabel updateEmployee;
+    private JLabel viewStaff;
+    private JLabel addStaff;
+    private JLabel deleteStaff;
+    private JLabel updateStaff;
     private JLabel welcomeLabel;
+
+    private AdminOptionPanelListeners adminOptionPanelListeners;
 
 
     public AdminHomePanel() {
         System.out.println("Creating Admin panel...");
         adminHomePanel =new JPanel();
         showOptionsPanel=new JPanel();
-        viewDetails = new JLabel();
-        addEmployee = new JLabel();
-        deleteEmployee = new JLabel();
-        updateEmployee = new JLabel();
+        viewStaff = new JLabel();
+        addStaff = new JLabel();
+        deleteStaff = new JLabel();
+        updateStaff = new JLabel();
         welcomeLabel=new JLabel();
+
+        adminOptionPanelListeners=new AdminOptionPanelListeners();
 
 
         setProperty();
@@ -36,51 +42,60 @@ public class AdminHomePanel {
 
         addComponentToPanel();
 
+
+
+
+        addListeners();
+
         System.out.println("Admin Panel Created...");
 
     }
 
+    private void addListeners() {
+        adminOptionPanelListeners.employeeViewListeners(viewStaff);
+    }
+
     private void setProperty() {
-        viewDetails.setText("View Details");
-        addEmployee.setText("Add Employee");
-        deleteEmployee.setText("Delete Employee");
-        updateEmployee.setText("Update Employee");
-        welcomeLabel.setText("Welcome Admin/0wner");
+        viewStaff.setText("View Staff");
+        addStaff.setText("Add Staff");
+        deleteStaff.setText("Delete Staff");
+        updateStaff.setText("Update Staff");
+        welcomeLabel.setText("Welcome Admin");
 
         showOptionsPanel.setLayout(null);
         showOptionsPanel.setOpaque(false);
         adminHomePanel.setLayout(null);
         adminHomePanel.setOpaque(false);
 
-        viewDetails.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        viewDetails.setForeground(Color.WHITE);
-        addEmployee.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        addEmployee.setForeground(Color.WHITE);
-        deleteEmployee.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        deleteEmployee.setForeground(Color.WHITE);
-        updateEmployee.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        updateEmployee.setForeground(Color.WHITE);
+        viewStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
+        viewStaff.setForeground(Color.WHITE);
+        addStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
+        addStaff.setForeground(Color.WHITE);
+        deleteStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
+        deleteStaff.setForeground(Color.WHITE);
+        updateStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
+        updateStaff.setForeground(Color.WHITE);
         welcomeLabel.setFont(new Font("Century Gothic",Font.BOLD, 40));
         welcomeLabel.setForeground(Color.WHITE);
 
     }
 
     private void setBounds() {
-        adminHomePanel.setBounds(5,140,1400,550);
-        showOptionsPanel.setBounds(1100,0,300,550);
-        viewDetails.setBounds(50,150,300,30);
-        addEmployee.setBounds(50,200,300,30);
-        deleteEmployee.setBounds(50,250,300,30);
-        updateEmployee.setBounds(50,300,300,30);
+        adminHomePanel.setBounds(0,140,1100,550);
+        showOptionsPanel.setBounds(1100,140,300,550);
+        viewStaff.setBounds(50,150,300,30);
+        addStaff.setBounds(50,200,300,30);
+        deleteStaff.setBounds(50,250,300,30);
+        updateStaff.setBounds(50,300,300,30);
         welcomeLabel.setBounds(360,100,500,200);
 
     }
 
     private void addComponentToPanel() {
-        showOptionsPanel.add(viewDetails);
-        showOptionsPanel.add(addEmployee);
-        showOptionsPanel.add(deleteEmployee);
-        showOptionsPanel.add(updateEmployee);
+        showOptionsPanel.add(viewStaff);
+        showOptionsPanel.add(addStaff);
+        showOptionsPanel.add(deleteStaff);
+        showOptionsPanel.add(updateStaff);
         adminHomePanel.add(welcomeLabel);
         adminHomePanel.add(showOptionsPanel);
     }
@@ -92,4 +107,6 @@ public class AdminHomePanel {
     public JPanel getAdminHomePanel(){
         return this.adminHomePanel;
     }
+
+    public JPanel getShowOptionsPanel(){return  this.showOptionsPanel;}
 }

@@ -1,6 +1,7 @@
 package controller;
 
 import GUI.AdminHomePanel;
+import GUI.EmployeeViewPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -8,17 +9,21 @@ import singleton.JframeSingleTon;
 import javax.swing.*;
 
 /**
- * Created by Dell on 7/10/2017.
+ * Created by jatin kumar vimal on 11/07/2017.
  */
-public class AdminHomeController {
+public class EmployeeViewController
+{
     private JFrame initialFrame;
+    private EmployeeViewPanel employeeViewPanel;
+
+    //for showing receptionist options
     private AdminHomePanel adminHomePanel;
 
+    public EmployeeViewController(){
 
-    public AdminHomeController(){
+        System.out.println("Controls in employee Controller...");
 
-        System.out.println("Controls in Admin Controller...");
-
+        employeeViewPanel = new EmployeeViewPanel();
         adminHomePanel = new AdminHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -30,7 +35,7 @@ public class AdminHomeController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/room.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/receptionWritten.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);
@@ -41,7 +46,7 @@ public class AdminHomeController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(adminHomePanel.getAdminHomePanel());
+        initialFrame.add(employeeViewPanel.getEmployeeViewPanel());
         initialFrame.add(adminHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
