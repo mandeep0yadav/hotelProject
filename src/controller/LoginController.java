@@ -62,8 +62,24 @@ public class LoginController {
             //new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
 
             //for just testing
-            if (logInScreenPanel.edituserId.getText().equals("123") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("123")){
+            if (logInScreenPanel.edituserId.getText().equals("1") &&
+                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
+                logInScreenPanel.alertLabel.setText("");
+                //launch the next screen according to usertype
+
+                LogInPanelListeners obj =new LogInPanelListeners();
+                obj.launchAdmin();
+
+            } if (logInScreenPanel.edituserId.getText().equals("2") &&
+                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("2")){
+                logInScreenPanel.alertLabel.setText("");
+                //launch the next screen according to usertype
+
+                LogInPanelListeners obj =new LogInPanelListeners();
+                obj.launchManager();
+
+            } if (logInScreenPanel.edituserId.getText().equals("3") &&
+                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("3")){
                 logInScreenPanel.alertLabel.setText("");
                 //launch the next screen according to usertype
 

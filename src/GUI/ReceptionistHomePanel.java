@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.ReceptionistOptioinsPanelListners;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,8 +9,9 @@ import java.awt.*;
  * Created by nirmit on 4/7/17.
  */
 public class ReceptionistHomePanel {
-        private JPanel receptionistHomePanel;
-        private JPanel showOptionsPanel;
+
+    private JPanel receptionistHomePanel;
+    private JPanel showOptionsPanel;
 
 
     private JLabel roomBoking;
@@ -18,6 +21,10 @@ public class ReceptionistHomePanel {
     private JLabel issueBill;
     private JLabel deleteGuest;
     private JLabel welcome;
+
+
+    //adding receptionist Options Listeners
+    private ReceptionistOptioinsPanelListners receptionistOptioinsPanelListners;
 
 
     public ReceptionistHomePanel() {
@@ -34,6 +41,7 @@ public class ReceptionistHomePanel {
         deleteGuest = new JLabel();
         welcome=new JLabel();
 
+        receptionistOptioinsPanelListners = new ReceptionistOptioinsPanelListners();
 
         setProperty();
 
@@ -41,7 +49,15 @@ public class ReceptionistHomePanel {
 
         addComponentToPanel();
 
+        addListeners();
+
         System.out.println("Receptionist Home Panel Created...");
+
+    }
+
+    private void addListeners() {
+
+        receptionistOptioinsPanelListners.issueBillListener(issueBill);
 
     }
 
@@ -77,8 +93,8 @@ public class ReceptionistHomePanel {
     }
 
     private void setBounds() {
-        receptionistHomePanel.setBounds(0,140,1400,550);
-        showOptionsPanel.setBounds(1100,0,300,550);
+        receptionistHomePanel.setBounds(0,140,1000,550);
+        showOptionsPanel.setBounds(1100,140,300,550);
         roomBoking.setBounds(50,100,300,30);
         addGuest.setBounds(50,150,300,30);
         updateBooking.setBounds(50,200,300,30);
@@ -97,7 +113,7 @@ public class ReceptionistHomePanel {
         showOptionsPanel.add(issueBill);
         showOptionsPanel.add(roomView);
         receptionistHomePanel.add(welcome);
-        receptionistHomePanel.add(showOptionsPanel);
+//        receptionistHomePanel.add(showOptionsPanel);
     }
 
     public void destroy() {
@@ -108,4 +124,7 @@ public class ReceptionistHomePanel {
 public JPanel getReceptionistHomePanel(){
         return this.receptionistHomePanel;
 }
+
+public JPanel getShowOptionsPanel(){     return this.showOptionsPanel; }
+
 }

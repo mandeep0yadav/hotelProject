@@ -92,12 +92,6 @@ public class RegisterPanel {
         selectGender = new JComboBox();
         selectPost = new JComboBox();
 
-//        dobDay = new JComboBox();
-//        dobMonth = new JComboBox();
-//        dobYear = new JComboBox();
-
-//        selectDob = new DatePicker();
-
         editPassword = new JPasswordField();
 
         registerButton = new JButton();

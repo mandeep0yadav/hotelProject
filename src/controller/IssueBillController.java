@@ -1,6 +1,7 @@
 package controller;
 
-import GUI.AboutUsPanel;
+import GUI.IssueBillPanel;
+import GUI.ManagerHomePanel;
 import GUI.ReceptionistHomePanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
@@ -9,17 +10,21 @@ import singleton.JframeSingleTon;
 import javax.swing.*;
 
 /**
- * Created by Dell on 7/10/2017.
+ * Created by Dell on 7/11/2017.
  */
-public class ReceptionistHomeController {
+public class IssueBillController {
 
     private JFrame initialFrame;
+    private IssueBillPanel issueBillPanel;
+
+    //for showing receptionist options
     private ReceptionistHomePanel receptionistHomePanel;
 
-    public ReceptionistHomeController(){
+    public IssueBillController(){
 
-        System.out.println("Controls in Receptionist Controller...");
+        System.out.println("Controls in Issue Controller...");
 
+        issueBillPanel = new IssueBillPanel();
         receptionistHomePanel = new ReceptionistHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -42,10 +47,9 @@ public class ReceptionistHomeController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(receptionistHomePanel.getReceptionistHomePanel());
+        initialFrame.add(issueBillPanel.getIssueBillPanel());
         initialFrame.add(receptionistHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
-
 }
