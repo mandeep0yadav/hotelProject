@@ -36,7 +36,6 @@ public class LoginController {
         //adding frame properties
         initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/guestRoomSofa.jpg")));
         initialFrame.setTitle("Login In");
-        initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
         //initialFrame.setResizable(false);
 

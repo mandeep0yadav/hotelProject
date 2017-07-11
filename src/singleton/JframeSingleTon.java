@@ -16,6 +16,7 @@ public class JframeSingleTon {
     //singleton constructor
     private JframeSingleTon(){
         jFrame = new JFrame();
+        jFrame.setSize(1366,768);
         System.out.println("JFrame Created...");
     }
 
@@ -29,6 +30,7 @@ public class JframeSingleTon {
         if(jframeSingleTon == null){
             jframeSingleTon = new JframeSingleTon();
             jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         }
 
     }

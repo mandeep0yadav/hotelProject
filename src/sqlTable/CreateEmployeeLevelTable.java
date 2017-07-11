@@ -16,7 +16,7 @@ public class CreateEmployeeLevelTable {
     private Statement statement;
 
     public CreateEmployeeLevelTable(){
-        System.out.println("Creating Employee Login table");
+        System.out.println("Creating  EmployeeLevelTable");
         mysqlDatabase = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
         try {
             connection = mysqlDatabase.createConnection();
@@ -34,11 +34,11 @@ public class CreateEmployeeLevelTable {
             String sql = "CREATE TABLE EMPLOYEELEVEL" +
                     "(empid varchar(36) not NULL, " +
                     " level VARCHAR(36) not NULL, " +
-                    " FOREIGN KEY (level) REFERENCES ROOMDETAILS(level),"+
-                    " FOREIGN KEY (empid) REFERENCES CUSTOMERLOGIN( empid ))";
+                    " FOREIGN KEY (level) REFERENCES EMPLOYEELEVELTASK(level),"+
+                    " FOREIGN KEY (empid) REFERENCES EMPLOYEELOGIN( empid ))";
 
             statement.executeUpdate(sql);
-            System.out.println("Created Employee Login table");
+            System.out.println("Created EmployeeLevelTask table");
         }catch (SQLException se){
             se.printStackTrace();
         }catch (Exception e){

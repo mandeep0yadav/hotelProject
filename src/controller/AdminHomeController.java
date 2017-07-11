@@ -32,7 +32,6 @@ public class AdminHomeController {
         //adding frame properties
         initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/room.jpg")));
         initialFrame.setTitle("Holla Hotel");
-        initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);
 

@@ -33,7 +33,6 @@ public class PolicyController {
         //adding frame properties
         initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/superiorRoom1.jpg")));
         initialFrame.setTitle("Holla Hotel");
-        initialFrame.setExtendedState(initialFrame.MAXIMIZED_BOTH);
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);
 

@@ -1,10 +1,7 @@
 package listeners;
 
 import GUI.LogInScreenPanel;
-import controller.AdminHomeController;
-import controller.LoginController;
-import controller.ManagerHomeController;
-import controller.ReceptionistHomeController;
+import controller.*;
 
 import javax.swing.*;
 
@@ -24,10 +21,10 @@ public class LogInPanelListeners {
         new ReceptionistHomeController();
     }
     public  void launchManager(){
-
+new ManagerHomeController();
     }
     public void launchAdmin(){
-
+new AdminHomeController();
     }
 
 

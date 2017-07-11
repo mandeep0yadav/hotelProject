@@ -53,6 +53,9 @@ public class Main {
 
 
         new CreateAllottedRoomTable();
+        new CreateEmployeeLevelTable();
+        new CreateEmployeeLevelTaskTable();
+
 
     }
 
