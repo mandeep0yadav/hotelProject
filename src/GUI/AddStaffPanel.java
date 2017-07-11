@@ -10,10 +10,10 @@ public class AddStaffPanel {
 
     private JPanel addStaffPanel;
 
-    //components in panel
+    // All Components in panel
 
-    //all labels
-    private JLabel registrationLabel;
+    // All labels
+    private JLabel addStaffLabel;
     private JLabel personalLabel;
     private JLabel firstNameLabel , lastNameLabel;
     private JLabel dobLabel;
@@ -27,38 +27,45 @@ public class AddStaffPanel {
     private JLabel jobLabel;
     private JLabel postLabel;
 
-
-
-    //text fields
+    // Text fields
     private JTextField editFirstName , editLastName;
     private JTextField editCountry , editCity ,  editPostalCode;
     private JTextField editPhone , editEmail;
     private JTextField editEmpID;
-    private JTextField editDobDay , editDobMonth , editDobYear;
 
-    //text area
+    // Text area
     private JTextArea editStreetAddress;
 
-    //comboBox
-    private JComboBox selectPost , selectGender;
-    // private JComboBox dobDay , dobMonth , dobYear;
+    // ComboBox
+    private JComboBox postList , genderList;
 
-    //password field
+    private JComboBox dobDayList , dobMonthList , dobYearList;
+
+    // Password field
     private JPasswordField editPassword;
 
-    //date picker
-    //private  DatePicker selectDob;
+    // Separator
+    private JSeparator registrationLabelSeparator ;
+    private JSeparator personalLabelSeparator , loginLabelSeparator , jobLabelSeparator ;
 
+    // Button
     private JButton registerButton;
 
+
+    // Constructor
     public AddStaffPanel() {
 
-        System.out.println("Creating Add Staff...");
+        System.out.println("Creating Register Panel...");
 
         addStaffPanel = new JPanel();
 
-        registrationLabel = new JLabel();
+        addStaffLabel = new JLabel();
+        registrationLabelSeparator = new JSeparator();
+
+        // Under Personal Details
         personalLabel = new JLabel();
+        personalLabelSeparator = new JSeparator();
+
         firstNameLabel = new JLabel();
         lastNameLabel = new JLabel();
         genderLabel = new JLabel();
@@ -69,12 +76,21 @@ public class AddStaffPanel {
         countryLabel = new JLabel();
         cityLabel = new JLabel();
         postalCodeLabel = new JLabel();
+
+        // Under Login Details
         loginLabel = new JLabel();
+        loginLabelSeparator = new JSeparator();
+
         empIDLabel = new JLabel();
         passwordLabel = new JLabel();
+
+        // Under Job Details
         jobLabel = new JLabel();
+        jobLabelSeparator = new JSeparator();
+
         postLabel = new JLabel();
 
+        // All Fields corresponding to labels
         editFirstName = new JTextField();
         editLastName = new JTextField();
         editCountry = new JTextField();
@@ -83,14 +99,15 @@ public class AddStaffPanel {
         editEmail = new JTextField();
         editPostalCode = new JTextField();
         editEmpID = new JTextField();
-        editDobDay = new JTextField();
-        editDobMonth = new JTextField();
-        editDobYear = new JTextField();
+
+        dobDayList = new JComboBox();
+        dobMonthList = new JComboBox();
+        dobYearList = new JComboBox();
+
+        genderList = new JComboBox();
+        postList = new JComboBox();
 
         editStreetAddress = new JTextArea();
-
-        selectGender = new JComboBox();
-        selectPost = new JComboBox();
 
         editPassword = new JPasswordField();
 
@@ -102,18 +119,183 @@ public class AddStaffPanel {
 
         addComponentToPanel();
 
-        System.out.println("Add staff Created...");
+        System.out.println("Register Panel Created...");
 
     }
 
-    public JPanel getAddStaffPanel() {
-        return this.addStaffPanel;
+
+    private void setProperty() {
+
+        addStaffPanel.setLayout(null);
+        addStaffPanel.setOpaque(false);
+
+        addStaffLabel.setText("Add New Staff");
+        addStaffLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
+        addStaffLabel.setForeground(Color.red);
+
+        personalLabel.setText("Personal Details");
+        personalLabel.setFont(new Font("Century Gothic", Font.BOLD,16));
+        personalLabel.setForeground(Color.white);
+
+        firstNameLabel.setText("First Name");
+        firstNameLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        firstNameLabel.setForeground(Color.white);
+
+        lastNameLabel.setText("Last Name");
+        lastNameLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        lastNameLabel.setForeground(Color.white);
+
+        genderLabel.setText("Gender");
+        genderLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        genderLabel.setForeground(Color.white);
+
+        dobLabel.setText("DOB");
+        dobLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        dobLabel.setForeground(Color.white);
+
+        phoneLabel.setText("Phone No.");
+        phoneLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        phoneLabel.setForeground(Color.white);
+
+        emailLabel.setText("Email ID");
+        emailLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        emailLabel.setForeground(Color.white);
+
+        streetAddressLabel.setText("Street Address");
+        streetAddressLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        streetAddressLabel.setForeground(Color.white);
+
+        countryLabel.setText("Country");
+        countryLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        countryLabel.setForeground(Color.white);
+
+        cityLabel.setText("City");
+        cityLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        cityLabel.setForeground(Color.white);
+
+        postalCodeLabel.setText("Postal Code");
+        postalCodeLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        postalCodeLabel.setForeground(Color.white);
+
+        loginLabel.setText("Login Details");
+        loginLabel.setFont(new Font("Century Gothic", Font.BOLD,16));
+        loginLabel.setForeground(Color.white);
+
+        empIDLabel.setText("Set Employee ID");
+        empIDLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        empIDLabel.setForeground(Color.white);
+
+        passwordLabel.setText("Set Password");
+        passwordLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        passwordLabel.setForeground(Color.white);
+
+        jobLabel.setText("Job Details");
+        jobLabel.setFont(new Font("Century Gothic", Font.BOLD,16));
+        jobLabel.setForeground(Color.white);
+
+        postLabel.setText("Select Post");
+        postLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        postLabel.setForeground(Color.white);
+
+
+
+        String[] genderType = {"Male" , "Female"};
+        genderList.setModel(new DefaultComboBoxModel(genderType));
+
+
+        String[] postType = {"Receptionist","Manager","Admin"};
+        postList.setModel(new DefaultComboBoxModel(postType));
+
+        Integer[] day = new Integer[31];
+        for (int i = 0 ; i < day.length ; i++) {
+            day[i] = i+1;
+        }
+
+        Integer[] month = new Integer[12];
+        for (int i = 0 ; i < month.length ; i++) {
+            month[i] = i+1;
+        }
+
+        Integer[] year = new Integer[100];
+        for (int i = 0 ; i < year.length ; i++) {
+            year[i] = i+1918;
+        }
+
+        dobDayList.setModel(new DefaultComboBoxModel(day));
+        dobMonthList.setModel(new DefaultComboBoxModel(month));
+        dobYearList.setModel(new DefaultComboBoxModel(year));
+        dobYearList.setSelectedItem(1990);
+
+        registerButton.setText("Register");
+
+    }
+
+    private void setBounds() {
+
+        addStaffPanel.setBounds(0,140,1000,550);
+
+        addStaffLabel.setBounds(400,0,200,39);
+
+        registrationLabelSeparator.setBounds(50,39,900,1);
+
+        // Personal Details Bounds
+        personalLabel.setBounds(100,40,200,29);
+        personalLabelSeparator.setBounds(60,69,400,1);
+
+        firstNameLabel.setBounds(100,80,100,25);
+        editFirstName.setBounds(220,80,150,25);
+        lastNameLabel.setBounds(600,80,100,25);
+        editLastName.setBounds(720,80,150,25);
+        genderLabel.setBounds(100,120,100,25);
+        genderList.setBounds(220,120,150,25);
+        dobLabel.setBounds(600,120,100,25);
+
+        dobDayList.setBounds(720,120,35,25);
+        dobMonthList.setBounds(755,120,35,25);
+        dobYearList.setBounds(790,120,70,25);
+
+        phoneLabel.setBounds(100,160,100,25);
+        editPhone.setBounds(220,160,150,25);
+        emailLabel.setBounds(600,160,100,25);
+        editEmail.setBounds(720,160,150,25);
+        streetAddressLabel.setBounds(100,200,100,25);
+        editStreetAddress.setBounds(220,200,150,30);
+        countryLabel.setBounds(600,200,100,25);
+        editCountry.setBounds(720,200,150,25);
+        cityLabel.setBounds(100,240,100,25);
+        editCity.setBounds(220,240,150,25);
+        postalCodeLabel.setBounds(600,240,100,25);
+        editPostalCode.setBounds(720,240,150,25);
+
+        // Login Details Bounds
+        loginLabel.setBounds(100,280,100,29);
+        loginLabelSeparator.setBounds(60,309,400,1);
+
+        empIDLabel.setBounds(100,320,150,25);
+        editEmpID.setBounds(220,320,150,25);
+        passwordLabel.setBounds(600,320,100,25);
+        editPassword.setBounds(720,320,150,25);
+
+        // Job Details Bounds
+        jobLabel.setBounds(100,360,100,29);
+        jobLabelSeparator.setBounds(60,389,400,1);
+        postLabel.setBounds(100,400,100,25);
+        postList.setBounds(220,400,150,25);
+
+
+        registerButton.setBounds(550,465,100,30);
+
     }
 
     private void addComponentToPanel() {
 
-        addStaffPanel.add(registrationLabel);
+        // Adding all labels to Panel
+        addStaffPanel.add(addStaffLabel);
+        addStaffPanel.add(registrationLabelSeparator);
+
         addStaffPanel.add(personalLabel);
+        addStaffPanel.add(personalLabelSeparator);
+
         addStaffPanel.add(firstNameLabel);
         addStaffPanel.add(lastNameLabel);
         addStaffPanel.add(genderLabel);
@@ -124,18 +306,24 @@ public class AddStaffPanel {
         addStaffPanel.add(countryLabel);
         addStaffPanel.add(cityLabel);
         addStaffPanel.add(postalCodeLabel);
+
         addStaffPanel.add(loginLabel);
+        addStaffPanel.add(loginLabelSeparator);
         addStaffPanel.add(empIDLabel);
         addStaffPanel.add(passwordLabel);
+
         addStaffPanel.add(jobLabel);
+        addStaffPanel.add(jobLabelSeparator);
         addStaffPanel.add(postLabel);
+
+        // Adding all fields to Panel
         addStaffPanel.add(editFirstName);
         addStaffPanel.add(editLastName);
-        addStaffPanel.add(selectGender);
-        addStaffPanel.add(editDobDay);
-        addStaffPanel.add(editDobMonth);
-        addStaffPanel.add(editDobYear);
+        addStaffPanel.add(genderList);
 
+        addStaffPanel.add(dobDayList);
+        addStaffPanel.add(dobMonthList);
+        addStaffPanel.add(dobYearList);
 
         addStaffPanel.add(editPhone);
         addStaffPanel.add(editEmail);
@@ -145,144 +333,8 @@ public class AddStaffPanel {
         addStaffPanel.add(editPostalCode);
         addStaffPanel.add(editEmpID);
         addStaffPanel.add(editPassword);
-        addStaffPanel.add(selectPost);
+        addStaffPanel.add(postList);
         addStaffPanel.add(registerButton);
-
-    }
-
-    private void setBounds() {
-
-        addStaffPanel.setBounds(0,140,1100,550);
-
-        registrationLabel.setBounds(600,0,200,30);
-
-        personalLabel.setBounds(100,40,200,30);
-        firstNameLabel.setBounds(100,80,100,25);
-        editFirstName.setBounds(220,80,150,25);
-        lastNameLabel.setBounds(600,80,100,25);
-        editLastName.setBounds(720,80,150,25);
-        genderLabel.setBounds(100,120,100,25);
-        selectGender.setBounds(220,120,150,25);
-        dobLabel.setBounds(600,120,100,25);
-        editDobDay.setBounds(720,120,35,25);
-        editDobMonth.setBounds(755,120,35,25);
-        editDobYear.setBounds(790,120,70,25);
-//        selectDob.setBounds(,,,);
-        phoneLabel.setBounds(300,160,100,30);
-        editPhone.setBounds(220,160,150,25);
-        emailLabel.setBounds(600,160,100,25);
-        editEmail.setBounds(720,160,150,25);
-        streetAddressLabel.setBounds(100,200,100,25);
-        editStreetAddress.setBounds(220,200,150,25);
-        countryLabel.setBounds(600,200,100,25);
-        editCountry.setBounds(720,200,150,25);
-        cityLabel.setBounds(100,240,100,25);
-        editCity.setBounds(220,240,150,25);
-        postalCodeLabel.setBounds(600,240,100,25);
-        editPostalCode.setBounds(720,240,150,25);
-
-        loginLabel.setBounds(100,280,100,30);
-        empIDLabel.setBounds(100,310,150,25);
-        editEmpID.setBounds(220,310,150,25);
-        passwordLabel.setBounds(600,310,100,25);
-        editPassword.setBounds(720,310,150,25);
-
-        jobLabel.setBounds(100,350,100,30);
-        postLabel.setBounds(100,390,100,25);
-        selectPost.setBounds(220,390,150,25);
-
-
-
-
-        registerButton.setBounds(550,465,100,30);
-
-
-    }
-
-    private void setProperty() {
-
-        addStaffPanel.setLayout(null);
-        addStaffPanel.setOpaque(false);
-
-        registrationLabel.setText("Registration Page");
-        registrationLabel.setFont(new Font("comic sans", Font.BOLD,22));
-        registrationLabel.setForeground(Color.red);
-
-        personalLabel.setText("Personal Details");
-        personalLabel.setFont(new Font("comic sans", Font.BOLD,15));
-        personalLabel.setForeground(Color.blue);
-
-        firstNameLabel.setText("First Name");
-        firstNameLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        firstNameLabel.setForeground(Color.white);
-
-        lastNameLabel.setText("Last Name");
-        lastNameLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        lastNameLabel.setForeground(Color.white);
-
-        genderLabel.setText("Gender");
-        genderLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        genderLabel.setForeground(Color.white);
-
-        dobLabel.setText("DOB");
-        dobLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        dobLabel.setForeground(Color.white);
-
-        phoneLabel.setText("Phone No.");
-        phoneLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        phoneLabel.setForeground(Color.white);
-
-        emailLabel.setText("Email ID");
-        emailLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        emailLabel.setForeground(Color.white);
-
-        streetAddressLabel.setText("Street Address");
-        streetAddressLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        streetAddressLabel.setForeground(Color.white);
-
-        countryLabel.setText("Country");
-        countryLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        countryLabel.setForeground(Color.white);
-
-        cityLabel.setText("City");
-        cityLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        cityLabel.setForeground(Color.white);
-
-        postalCodeLabel.setText("Postal Code");
-        postalCodeLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        postalCodeLabel.setForeground(Color.white);
-
-        loginLabel.setText("Login Details");
-        loginLabel.setFont(new Font("comic sans", Font.BOLD,15));
-        loginLabel.setForeground(Color.blue);
-
-        empIDLabel.setText("Set Employee ID");
-        empIDLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        empIDLabel.setForeground(Color.white);
-
-        passwordLabel.setText("Set Password");
-        passwordLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        passwordLabel.setForeground(Color.white);
-
-        jobLabel.setText("Job Details");
-        jobLabel.setFont(new Font("comic sans", Font.BOLD,15));
-        jobLabel.setForeground(Color.blue);
-
-        postLabel.setText("Select Post");
-        postLabel.setFont(new Font("comic sans", Font.BOLD,13));
-        postLabel.setForeground(Color.white);
-
-
-
-        String[] genderType = {"Male" , "Female"};
-        selectGender.addItem(genderType);
-
-
-        String[] postType = {"Receptionist","Manager","Admin"};
-        selectPost.addItem(postType);
-
-        registerButton.setText("Register");
-
 
     }
 
@@ -291,6 +343,8 @@ public class AddStaffPanel {
         System.out.println("Register Panel destroyed...");
     }
 
-
+    public JPanel getAddStaffPanel() {
+        return this.addStaffPanel;
+    }
 
 }
