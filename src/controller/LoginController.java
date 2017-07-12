@@ -4,6 +4,9 @@ import GUI.FooterPanel;
 import GUI.HeaderPanel;
 import GUI.LaunchPanel;
 import GUI.LogInScreenPanel;
+import ValueObjects.EmployeeDetails;
+import ValueObjects.EmployeeLogin;
+import dao.MysqlDAO.MysqlEmployeeDetailsDAO;
 import dao.MysqlDAO.MysqlEmployeeLoginDAO;
 import listeners.LogInPanelListeners;
 import singleton.FooterSingleTon;
@@ -59,9 +62,10 @@ public class LoginController {
 
             //do database validation and perform the action whatever you want
 
-            //new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
-
-            //for just testing
+            EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
+            EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
+            new ReceptionistHomeController(employeeDetails);
+            /*//for just testing
             if (logInScreenPanel.edituserId.getText().equals("1") &&
                     String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
                 logInScreenPanel.alertLabel.setText("");
@@ -89,7 +93,7 @@ public class LoginController {
             }
             else{
                 logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
-            }
+            }*/
 
         } else {
             if (logInScreenPanel.edituserId.getText().trim().length() == 0) {

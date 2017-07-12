@@ -2,6 +2,7 @@ package controller;
 
 import GUI.AboutUsPanel;
 import GUI.ReceptionistHomePanel;
+import ValueObjects.EmployeeDetails;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -16,13 +17,16 @@ public class ReceptionistHomeController {
     private JFrame initialFrame;
     private ReceptionistHomePanel receptionistHomePanel;
 
-    public ReceptionistHomeController(){
+    private EmployeeDetails employeeDetails;
+
+
+    public ReceptionistHomeController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in Receptionist Controller...");
 
         receptionistHomePanel = new ReceptionistHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails= employeeDetails;
         setproperty();
 
         addComponent();
@@ -35,6 +39,9 @@ public class ReceptionistHomeController {
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);
+
+        //setting welcome text
+        receptionistHomePanel.welcome.setText("WELCOME "+ employeeDetails.getName().toUpperCase());
 
     }
 
