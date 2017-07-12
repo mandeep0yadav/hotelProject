@@ -18,14 +18,69 @@ public class MysqlEmployeeLoginDAO implements EmployeeLoginDAO {
     Connection connection;
 
     @Override
-    public int insertEmployeeLogin(EmployeeLogin employeeLogin) {
-        return 0;
+    public boolean insertEmployeeLogin(EmployeeLogin employeeLogin) {
+        mysqlDaoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+
+        try {
+            connection = mysqlDaoFactory.createConnection();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String queryString = "INSERT INTO EMPLOYEELOGIN VALUES(?,?)";
+        //set this values using PreparedStatement = ps.executeQuery(queryString)
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement.setString(1,employeeLogin.getEmpid());
+            preparedStatement.setString(2,employeeLogin.getPassword());
+            if(preparedStatement.execute()) {
+                System.out.println("Records inserted in data base");
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Unable to insert Records in data base");
+
+        return true;
     }
 
     @Override
     public boolean deleteEmployeeLogin(EmployeeLogin employeeLogin) {
+
+        mysqlDaoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+
+        try {
+            connection = mysqlDaoFactory.createConnection();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String queryString = "DELETE FROM EMPLOYEELOGIN WHERE empid = ? AND password = ?";
+        //set this values using PreparedStatement = ps.executeQuery(queryString)
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement.setString(1,employeeLogin.getEmpid());
+            preparedStatement.setString(2,employeeLogin.getPassword());
+            preparedStatement.execute();
+            if(preparedStatement.execute()) {
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Records not found in data base");
+
         return false;
     }
+
+
 
     @Override
     public EmployeeLogin findEmployeeLogin(String userName, String password) {
@@ -45,22 +100,53 @@ public class MysqlEmployeeLoginDAO implements EmployeeLoginDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
             preparedStatement.setString(1,userName);
             preparedStatement.setString(2,password);
-            ResultSet results = preparedStatement.executeQuery();
-            if(!results.next()) {
-                System.out.println("\n\n\nno user");
-            }else {
-                System.out.println("\n\n\n\nuser found");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                EmployeeLogin employeeLogin = new EmployeeLogin();
+                employeeLogin.setEmpid(resultSet.getString(1));
+                return employeeLogin;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        System.out.println("Records not found in data base");
+
         return null;
     }
 
+
+
     @Override
     public boolean updateEmployeeLogin(EmployeeLogin employeeLogin) {
+
+        mysqlDaoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+
+        try {
+            connection = mysqlDaoFactory.createConnection();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String queryString = "UPDATE EMPLOYEELOGIN SET password=? WHERE empid = ?";
+        //set this values using PreparedStatement = ps.executeQuery(queryString)
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement.setString(1,employeeLogin.getPassword());
+            preparedStatement.setString(2,employeeLogin.getEmpid());
+            if(preparedStatement.execute()) {
+                System.out.println("Records updated in data base");
+                return true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Records not found in data base");
+
         return false;
     }
 
