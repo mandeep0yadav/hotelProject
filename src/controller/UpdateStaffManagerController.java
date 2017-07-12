@@ -37,7 +37,7 @@ public class UpdateStaffManagerController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/room.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/hotel.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);

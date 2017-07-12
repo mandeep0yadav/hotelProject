@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.CheckInPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -66,13 +68,17 @@ public class CheckInPanel {
     private JButton cancelButton;
     private JButton checkinButton;
 
+    private CheckInPanelListeners checkInPanelListeners;
+
     public CheckInPanel() {
 
         System.out.println("Creating Register Panel...");
 
         checkinpanel = new JPanel();
 
-        checkinlabel = new JLabel();
+        checkinlabel
+
+                = new JLabel();
         checkinLabelSeparator = new JSeparator();
 
         customerLabel = new JLabel();
@@ -146,11 +152,15 @@ public class CheckInPanel {
         cancelButton = new JButton();
         checkinButton = new JButton();
 
+        checkInPanelListeners=new CheckInPanelListeners();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
+
+        addListeners();
 
         System.out.println("Check-in Panel Created...");
 
@@ -455,6 +465,11 @@ public class CheckInPanel {
     public JPanel CheckInpanel() {
         return this.getCheckinpanel();
     }
+
+    public void addListeners(){
+        checkInPanelListeners.cancelBottonListener(cancelButton);
+    }
+
 
 }
 
