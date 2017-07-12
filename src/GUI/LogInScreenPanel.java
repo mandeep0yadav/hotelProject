@@ -135,6 +135,7 @@ public class LogInScreenPanel
     private void addListeners(){
 
         logInPanelListeners.loginButtonListeners(logInButton);
+        logInPanelListeners.forgotLabelListener(forgotPassword);
 
     }
 
