@@ -49,8 +49,8 @@ public class CheckInController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(checkInPanel.getCheckInPanel());
-        initialFrame.add(receptionistHomePanel.getShowOptionsPanel());
+        initialFrame.add(checkInPanel.getCheckinpanel());
+        //initialFrame.add(receptionistHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }

@@ -21,7 +21,7 @@ public class MysqlDAOFactory extends DAOFactory {
             "jdbc:mysql://localhost:3306/hotelProject?autoReconnect=true&useSSL=false";
 
     public static final String user = "root";
-    public static final String pass = "nirmit";
+    public static final String pass = "gupta777";
 
     private MysqlDAOFactory(){
         System.out.println("createing mysql dao for first time");
