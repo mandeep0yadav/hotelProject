@@ -5,8 +5,10 @@ import GUI.HeaderPanel;
 import GUI.LaunchPanel;
 import GUI.LogInScreenPanel;
 import ValueObjects.EmployeeDetails;
+import ValueObjects.EmployeeLevel;
 import ValueObjects.EmployeeLogin;
 import dao.MysqlDAO.MysqlEmployeeDetailsDAO;
+import dao.MysqlDAO.MysqlEmployeeLevelDAO;
 import dao.MysqlDAO.MysqlEmployeeLoginDAO;
 import listeners.LogInPanelListeners;
 import singleton.FooterSingleTon;
@@ -63,8 +65,26 @@ public class LoginController {
             //do database validation and perform the action whatever you want
 
             EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
-            EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
-            new ReceptionistHomeController(employeeDetails);
+            if (employeeLogin != null) {
+                EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
+                EmployeeLevel employeeLevel = new MysqlEmployeeLevelDAO().findEmployeeLevel(employeeLogin.getEmpid());
+                switch (employeeLevel.getLevel()) {
+                    case "Receptionist":
+                        new ReceptionistHomeController(employeeDetails);
+                        break;
+                    case "Manager":
+                        new ManagerHomeController();
+                        break;
+                    case "Admin":
+                        new AdminHomeController();
+                        break;
+                    default:
+                        System.out.println("Unknown Category");
+                        break;
+                }
+            }else {
+                logInScreenPanel.alertLabel.setText("Please Enter Valid UserId");
+            }
 
             /*//for just testing
             if (logInScreenPanel.edituserId.getText().equals("1") &&

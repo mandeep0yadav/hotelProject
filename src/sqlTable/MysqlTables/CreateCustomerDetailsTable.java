@@ -38,6 +38,7 @@ public class CreateCustomerDetailsTable {
                     " postalcode INT(10), " +
                     " country VARCHAR(50), " +
                     " dob DATE not NULL, " +
+                    " sex VARCHAR(10) not NULL, " +
                     " email VARCHAR(255) not NULL, " +
                     " mob INT(10) not NULL, " +
                     " FOREIGN KEY (customerid) REFERENCES CUSTOMERLOGIN(customerid))";

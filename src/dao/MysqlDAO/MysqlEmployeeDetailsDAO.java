@@ -109,7 +109,18 @@ public class MysqlEmployeeDetailsDAO implements EmployeeDetailsDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()) {
                 EmployeeDetails employeeDetails = new EmployeeDetails();
+                employeeDetails.setEmpid(resultSet.getString(1));
                 employeeDetails.setName(resultSet.getString(2));
+                employeeDetails.setHouseNumber(resultSet.getInt(3));
+                employeeDetails.setStreet(resultSet.getString(4));
+                employeeDetails.setCity(resultSet.getString(5));
+                employeeDetails.setPostalCode(resultSet.getInt(6));
+                employeeDetails.setCountry(resultSet.getString(7));
+                employeeDetails.setSalary(resultSet.getInt(8));
+                employeeDetails.setDob(resultSet.getDate(9));
+                employeeDetails.setEmail(resultSet.getString(10));
+                employeeDetails.setMobile(resultSet.getInt(11));
+
                 return employeeDetails;
             }
 

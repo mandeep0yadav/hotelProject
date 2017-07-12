@@ -34,7 +34,6 @@ public class CreateCustomerAddProofTable {
                     "(customerid varchar(36) not NULL, " +
                     " idtype VARCHAR(255) not NULL, " +
                     " idnumber INT(20) not NULL, " +
-                    " sex VARCHAR(10) not NULL, " +
                     " FOREIGN KEY (customerid) REFERENCES CUSTOMERLOGIN(customerid))";
 
             //addition blob later ***addressScan           blob        not null,***
