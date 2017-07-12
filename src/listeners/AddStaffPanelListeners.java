@@ -1,6 +1,6 @@
 package listeners;
 
-import controller.RegisterButtonController;
+import controller.AdminHomeController;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -19,7 +19,7 @@ public class AddStaffPanelListeners {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on CONTACT Label");
-                new RegisterButtonController();
+                new AdminHomeController();
 
                 //for color change to show which panel is launched
 

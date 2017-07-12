@@ -31,7 +31,7 @@ public class ForgotPasswordController {
     private void setproperty(){
 
         //adding frame properties
-        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/doubleRoom2.jpg")));
+        initialFrame.setContentPane(new JLabel(new ImageIcon("src/Images/guestRoomSofa.jpg")));
         initialFrame.setTitle("Holla Hotel");
         initialFrame.setVisible(true);
         initialFrame.setResizable(false);

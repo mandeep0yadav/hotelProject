@@ -2,7 +2,6 @@ package controller;
 
 import GUI.AdminHomePanel;
 import GUI.DeleteStaffPanel;
-import GUI.ViewStaffPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;

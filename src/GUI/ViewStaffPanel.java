@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Date;
 
 /**
  * Created by Dell on 4/7/17.
@@ -10,7 +11,12 @@ public class ViewStaffPanel {
 
     private JPanel viewStaffPanel;
 
-    private JLabel testLabel;
+   private JTable staffTable;
+    private JScrollPane scrollPane;
+
+    private String[] coloumnTitles;
+
+    private Object[][] sampledata;
 
     public ViewStaffPanel() {
 
@@ -18,7 +24,104 @@ public class ViewStaffPanel {
 
         viewStaffPanel = new JPanel();
 
-        testLabel = new JLabel();
+
+        coloumnTitles= new String[]{"Emplyee ID","Name","House No.","Street","City","Postalcode","country","Salary","dob","Email","Mob No."};
+        sampledata=new Object[][]{
+                {"101A","Smith first",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmafergegegwwrewegerwgwresgevdvdfil.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith Thomason",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+                {"101A","Smith last",new Integer(120),"new colony","Sydney",new Integer(2503),"Australia",new Integer(200), "23jul2015","xyz@gmail.com",new Integer(999028233)},
+
+                };
+
+        staffTable=new JTable(sampledata, coloumnTitles);
+        scrollPane=new JScrollPane(staffTable);
+
 
         setProperty();
 
@@ -35,8 +138,15 @@ public class ViewStaffPanel {
         viewStaffPanel.setOpaque(false);
         viewStaffPanel.setLayout(null);
 
-        testLabel.setText("Staff View");
-        testLabel.setForeground(Color.white);
+
+        staffTable.setFillsViewportHeight(true);
+
+        viewStaffPanel.setLayout(new BorderLayout());
+        viewStaffPanel.add(staffTable.getTableHeader(), BorderLayout.PAGE_START);
+
+        staffTable.setOpaque(false);
+        scrollPane.setOpaque(false);
+        scrollPane.getViewport().setOpaque(false);
 
 
 
@@ -44,15 +154,15 @@ public class ViewStaffPanel {
 
     private void setBounds() {
 
-        viewStaffPanel.setBounds(0,140,1000,550);
-
-        testLabel.setBounds(100,100,100,25);
+        viewStaffPanel.setBounds(0,140,1100,550);
+        scrollPane.setBounds(60,30,990,500);
 
     }
 
     private void addComponentToPanel() {
 
-        viewStaffPanel.add(testLabel);
+        viewStaffPanel.add(scrollPane);
+
 
     }
 

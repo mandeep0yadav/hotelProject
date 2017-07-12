@@ -19,10 +19,10 @@ public class ForgotPasswordPanel {
 
     private JTextField editUserId ;
     private JTextField editPhoneNo ;
-    private JTextField editNewPassword ;
+    private JPasswordField editNewPassword ;
     private JPasswordField editConfirmNewPassword ;
 
-    private JButton changePassword ;
+    private JButton changePasswordButton;
 
 
     public ForgotPasswordPanel() {
@@ -40,10 +40,10 @@ public class ForgotPasswordPanel {
 
         editUserId = new JTextField();
         editPhoneNo = new JTextField();
-        editNewPassword = new JTextField();
+        editNewPassword = new JPasswordField();
         editConfirmNewPassword = new JPasswordField();
 
-        changePassword = new JButton();
+        changePasswordButton = new JButton();
 
         setProperty();
 
@@ -81,10 +81,10 @@ public class ForgotPasswordPanel {
         confirmNewPassword.setFont(new Font("Century Gothic", Font.BOLD,16));
         confirmNewPassword.setForeground(Color.white);
 
-        changePassword.setText("Change Password");
-        changePassword.setFont(new Font("Century Gothic", Font.BOLD,16));
-        changePassword.setBackground(Color.red);
-        changePassword.setForeground(Color.white);
+        changePasswordButton.setText("Change Password");
+        changePasswordButton.setFont(new Font("Lithos Pro Regular", Font.PLAIN,16));
+        changePasswordButton.setBackground(Color.red);
+        changePasswordButton.setForeground(Color.white);
 
 
     }
@@ -94,7 +94,7 @@ public class ForgotPasswordPanel {
         forgotPasswordPanel.setBounds(0,140,1400,500);
 
         //adding bounds to other components;
-        pageHeadingLabel.setBounds(500,0,200,40);
+        pageHeadingLabel.setBounds(570,60,200,40);
         userId.setBounds(500,150,200,30);
         phoneNo.setBounds(500,200,200,30);
         newPassword.setBounds(500,250,200,30);
@@ -104,7 +104,7 @@ public class ForgotPasswordPanel {
         editNewPassword.setBounds(700,250,200,30);
         editConfirmNewPassword.setBounds(700,300,200,30);
 
-        changePassword.setBounds(650,400,150,40);
+        changePasswordButton.setBounds(600,380,250,40);
 
 
     }
@@ -120,7 +120,7 @@ public class ForgotPasswordPanel {
         forgotPasswordPanel.add(editPhoneNo);
         forgotPasswordPanel.add(editNewPassword);
         forgotPasswordPanel.add(editConfirmNewPassword);
-        forgotPasswordPanel.add(changePassword);
+        forgotPasswordPanel.add(changePasswordButton);
 
     }
 
