@@ -12,7 +12,11 @@ public class CheckOutPanel {
 
     private JPanel checkOutPanel;
 
-    private JLabel checkOutLabel;
+    //private JLabel checkOutLabel;
+
+    private JLabel roomnumberLabel;
+    private JTextField editroomNumber;
+    private JButton checkoutButton;
 
     public CheckOutPanel() {
 
@@ -20,7 +24,13 @@ public class CheckOutPanel {
 
         checkOutPanel = new JPanel();
 
-        checkOutLabel = new JLabel();
+
+        //checkOutLabel = new JLabel();
+
+        roomnumberLabel = new JLabel();
+        editroomNumber = new JTextField();
+        checkoutButton = new JButton();
+
 
 
         setProperty();
@@ -38,10 +48,15 @@ public class CheckOutPanel {
         checkOutPanel.setOpaque(false);
         checkOutPanel.setLayout(null);
 
-        checkOutLabel.setText("Check-Out");
-        checkOutLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
-        checkOutLabel.setForeground(Color.white);
-        checkOutLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+        //checkOutLabel.setText("Check-Out");
+        //checkOutLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
+        //checkOutLabel.setForeground(Color.white);
+        //checkOutLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+
+        roomnumberLabel.setText("Room Number");
+        roomnumberLabel.setFont(new Font("comic sans", Font.BOLD, 15));
+        roomnumberLabel.setForeground(Color.red);
+        checkoutButton.setText("Check-out");
 
     }
 
@@ -49,14 +64,21 @@ public class CheckOutPanel {
 
         checkOutPanel.setBounds(0,140,1000,550);
 
-        checkOutLabel.setBounds(450,0,200,39);
+        roomnumberLabel.setBounds(450,200,150,30);
+        editroomNumber.setBounds(600,200,150,30);
+        checkoutButton.setBounds(520,300,150,30);
+
+
+        //checkOutLabel.setBounds(450,0,200,39);
 
 
     }
 
     private void addComponentToPanel() {
 
-        checkOutPanel.add(checkOutLabel);
+        checkOutPanel.add(roomnumberLabel);
+        checkOutPanel.add(editroomNumber);
+        checkOutPanel.add(checkoutButton);
 
 
     }

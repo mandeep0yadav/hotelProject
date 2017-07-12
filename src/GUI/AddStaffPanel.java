@@ -19,9 +19,10 @@ public class AddStaffPanel {
     private JLabel personalLabel;
     private JLabel firstNameLabel , lastNameLabel;
     private JLabel dobLabel;
-    private JLabel streetAddressLabel , countryLabel , cityLabel , postalCodeLabel;
+    private JLabel housenumberLabel,streetAddressLabel , countryLabel , cityLabel , postalCodeLabel;
     private JLabel genderLabel;
     private JLabel phoneLabel , emailLabel;
+    private JLabel salaryLabel;
 
     private JLabel loginLabel;
     private JLabel empIDLabel , passwordLabel;
@@ -34,9 +35,9 @@ public class AddStaffPanel {
     private JTextField editCountry , editCity ,  editPostalCode;
     private JTextField editPhone , editEmail;
     private JTextField editEmpID;
-
-    // Text area
-    private JTextArea editStreetAddress;
+    private JTextField edithouseNumber;
+    private JTextField editStreetAddress;
+    private JTextField editSalary;
 
     // ComboBox
     private JComboBox postList , genderList;
@@ -47,7 +48,6 @@ public class AddStaffPanel {
     private JPasswordField editPassword;
 
     // Separator
-    private JSeparator addStaffLabelSeparator ;
     private JSeparator personalLabelSeparator , loginLabelSeparator , jobLabelSeparator ;
 
     // Button
@@ -65,7 +65,7 @@ public class AddStaffPanel {
         addStaffPanel = new JPanel();
 
         addStaffLabel = new JLabel();
-        addStaffLabelSeparator = new JSeparator();
+
 
         // Under Personal Details
         personalLabel = new JLabel();
@@ -77,6 +77,7 @@ public class AddStaffPanel {
         dobLabel = new JLabel();
         phoneLabel = new JLabel();
         emailLabel = new JLabel();
+        housenumberLabel = new JLabel();
         streetAddressLabel = new JLabel();
         countryLabel = new JLabel();
         cityLabel = new JLabel();
@@ -94,16 +95,20 @@ public class AddStaffPanel {
         jobLabelSeparator = new JSeparator();
 
         postLabel = new JLabel();
+        salaryLabel = new JLabel();
 
         // All Fields corresponding to labels
         editFirstName = new JTextField();
         editLastName = new JTextField();
+        editStreetAddress = new JTextField();
+        edithouseNumber = new JTextField();
         editCountry = new JTextField();
         editCity = new JTextField();
         editPhone = new JTextField();
         editEmail = new JTextField();
         editPostalCode = new JTextField();
         editEmpID = new JTextField();
+        editSalary = new JTextField();
 
         dobDayList = new JComboBox();
         dobMonthList = new JComboBox();
@@ -112,7 +117,7 @@ public class AddStaffPanel {
         genderList = new JComboBox();
         postList = new JComboBox();
 
-        editStreetAddress = new JTextArea();
+
 
         editPassword = new JPasswordField();
 
@@ -137,11 +142,6 @@ public class AddStaffPanel {
 
         addStaffPanel.setLayout(null);
         addStaffPanel.setOpaque(false);
-
-        addStaffLabel.setText("Add New Staff");
-        addStaffLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
-        addStaffLabel.setForeground(Color.red);
-        addStaffLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
         personalLabel.setText("Personal Details");
         personalLabel.setFont(new Font("Century Gothic", Font.BOLD,16));
@@ -170,6 +170,10 @@ public class AddStaffPanel {
         emailLabel.setText("Email ID");
         emailLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
         emailLabel.setForeground(Color.white);
+
+        housenumberLabel.setText("House Number");
+        housenumberLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        housenumberLabel.setForeground(Color.white);
 
         streetAddressLabel.setText("Street Address");
         streetAddressLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
@@ -207,6 +211,9 @@ public class AddStaffPanel {
         postLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
         postLabel.setForeground(Color.white);
 
+        salaryLabel.setText("Salary");
+        salaryLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
+        salaryLabel.setForeground(Color.white);
 
 
         String[] genderType = {"Male" , "Female"};
@@ -247,7 +254,6 @@ public class AddStaffPanel {
 
         addStaffLabel.setBounds(400,0,200,39);
 
-        addStaffLabelSeparator.setBounds(50,39,900,1);
 
         // Personal Details Bounds
         personalLabel.setBounds(100,40,200,29);
@@ -257,44 +263,51 @@ public class AddStaffPanel {
         editFirstName.setBounds(220,80,150,25);
         lastNameLabel.setBounds(600,80,100,25);
         editLastName.setBounds(720,80,150,25);
+
         genderLabel.setBounds(100,120,100,25);
         genderList.setBounds(220,120,150,25);
         dobLabel.setBounds(600,120,100,25);
-
-        dobDayList.setBounds(720,120,35,25);
-        dobMonthList.setBounds(755,120,35,25);
-        dobYearList.setBounds(790,120,70,25);
+        dobDayList.setBounds(720,120,40,25);
+        dobMonthList.setBounds(760,120,40,25);
+        dobYearList.setBounds(800,120,70,25);
 
         phoneLabel.setBounds(100,160,100,25);
         editPhone.setBounds(220,160,150,25);
         emailLabel.setBounds(600,160,100,25);
         editEmail.setBounds(720,160,150,25);
-        streetAddressLabel.setBounds(100,200,100,25);
-        editStreetAddress.setBounds(220,200,150,30);
-        countryLabel.setBounds(600,200,100,25);
-        editCountry.setBounds(720,200,150,25);
+
+        housenumberLabel.setBounds(100,200,100,25);
+        edithouseNumber.setBounds(220,200,150,30);
+        streetAddressLabel.setBounds(600,200,100,25);
+        editStreetAddress.setBounds(720,200,150,25);
+
         cityLabel.setBounds(100,240,100,25);
         editCity.setBounds(220,240,150,25);
         postalCodeLabel.setBounds(600,240,100,25);
         editPostalCode.setBounds(720,240,150,25);
 
-        // Login Details Bounds
-        loginLabel.setBounds(100,280,100,29);
-        loginLabelSeparator.setBounds(60,309,400,1);
+        countryLabel.setBounds(100,280,100,25);
+        editCountry.setBounds(220,280,150,25);
 
-        empIDLabel.setBounds(100,320,150,25);
-        editEmpID.setBounds(220,320,150,25);
-        passwordLabel.setBounds(600,320,100,25);
-        editPassword.setBounds(720,320,150,25);
+        // Login Details Bounds
+        loginLabel.setBounds(100,320,100,29);
+        loginLabelSeparator.setBounds(60,349,400,1);
+
+        empIDLabel.setBounds(100,360,150,25);
+        editEmpID.setBounds(220,360,150,25);
+        passwordLabel.setBounds(600,360,100,25);
+        editPassword.setBounds(720,360,150,25);
 
         // Job Details Bounds
-        jobLabel.setBounds(100,360,100,29);
-        jobLabelSeparator.setBounds(60,389,400,1);
-        postLabel.setBounds(100,400,100,25);
-        postList.setBounds(220,400,150,25);
+        jobLabel.setBounds(100,400,100,29);
+        jobLabelSeparator.setBounds(60,429,400,1);
+        postLabel.setBounds(100,440,100,25);
+        postList.setBounds(220,440,150,25);
+        salaryLabel.setBounds(600,440,100,25);
+        editSalary.setBounds(720,440,150,25);
 
 
-        registerButton.setBounds(550,465,100,30);
+        registerButton.setBounds(550,505,100,30);
 
     }
 
@@ -302,7 +315,7 @@ public class AddStaffPanel {
 
         // Adding all labels to Panel
         addStaffPanel.add(addStaffLabel);
-        addStaffPanel.add(addStaffLabelSeparator);
+
 
         addStaffPanel.add(personalLabel);
         addStaffPanel.add(personalLabelSeparator);
@@ -313,6 +326,7 @@ public class AddStaffPanel {
         addStaffPanel.add(dobLabel);
         addStaffPanel.add(phoneLabel);
         addStaffPanel.add(emailLabel);
+        addStaffPanel.add(housenumberLabel);
         addStaffPanel.add(streetAddressLabel);
         addStaffPanel.add(countryLabel);
         addStaffPanel.add(cityLabel);
@@ -326,6 +340,7 @@ public class AddStaffPanel {
         addStaffPanel.add(jobLabel);
         addStaffPanel.add(jobLabelSeparator);
         addStaffPanel.add(postLabel);
+        addStaffPanel.add(salaryLabel);
 
         // Adding all fields to Panel
         addStaffPanel.add(editFirstName);
@@ -339,12 +354,14 @@ public class AddStaffPanel {
         addStaffPanel.add(editPhone);
         addStaffPanel.add(editEmail);
         addStaffPanel.add(editStreetAddress);
+        addStaffPanel.add(edithouseNumber);
         addStaffPanel.add(editCountry);
         addStaffPanel.add(editCity);
         addStaffPanel.add(editPostalCode);
         addStaffPanel.add(editEmpID);
         addStaffPanel.add(editPassword);
         addStaffPanel.add(postList);
+        addStaffPanel.add(editSalary);
         addStaffPanel.add(registerButton);
 
     }
