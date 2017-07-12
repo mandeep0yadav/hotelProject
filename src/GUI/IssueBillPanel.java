@@ -10,14 +10,11 @@ public class IssueBillPanel {
 
     private JPanel issueBillPanel;
 
-    private JLabel issueBillLabel;
+    private JLabel roomNoLabel;
+    private JTextField roomNoText;
 
-    private JLabel customerIdLabel;
-    private JTextField editCustomerId;
 
-    private JSeparator issueBillLabelSeparator;
-
-    private JButton generateBill;
+    private JButton generateBillButton;
 
     public IssueBillPanel() {
 
@@ -25,14 +22,12 @@ public class IssueBillPanel {
 
         issueBillPanel = new JPanel();
 
-        issueBillLabel = new JLabel();
 
-        customerIdLabel = new JLabel();
-        editCustomerId = new JTextField();
+        roomNoLabel = new JLabel();
+        roomNoText = new JTextField();
 
-        issueBillLabelSeparator = new JSeparator();
 
-        generateBill = new JButton();
+        generateBillButton = new JButton();
 
         setProperty();
 
@@ -49,17 +44,18 @@ public class IssueBillPanel {
         issueBillPanel.setOpaque(false);
         issueBillPanel.setLayout(null);
 
-        issueBillLabel.setText("Issue Bill");
-        issueBillLabel.setFont(new Font("Century Gothic", Font.BOLD,22));
-        issueBillLabel.setForeground(Color.white);
-        issueBillLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
-        customerIdLabel.setText("Customer ID");
-        customerIdLabel.setFont(new Font("Century Gothic", Font.BOLD,12));
-        customerIdLabel.setForeground(Color.white);
+        roomNoLabel.setText("Room Number");
+        roomNoLabel.setFont(new Font("Century Gothic", Font.BOLD,18));
+        roomNoLabel.setForeground(Color.white);
 
-        generateBill.setText("Generate Bill");
-        generateBill.setFont(new Font("Century Gothic", Font.BOLD,12));
+
+        roomNoText.setFont(new Font("Century Gothic", Font.BOLD,15));
+
+        generateBillButton.setText("Generate Bill");
+        generateBillButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
+        generateBillButton.setBackground(Color.red);
+        generateBillButton.setForeground(Color.WHITE);
 
     }
 
@@ -67,27 +63,21 @@ public class IssueBillPanel {
 
         issueBillPanel.setBounds(0,140,1000,550);
 
-        issueBillLabel.setBounds(450,0,200,39);
+        roomNoLabel.setBounds(400,200,250,25);
+        roomNoText.setBounds(600,200,150,25);
 
-        issueBillLabelSeparator.setBounds(50,39,900,1);
-
-        customerIdLabel.setBounds(400,100,100,25);
-        editCustomerId.setBounds(500,100,120,25);
-
-        generateBill.setBounds(440,140,125,25);
+        generateBillButton.setBounds(450,280,200,25);
 
     }
 
     private void addComponentToPanel() {
 
-        issueBillPanel.add(issueBillLabel);
 
-        issueBillPanel.add(issueBillLabelSeparator);
 
-        issueBillPanel.add(customerIdLabel);
-        issueBillPanel.add(editCustomerId);
+        issueBillPanel.add(roomNoLabel);
+        issueBillPanel.add(roomNoText);
 
-        issueBillPanel.add(generateBill);
+        issueBillPanel.add(generateBillButton);
 
     }
 
@@ -98,5 +88,6 @@ public class IssueBillPanel {
     public void destroy() {
         issueBillPanel.setVisible(false);
     }
+
 
 }
