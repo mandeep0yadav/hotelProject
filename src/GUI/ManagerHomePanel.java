@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.ManagerOptionsPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,13 +13,12 @@ public class ManagerHomePanel {
     private JPanel showOptionsPanel;
 
 
-    private JLabel addRoom;
-    private JLabel updateRoom;
-    private JLabel deleteRoom;
+
     private JLabel addStaff;
     private JLabel updateStaff;
-    private JLabel deleteStaff;
     private JLabel welcomeLabel;
+
+    private ManagerOptionsPanelListeners managerOptionsPanelListeners;
 
 
     public ManagerHomePanel() {
@@ -26,13 +27,12 @@ public class ManagerHomePanel {
 
         managerHomePanel =new JPanel();
         showOptionsPanel=new JPanel();
-        addRoom = new JLabel();
-        updateRoom = new JLabel();
-        deleteRoom = new JLabel();
+
         addStaff = new JLabel();
         updateStaff = new JLabel();
-        deleteStaff = new JLabel();
         welcomeLabel=new JLabel();
+
+        managerOptionsPanelListeners=new ManagerOptionsPanelListeners();
 
 
         setProperty();
@@ -41,17 +41,22 @@ public class ManagerHomePanel {
 
         addComponentToPanel();
 
+        addListeners();
+
         System.out.println("Manager Home Panel Created...");
+
+    }
+    private void addListeners() {
+
+        managerOptionsPanelListeners.addStaffListener(addStaff);
+
+        managerOptionsPanelListeners.updateStaffListener(updateStaff);
 
     }
 
     private void setProperty() {
-        addRoom.setText("Add Room");
-        updateRoom.setText("Update Room");
-        deleteRoom.setText("Delete Room");
         addStaff.setText("Add Staff");
         updateStaff.setText("Update Staff");
-        deleteStaff.setText("Delete Staff");
         welcomeLabel.setText("Welcome Manager");
 
         showOptionsPanel.setLayout(null);
@@ -59,18 +64,10 @@ public class ManagerHomePanel {
         managerHomePanel.setLayout(null);
         managerHomePanel.setOpaque(false);
 
-        addRoom.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        addRoom.setForeground(Color.WHITE);
-        updateRoom.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        updateRoom.setForeground(Color.WHITE);
-        deleteRoom.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        deleteRoom.setForeground(Color.WHITE);
         addStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
         addStaff.setForeground(Color.WHITE);
         updateStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
         updateStaff.setForeground(Color.WHITE);
-        deleteStaff.setFont(new Font("Century Gothic",Font.BOLD, 20));
-        deleteStaff.setForeground(Color.WHITE);
         welcomeLabel.setFont(new Font("Century Gothic",Font.BOLD, 40));
         welcomeLabel.setForeground(Color.WHITE);
 
@@ -79,22 +76,16 @@ public class ManagerHomePanel {
     private void setBounds() {
         managerHomePanel.setBounds(5,140,1400,550);
         showOptionsPanel.setBounds(1100,0,300,550);
-        addRoom.setBounds(50,100,300,30);
-        updateRoom.setBounds(50,150,300,30);
-        deleteRoom.setBounds(50,200,300,30);
+
         addStaff.setBounds(50,250,300,30);
-        deleteStaff.setBounds(50,300,300,30);
-        updateStaff.setBounds(50,350,300,30);
+        updateStaff.setBounds(50,300,300,30);
 
         welcomeLabel.setBounds(360,100,500,200);
 
     }
 
     private void addComponentToPanel() {
-        showOptionsPanel.add(addRoom);
-        showOptionsPanel.add(updateRoom);
-        showOptionsPanel.add(deleteRoom);
-        showOptionsPanel.add(deleteStaff);
+
         showOptionsPanel.add(updateStaff);
         showOptionsPanel.add(addStaff);
         managerHomePanel.add(welcomeLabel);
@@ -109,4 +100,7 @@ public class ManagerHomePanel {
     public JPanel getManagerHomePanel(){
         return this.managerHomePanel;
     }
+
+
+    public JPanel getShowOptionsPanel(){return  this.showOptionsPanel;}
 }
