@@ -34,15 +34,4 @@ public class LogInPanelListeners {
         });
     }
 
-    public void launchReceptionist(){
-        new ReceptionistHomeController();
-    }
-    public  void launchManager(){
-new ManagerHomeController();
-    }
-    public void launchAdmin(){
-new AdminHomeController();
-    }
-
-
 }
