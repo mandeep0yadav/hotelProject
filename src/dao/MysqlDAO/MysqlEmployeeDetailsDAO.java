@@ -127,7 +127,7 @@ public class MysqlEmployeeDetailsDAO implements EmployeeDetailsDAO {
     @Override
     public boolean updateEmployeeDetails(EmployeeDetails EmployeeDetails) {
 
-       /* mysqlDaoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+        mysqlDaoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
 
         try {
             connection = mysqlDaoFactory.createConnection();
@@ -137,20 +137,29 @@ public class MysqlEmployeeDetailsDAO implements EmployeeDetailsDAO {
         }
 
         String queryString = "UPDATE EmployeeDetails SET name = ?, " +
-                " housenumber =?, " +
-                " street =?, " +
-                " city =? , " +
-                " postalcode =?, " +
-                " country VARCHAR(50), " +
-                " salary INT(8) not NULL, " +
-                " dob DATE not NULL, " +
-                " email VARCHAR(255) not NULL, " +
-                " mob INT(10) not NULL, " + WHERE empid = ?";
+                " housenumber = ?, " +
+                " street = ?, " +
+                " city = ? , " +
+                " postalcode = ?, " +
+                " country = ?, " +
+                " salary = ?, " +
+                " dob = ?, " +
+                " email = ?, " +
+                " mob = ?, " + "WHERE empid = ?";
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
-            preparedStatement.setString(1,EmployeeDetails.getPassword());
-            preparedStatement.setString(2,EmployeeDetails.getEmpid());
+            preparedStatement.setString(1,EmployeeDetails.getName());
+            preparedStatement.setInt(2,EmployeeDetails.getHouseNumber());
+            preparedStatement.setString(3,EmployeeDetails.getStreet());
+            preparedStatement.setString(4,EmployeeDetails.getCity());
+            preparedStatement.setInt(5,EmployeeDetails.getPostalCode());
+            preparedStatement.setString(6,EmployeeDetails.getCountry());
+            preparedStatement.setInt(7,EmployeeDetails.getSalary());
+            preparedStatement.setDate(8, (Date) EmployeeDetails.getDob());
+            preparedStatement.setString(9,EmployeeDetails.getEmail());
+            preparedStatement.setInt(10,EmployeeDetails.getMobile());
+            preparedStatement.setString(11,EmployeeDetails.getEmpid());
             if(preparedStatement.execute()) {
                 System.out.println("Records updated in data base");
                 return true;
@@ -160,7 +169,7 @@ public class MysqlEmployeeDetailsDAO implements EmployeeDetailsDAO {
             e.printStackTrace();
         }
 
-        System.out.println("Records not found in data base");*/
+        System.out.println("Records not found in data base");
 
         return false;
     }

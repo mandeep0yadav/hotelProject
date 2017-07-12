@@ -6,7 +6,8 @@ import ValueObjects.EmployeeLevelTask;
  * Created by nirmit on 10/7/17.
  */
 public interface EmployeeLevelTaskDAO {
-    public int insertEmployeeLevelTask();
-    public EmployeeLevelTask findEmployeeLevelTask();
-    public boolean updateEmployeeLevelTask();
+    public boolean insertEmployeeLevelTask(EmployeeLevelTask employeeLevelTask);
+    public boolean deleteEmployeeLevelTask(String level);
+    public EmployeeLevelTask findEmployeeLevelTask(String level);
+    public boolean updateEmployeeLevelTask(EmployeeLevelTask employeeLevelTask);
 }

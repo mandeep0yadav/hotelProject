@@ -65,6 +65,7 @@ public class LoginController {
             EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
             EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
             new ReceptionistHomeController(employeeDetails);
+
             /*//for just testing
             if (logInScreenPanel.edituserId.getText().equals("1") &&
                     String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){

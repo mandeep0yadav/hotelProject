@@ -45,7 +45,7 @@ public class MysqlEmployeeLoginDAO implements EmployeeLoginDAO {
 
         System.out.println("Unable to insert Records in data base");
 
-        return true;
+        return false;
     }
 
     @Override
@@ -66,7 +66,6 @@ public class MysqlEmployeeLoginDAO implements EmployeeLoginDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
             preparedStatement.setString(1,employeeLogin.getEmpid());
             preparedStatement.setString(2,employeeLogin.getPassword());
-            preparedStatement.execute();
             if(preparedStatement.execute()) {
                 return true;
             }
