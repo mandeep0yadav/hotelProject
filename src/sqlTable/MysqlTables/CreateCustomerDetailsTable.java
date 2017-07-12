@@ -32,7 +32,6 @@ public class CreateCustomerDetailsTable {
 
             String sql = "CREATE TABLE CUSTOMERDETAILS" +
                     "(customerid varchar(36) not NULL, " +
-                    " name VARCHAR(255) not NULL, " +
                     " housenumber INT(5), " +
                     " street VARCHAR(50), " +
                     " city VARCHAR(50) , " +
