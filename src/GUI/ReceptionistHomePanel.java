@@ -19,7 +19,7 @@ public class ReceptionistHomePanel {
     private JLabel updateBooking;
     private JLabel roomView;
     private JLabel issueBill;
-    private JLabel welcome;
+    public JLabel welcome;
 
 
     //adding receptionist Options Listeners
