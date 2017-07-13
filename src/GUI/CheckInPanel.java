@@ -41,25 +41,25 @@ public class CheckInPanel {
 
     //Declaring all  text fields
 
-    private JTextField editCustomerId;
-    private JTextField editFirstName, editLastName;
-    private JTextField editEmail, editContact;
-    private JTextField editCountry, editCity, editPostalCode;
-    private JTextField editHouseNumber;
-    private JTextField editIdnumber;
-    private JTextField editNumberofguest;
-    private JTextField editStreetAddress;
+    public JTextField editCustomerId;
+    public JTextField editFirstName, editLastName;
+    public JTextField editEmail, editContact;
+    public JTextField editCountry, editCity, editPostalCode;
+    public JTextField editHouseNumber;
+    public JTextField editIdnumber;
+    public JTextField editNumberofguest;
+    public JTextField editStreetAddress;
 
     //Declaring all comboBox
 
-    private JComboBox selectGender;
-    private JComboBox dobDayList, dobMonthList, dobYearList;
+    public JComboBox selectGender;
+    public JComboBox dobDayList, dobMonthList, dobYearList;
 
 
-    private JComboBox selectIdtype;
-    private JComboBox selectRoomtype;
-    private JComboBox checkinDayList, checkinMonthList, checkinYearList;
-    private JComboBox checkoutDayList, checkoutMonthList, checkoutYearList;
+    public JComboBox selectIdtype;
+    public JComboBox selectRoomtype;
+    public JComboBox checkinDayList, checkinMonthList, checkinYearList;
+    public JComboBox checkoutDayList, checkoutMonthList, checkoutYearList;
 
     private JSeparator checkinLabelSeparator;
     private JSeparator customerLabelSeparator, addressproofLabelSeparator, stayinfoLabelSeparator;

@@ -31,21 +31,21 @@ public class AddStaffPanel {
     private JLabel postLabel;
 
     // Text fields
-    private JTextField editFirstName , editLastName;
-    private JTextField editCountry , editCity ,  editPostalCode;
-    private JTextField editPhone , editEmail;
-    private JTextField editEmpID;
-    private JTextField edithouseNumber;
-    private JTextField editStreetAddress;
-    private JTextField editSalary;
+    public JTextField editFirstName , editLastName;
+    public JTextField editCountry , editCity ,  editPostalCode;
+    public JTextField editPhone , editEmail;
+    public JTextField editEmpID;
+    public JTextField edithouseNumber;
+    public JTextField editStreetAddress;
+    public JTextField editSalary;
 
     // ComboBox
-    private JComboBox postList , genderList;
+    public JComboBox postList , genderList;
 
-    private JComboBox dobDayList , dobMonthList , dobYearList;
+    public JComboBox dobDayList , dobMonthList , dobYearList;
 
     // Password field
-    private JPasswordField editPassword;
+    public JPasswordField editPassword;
 
     // Separator
     private JSeparator personalLabelSeparator , loginLabelSeparator , jobLabelSeparator ;

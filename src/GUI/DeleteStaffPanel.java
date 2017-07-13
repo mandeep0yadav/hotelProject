@@ -13,7 +13,7 @@ public class DeleteStaffPanel {
     private JPanel deleteStaffPanel;
 
     private JLabel staffIDLabel;
-    private JTextField staffIdTextField;
+    public JTextField staffIdTextField;
 
 
     private JButton deleteStaffButton;
