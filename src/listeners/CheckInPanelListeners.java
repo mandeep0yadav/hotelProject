@@ -22,7 +22,7 @@ public class CheckInPanelListeners {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("listener on cancelbutton");
 
-                new ReceptionistHomeController();
+                new ReceptionistHomeController(null);
             }
         });
     }

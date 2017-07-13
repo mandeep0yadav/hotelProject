@@ -15,6 +15,15 @@ public class CustomerDetails {
     private Date dob;
     private String email;
     private int mob;
+    private String sex;
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
     public String getCustomerId() {
         return customerId;

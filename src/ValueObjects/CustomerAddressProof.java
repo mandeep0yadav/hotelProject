@@ -7,7 +7,6 @@ public class CustomerAddressProof {
     private String customerId;
     private String idType;
     private int idnumber;
-    private String sex;
 
     public String getCustomerId() {
         return customerId;
@@ -33,11 +32,4 @@ public class CustomerAddressProof {
         this.idnumber = idnumber;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
 }

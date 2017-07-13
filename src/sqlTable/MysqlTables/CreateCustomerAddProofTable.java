@@ -30,7 +30,7 @@ public class CreateCustomerAddProofTable {
         try {
             statement = connection.createStatement();
 
-            String sql = "CREATE TABLE CUSTOMERADDRESSPROFF" +
+            String sql = "CREATE TABLE CUSTOMERADDRESSPROOF" +
                     "(customerid varchar(36) not NULL, " +
                     " idtype VARCHAR(255) not NULL, " +
                     " idnumber INT(20) not NULL, " +
