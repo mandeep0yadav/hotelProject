@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.UpdateBookingPanelListeners;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,6 +18,8 @@ public class UpdateBookingPanel {
 
     private JButton updateBookingButton;
 
+    private UpdateBookingPanelListeners updateBookingPanelListeners;
+
     public UpdateBookingPanel() {
 
         System.out.println("Creating updatebooking Panel...");
@@ -29,11 +33,15 @@ public class UpdateBookingPanel {
 
         updateBookingButton = new JButton();
 
+        updateBookingPanelListeners = new UpdateBookingPanelListeners();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
+
+        addListeners();
 
         System.out.println("Issue updatebooking Created...");
 
@@ -78,6 +86,12 @@ public class UpdateBookingPanel {
         updateBookingPanel.add(roomNoText);
 
         updateBookingPanel.add(updateBookingButton);
+
+    }
+
+    private void addListeners() {
+
+        updateBookingPanelListeners.updateButtonListener(updateBookingButton);
 
     }
 

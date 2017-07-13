@@ -1,24 +1,22 @@
 package GUI;
 
-import listeners.CheckInPanelListeners;
+import listeners.UpdateBookingDetailsButtonListener;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by priyanshu on 7/9/2017.
+ * Created by Himanshu on 13-07-2017.
  */
+public class UpdateBookingDetails {
 
-
-
-public class CheckInPanel {
-    private JPanel checkinpanel;
+    private JPanel updateBookingDetailsPanel;
 
     //  All components in panel
 
     //Declaring all labels
 
-    private JLabel checkinlabel;
+    private JLabel updateBookingDetailsLabel;
     private JLabel customerLabel;
     private JLabel customeridlabel;
     private JLabel firstNameLabel, lastNameLabel;
@@ -61,23 +59,24 @@ public class CheckInPanel {
     private JComboBox checkinDayList, checkinMonthList, checkinYearList;
     private JComboBox checkoutDayList, checkoutMonthList, checkoutYearList;
 
-    private JSeparator checkinLabelSeparator;
+    private JSeparator updateBookingDetailsLabelSeparator;
     private JSeparator customerLabelSeparator, addressproofLabelSeparator, stayinfoLabelSeparator;
 
 
     private JButton cancelButton;
-    private JButton checkinButton;
+    private JButton updateBookingButton;
 
-    private CheckInPanelListeners checkInPanelListeners;
+    private UpdateBookingDetailsButtonListener updateBookingDetailsButtonListener;
 
-    public CheckInPanel() {
 
-        System.out.println("Creating Register Panel...");
+    public UpdateBookingDetails() {
 
-        checkinpanel = new JPanel();
+        System.out.println("Creating Update Booking Details Panel...");
 
-        checkinlabel = new JLabel();
-        checkinLabelSeparator = new JSeparator();
+        updateBookingDetailsPanel = new JPanel();
+
+        updateBookingDetailsLabel = new JLabel();
+        updateBookingDetailsLabelSeparator = new JSeparator();
 
         customerLabel = new JLabel();
         customerLabelSeparator = new JSeparator();
@@ -148,9 +147,9 @@ public class CheckInPanel {
 
 
         cancelButton = new JButton();
-        checkinButton = new JButton();
+        updateBookingButton = new JButton();
 
-        checkInPanelListeners=new CheckInPanelListeners();
+        updateBookingDetailsButtonListener = new UpdateBookingDetailsButtonListener();
 
         setProperty();
 
@@ -160,19 +159,19 @@ public class CheckInPanel {
 
         addListeners();
 
-        System.out.println("Check-in Panel Created...");
+        System.out.println("Update Booking Details Panel Created...");
 
     }
 
 
     private void setProperty() {
 
-        checkinpanel.setLayout(null);
-        checkinpanel.setOpaque(false);
+        updateBookingDetailsPanel.setLayout(null);
+        updateBookingDetailsPanel.setOpaque(false);
 
-        checkinlabel.setText("Check-In Form");
-        checkinlabel.setFont(new Font("comic sans", Font.BOLD, 22));
-        checkinlabel.setForeground(Color.red);
+        updateBookingDetailsLabel.setText("Update Booking");
+        updateBookingDetailsLabel.setFont(new Font("comic sans", Font.BOLD, 22));
+        updateBookingDetailsLabel.setForeground(Color.red);
 
         customerLabel.setText("Customer Details");
         customerLabel.setFont(new Font("comic sans", Font.BOLD, 15));
@@ -303,7 +302,7 @@ public class CheckInPanel {
 
 
         cancelButton.setText("Cancel");
-        checkinButton.setText("Book Now");
+        updateBookingButton.setText("Update");
 
 
     }
@@ -311,10 +310,10 @@ public class CheckInPanel {
 
     private void setBounds() {
 
-        checkinpanel.setBounds(0, 140, 1400, 550);
+        updateBookingDetailsPanel.setBounds(0, 140, 1400, 550);
 
-        checkinlabel.setBounds(600, 0, 200, 30);
-        checkinLabelSeparator.setBounds(400, 39, 600, 1);
+        updateBookingDetailsLabel.setBounds(600, 0, 200, 30);
+        updateBookingDetailsLabelSeparator.setBounds(400, 39, 600, 1);
 
         customerLabel.setBounds(100, 40, 200, 30);
         customerLabelSeparator.setBounds(60, 69, 230, 1);
@@ -376,103 +375,96 @@ public class CheckInPanel {
 
 
         cancelButton.setBounds(500, 465, 120, 30);
-        checkinButton.setBounds(650, 465, 120, 30);
-
+        updateBookingButton.setBounds(650, 465, 120, 30);
 
     }
 
 
     private void addComponentToPanel() {
 
-        checkinpanel.add(checkinlabel);
-        checkinpanel.add(checkinLabelSeparator);
+        updateBookingDetailsPanel.add(updateBookingDetailsLabel);
+        updateBookingDetailsPanel.add(updateBookingDetailsLabelSeparator);
 
-        checkinpanel.add(customerLabel);
-        checkinpanel.add(customerLabelSeparator);
+        updateBookingDetailsPanel.add(customerLabel);
+        updateBookingDetailsPanel.add(customerLabelSeparator);
 
-        checkinpanel.add(customeridlabel);
-        checkinpanel.add(firstNameLabel);
-        checkinpanel.add(lastNameLabel);
+        updateBookingDetailsPanel.add(customeridlabel);
+        updateBookingDetailsPanel.add(firstNameLabel);
+        updateBookingDetailsPanel.add(lastNameLabel);
 
-        checkinpanel.add(genderLabel);
-        checkinpanel.add(dobLabel);
-        checkinpanel.add(contactLabel);
+        updateBookingDetailsPanel.add(genderLabel);
+        updateBookingDetailsPanel.add(dobLabel);
+        updateBookingDetailsPanel.add(contactLabel);
 
-        checkinpanel.add(emailLabel);
-        checkinpanel.add(streetAddressLabel);
-        checkinpanel.add(housenumberLabel);
-        checkinpanel.add(countryLabel);
+        updateBookingDetailsPanel.add(emailLabel);
+        updateBookingDetailsPanel.add(streetAddressLabel);
+        updateBookingDetailsPanel.add(housenumberLabel);
+        updateBookingDetailsPanel.add(countryLabel);
 
-        checkinpanel.add(cityLabel);
-        checkinpanel.add(postalCodeLabel);
+        updateBookingDetailsPanel.add(cityLabel);
+        updateBookingDetailsPanel.add(postalCodeLabel);
 
-        checkinpanel.add(editCustomerId);
-        checkinpanel.add(editFirstName);
-        checkinpanel.add(editLastName);
+        updateBookingDetailsPanel.add(editCustomerId);
+        updateBookingDetailsPanel.add(editFirstName);
+        updateBookingDetailsPanel.add(editLastName);
 
-        checkinpanel.add(selectGender);
-        checkinpanel.add(dobDayList);
-        checkinpanel.add(dobMonthList);
-        checkinpanel.add(dobYearList);
-        checkinpanel.add(editContact);
+        updateBookingDetailsPanel.add(selectGender);
+        updateBookingDetailsPanel.add(dobDayList);
+        updateBookingDetailsPanel.add(dobMonthList);
+        updateBookingDetailsPanel.add(dobYearList);
+        updateBookingDetailsPanel.add(editContact);
 
-        checkinpanel.add(editEmail);
-        checkinpanel.add(editHouseNumber);
-        checkinpanel.add(editStreetAddress);
-        checkinpanel.add(editCountry);
+        updateBookingDetailsPanel.add(editEmail);
+        updateBookingDetailsPanel.add(editHouseNumber);
+        updateBookingDetailsPanel.add(editStreetAddress);
+        updateBookingDetailsPanel.add(editCountry);
 
-        checkinpanel.add(editCity);
-        checkinpanel.add(editPostalCode);
+        updateBookingDetailsPanel.add(editCity);
+        updateBookingDetailsPanel.add(editPostalCode);
 
-        checkinpanel.add(addressproofLabel);
-        checkinpanel.add(addressproofLabelSeparator);
-        checkinpanel.add(idtypeLabel);
-        checkinpanel.add(idnumberLabel);
+        updateBookingDetailsPanel.add(addressproofLabel);
+        updateBookingDetailsPanel.add(addressproofLabelSeparator);
+        updateBookingDetailsPanel.add(idtypeLabel);
+        updateBookingDetailsPanel.add(idnumberLabel);
 
-        checkinpanel.add(selectIdtype);
-        checkinpanel.add(editIdnumber);
-
-
-        checkinpanel.add(stayinfoLabel);
-        checkinpanel.add(stayinfoLabelSeparator);
-        checkinpanel.add(checkindateLabel);
-        checkinpanel.add(checkoutdateLabel);
-        checkinpanel.add(roomtypeLabel);
-        checkinpanel.add(numberofguestLabel);
-
-        checkinpanel.add(checkinDayList);
-        checkinpanel.add(checkinMonthList);
-        checkinpanel.add(checkinYearList);
-        checkinpanel.add(checkoutDayList);
-        checkinpanel.add(checkoutMonthList);
-        checkinpanel.add(checkoutYearList);
-        checkinpanel.add(selectRoomtype);
-        checkinpanel.add(editNumberofguest);
-
-        checkinpanel.add(cancelButton);
-        checkinpanel.add(checkinButton);
-
-    }
+        updateBookingDetailsPanel.add(selectIdtype);
+        updateBookingDetailsPanel.add(editIdnumber);
 
 
-    public void destroy() {
-        checkinpanel.setVisible(false);
-        System.out.println("Check-in Panel destroyed...");
-    }
+        updateBookingDetailsPanel.add(stayinfoLabel);
+        updateBookingDetailsPanel.add(stayinfoLabelSeparator);
+        updateBookingDetailsPanel.add(checkindateLabel);
+        updateBookingDetailsPanel.add(checkoutdateLabel);
+        updateBookingDetailsPanel.add(roomtypeLabel);
+        updateBookingDetailsPanel.add(numberofguestLabel);
 
-    public JPanel getCheckinpanel() {
-        return this.checkinpanel;
+        updateBookingDetailsPanel.add(checkinDayList);
+        updateBookingDetailsPanel.add(checkinMonthList);
+        updateBookingDetailsPanel.add(checkinYearList);
+        updateBookingDetailsPanel.add(checkoutDayList);
+        updateBookingDetailsPanel.add(checkoutMonthList);
+        updateBookingDetailsPanel.add(checkoutYearList);
+        updateBookingDetailsPanel.add(selectRoomtype);
+        updateBookingDetailsPanel.add(editNumberofguest);
+
+        updateBookingDetailsPanel.add(cancelButton);
+        updateBookingDetailsPanel.add(updateBookingButton);
+
     }
 
     public void addListeners(){
-        checkInPanelListeners.cancelBottonListener(cancelButton);
+        updateBookingDetailsButtonListener.updateButtonListener(updateBookingButton);
+        updateBookingDetailsButtonListener.cancelButtonListener(cancelButton);
+    }
+
+    public void destroy() {
+        updateBookingDetailsPanel.setVisible(false);
+        System.out.println("Update Booking Details Panel destroyed...");
+    }
+
+    public JPanel getUpdateBookingDetailsPanel() {
+        return this.updateBookingDetailsPanel;
     }
 
 
 }
-
-
-
-
-
-

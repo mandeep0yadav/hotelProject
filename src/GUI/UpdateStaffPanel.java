@@ -48,9 +48,6 @@ public class UpdateStaffPanel {
 
     }
 
-    private void addListeners() {
-        updateStaffPanelListeners.updateButtonListener(updateButton);
-    }
 
     private void setProperty() {
 
@@ -94,6 +91,10 @@ public class UpdateStaffPanel {
 
         updateStaffPanel.add(updateButton);
 
+    }
+
+    private void addListeners() {
+        updateStaffPanelListeners.updateButtonListener(updateButton);
     }
 
     public JPanel getUpdateStaffPanel() {

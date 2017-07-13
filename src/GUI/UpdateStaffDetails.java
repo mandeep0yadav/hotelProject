@@ -121,7 +121,7 @@ public class UpdateStaffDetails {
 
         updateButton = new JButton();
 
-        updateStaffDetailsButtonListener=new UpdateStaffDetailsButtonListener();
+        updateStaffDetailsButtonListener = new UpdateStaffDetailsButtonListener();
 
         setProperty();
 
@@ -135,9 +135,6 @@ public class UpdateStaffDetails {
 
     }
 
-    private void addListeners() {
-        updateStaffDetailsButtonListener.updateButtonListener(updateButton);
-    }
 
 
     private void setProperty() {
@@ -362,8 +359,13 @@ public class UpdateStaffDetails {
 
 
     }
+
     public JPanel getUpdateStaffDetailsPanel() {
         return this.updateStaffDetailsPanel;
+    }
+
+    private void addListeners() {
+        updateStaffDetailsButtonListener.updateButtonListener(updateButton);
     }
 
 }
