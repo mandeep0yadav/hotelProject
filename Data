@@ -1,0 +1,80 @@
+                 (AllotedRooom)  
+
+insert into AllottedRoom values('C001',101);
+insert into AllottedRoom values('C002',202);
+insert into AllottedRoom values('C003',303);
+insert into AllottedRoom values('C004',104);
+insert into AllottedRoom values('C005',205);
+
+                (CUSTOMERADDRESSPROOF)
+insert into CUSTOMERADDRESSPROOF values('C001' , 'Aadhaar Card' , 111122223333);
+insert into CUSTOMERADDRESSPROOF values('C002' , 'Pan Card' , 1111222233);
+insert into CUSTOMERADDRESSPROOF values('C003' , 'Driving License' , 111122223333444);
+insert into CUSTOMERADDRESSPROOF values('C004' , 'Aadhaar Card' , 111122223344);
+insert into CUSTOMERADDRESSPROOF values('C005' , 'Pan Card' , 1111222244);
+
+                   (CUSTOMERDETAILS)
+
+insert into CUSTOMERDETAILS values('C001' , 45 , 'abc' , 'mumbai' , 251001 , 'india' , CURDATE() , 'male' , 'abc@gmail.com' , 98988);
+insert into CUSTOMERDETAILS values('C002' , 46 , 'bcd' , 'delhi' , 251002 , 'india' , CURDATE() , 'male' , 'abc@gmail.com' , 98988);
+insert into CUSTOMERDETAILS values('C003' , 47 , 'cde' , 'ghaziabad' , 251003 , 'india' , CURDATE() , 'male' , 'abc@gmail.com' , 98988);
+insert into CUSTOMERDETAILS values('C004' , 48 , 'def' , 'meerut' , 251004 , 'india' , CURDATE() , 'male' , 'abc@gmail.com' , 98988);
+insert into CUSTOMERDETAILS values('C005' , 49 , 'efg' , 'gurgaon' , 251005 , 'india' , CURDATE() , 'male' , 'abc@gmail.com' , 98988);
+
+                    (CUSTOMERLOGIN)
+
+insert into CUSTOMERLOGIN values('C001' , 'man');
+insert into CUSTOMERLOGIN values('C002' , 'jat');
+insert into CUSTOMERLOGIN values('C003' , 'pri');
+insert into CUSTOMERLOGIN values('C004' , 'him');
+insert into CUSTOMERLOGIN values('C005' , 'har');
+
+
+                      (CUSTOMERSTAYINFORMATION)
+insert into CUSTOMERSTAYINFORMATION values('C001', CURDATE() , CURDATE() , 5 , 'Luxury');
+insert into CUSTOMERSTAYINFORMATION values('C002', CURDATE() , CURDATE() , 6 , 'Semi-Luxury');
+insert into CUSTOMERSTAYINFORMATION values('C003', CURDATE() , CURDATE() , 4 , 'Luxury');
+insert into CUSTOMERSTAYINFORMATION values('C004', CURDATE() , CURDATE() , 2 , 'Normal');
+insert into CUSTOMERSTAYINFORMATION values('C005', CURDATE() , CURDATE() , 1 , 'Semi-Luxury');
+
+                       (EMPLOYEEDETAIL)
+
+insert into EMPLOYEEDETAIL values('E001' , 'Priyanshu' , '244' , 'civil lines' , 'moz' , 251001 , 'India' , 25000 , CURDATE() , 'gup@gmail.com' , 9760);
+insert into EMPLOYEEDETAIL values('E002' , 'Mandeep' , '245' , 'xyz' , 'meerut' , 251002, 'India' , 26000 , CURDATE() , 'man@gmail.com' , 9765);
+insert into EMPLOYEEDETAIL values('E003' , 'Jatin' , '246' , 'abc' , 'delhi' , 251003 , 'India' , 27000 , CURDATE() , 'gup@gmail.com' , 9760);
+insert into EMPLOYEEDETAIL values('E004' , 'Nirmit' , '247' , 'asd' , 'ghaziabad' , 251004 , 'India' , 28000 , CURDATE() , 'gup@gmail.com' , 9760);
+insert into EMPLOYEEDETAIL values('E005' , 'Himanshu' , '248' , 'ert' , 'gurgaon' , 251005, 'India' , 29000 , CURDATE() , 'gup@gmail.com' , 9760);
+
+
+                       (EMPLOYEELEVEL)
+insert into EMPLOYEELEVEL values('E001' , 'Receptionist');
+insert into EMPLOYEELEVEL values('E002' , 'Receptionist');
+insert into EMPLOYEELEVEL values('E003' , 'Manager');
+insert into EMPLOYEELEVEL values('E004' , 'Manager');
+insert into EMPLOYEELEVEL values('E005' , 'Admin');
+
+                            (EMPLOYEELEVELTASK)
+insert into EMPLOYEELEVELTASK values('Admin','vadu');
+insert into EMPLOYEELEVELTASK values('Receptionist','cicoubibvr');
+insert into EMPLOYEELEVELTASK values('Manager','au');
+
+                                  (EMPLOYEELOGIN)
+insert into EMPLOYEELOGIN values('E001','123');
+insert into EMPLOYEELOGIN values('E002','123');
+insert into EMPLOYEELOGIN values('E003','123');
+insert into EMPLOYEELOGIN values('E004','123');
+insert into EMPLOYEELOGIN values('E005','123');
+ 
+                                  (ROOMDETAILS)
+
+insert into ROOMDETAILS values('Luxury' , 101 , 199 , 7000 , 28);
+insert into ROOMDETAILS values('Semi-Luxury' , 201 , 299 , 5000 , 18);
+insert into ROOMDETAILS values('Normal' , 301 , 399 , 3000 , 12);
+
+
+
+ 
+
+
+
+
