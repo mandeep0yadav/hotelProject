@@ -6,7 +6,8 @@ import ValueObjects.AllottedRoom;
  * Created by nirmit on 8/7/17.
  */
 public interface AllottedRoomDAO {
-    public int insertAllottedRoom();
-    public boolean deleteAllottedRoom();
-    public AllottedRoom findAllottedRoom();
+    public boolean insertAllottedRoom(AllottedRoom allottedRoom);
+    public boolean deleteAllottedRoom(String custid);
+    public AllottedRoom findAllottedRoom(String custid);
+    public boolean updateAllottedRoom(AllottedRoom allottedRoom);
 }

@@ -6,7 +6,7 @@ package ValueObjects;
 public class RoomDetails {
     private String roomtype;
     private int room_number_start;
-    private int room_numbber_end;
+    private int room_number_end;
     private int baseprice;
     private int taxpercent;
 
@@ -26,12 +26,12 @@ public class RoomDetails {
         this.room_number_start = room_number_start;
     }
 
-    public int getRoom_numbber_end() {
-        return room_numbber_end;
+    public int getRoom_number_end() {
+        return room_number_end;
     }
 
-    public void setRoom_numbber_end(int room_numbber_end) {
-        this.room_numbber_end = room_numbber_end;
+    public void setRoom_number_end(int room_number_end) {
+        this.room_number_end = room_number_end;
     }
 
     public int getBaseprice() {
