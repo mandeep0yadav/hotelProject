@@ -11,7 +11,7 @@ public class ViewStaffPanel {
 
     private JPanel viewStaffPanel;
 
-   private JTable staffTable;
+    private JTable staffTable;
     private JScrollPane scrollPane;
 
     private String[] coloumnTitles;

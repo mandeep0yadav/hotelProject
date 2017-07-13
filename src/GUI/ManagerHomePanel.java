@@ -9,10 +9,9 @@ import java.awt.*;
  * Created by nirmit on 4/7/17.
  */
 public class ManagerHomePanel {
+
     private JPanel managerHomePanel;
     private JPanel showOptionsPanel;
-
-
 
     private JLabel addStaff;
     private JLabel updateStaff;

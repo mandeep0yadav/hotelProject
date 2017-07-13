@@ -17,10 +17,10 @@ public class ForgotPasswordPanel {
     private JLabel newPassword ;
     private JLabel confirmNewPassword ;
 
-    private JTextField editUserId ;
-    private JTextField editPhoneNo ;
-    private JPasswordField editNewPassword ;
-    private JPasswordField editConfirmNewPassword ;
+    public JTextField editUserId ;
+    public JTextField editPhoneNo ;
+    public JPasswordField editNewPassword ;
+    public JPasswordField editConfirmNewPassword ;
 
     private JButton changePasswordButton;
 

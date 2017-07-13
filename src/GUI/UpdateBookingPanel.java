@@ -13,7 +13,7 @@ public class UpdateBookingPanel {
     private JPanel updateBookingPanel;
 
     private JLabel roomNoLabel;
-    private JTextField roomNoText;
+    public JTextField roomNoText;
 
 
     private JButton updateBookingButton;

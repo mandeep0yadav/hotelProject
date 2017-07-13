@@ -11,7 +11,7 @@ public class IssueBillPanel {
     private JPanel issueBillPanel;
 
     private JLabel roomNoLabel;
-    private JTextField roomNoText;
+    public JTextField roomNoText;
 
 
     private JButton generateBillButton;

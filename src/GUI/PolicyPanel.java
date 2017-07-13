@@ -16,9 +16,6 @@ public class PolicyPanel {
     private JScrollPane jScrollPane;
 
 
-
-
-
     public PolicyPanel() {
         policyPanel=new JPanel(new GridLayout());
         policyTextArea = new JTextArea();

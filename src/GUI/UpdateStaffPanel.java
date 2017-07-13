@@ -14,7 +14,7 @@ public class UpdateStaffPanel {
     private JPanel updateStaffPanel;
 
     private JLabel staffIdLabel;
-    private JTextField staffIdTexField;
+    public JTextField staffIdTexField;
 
 
     private JButton updateButton;
