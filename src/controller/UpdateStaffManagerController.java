@@ -2,6 +2,7 @@ package controller;
 
 import GUI.AdminHomePanel;
 import GUI.ManagerHomePanel;
+import GUI.UpdateStaffManagerPanel;
 import GUI.UpdateStaffPanel;
 import listeners.ManagerOptionsPanelListeners;
 import singleton.FooterSingleTon;
@@ -16,7 +17,7 @@ import javax.swing.*;
 public class UpdateStaffManagerController {
 
     private JFrame initialFrame;
-    private UpdateStaffPanel updateStaffPanel;
+    private UpdateStaffManagerPanel updateStaffManagerPanel;
 
 
     private ManagerHomePanel managerHomePanel;
@@ -25,7 +26,7 @@ public class UpdateStaffManagerController {
 
         System.out.println("Controls in updateStaffManager Controller...");
 
-        updateStaffPanel = new UpdateStaffPanel();
+        updateStaffManagerPanel = new UpdateStaffManagerPanel();
         managerHomePanel = new ManagerHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -48,7 +49,7 @@ public class UpdateStaffManagerController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(updateStaffPanel.getUpdateStaffPanel());
+        initialFrame.add(updateStaffManagerPanel.getUpdateStaffPanel());
         initialFrame.add(managerHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 

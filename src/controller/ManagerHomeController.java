@@ -42,6 +42,7 @@ public class ManagerHomeController {
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
         initialFrame.add(managerHomePanel.getManagerHomePanel());
+        initialFrame.add(managerHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }

@@ -63,58 +63,56 @@ public class LoginController {
                 String.valueOf(logInScreenPanel.editPassword.getPassword()).trim().length() > 0) {
 
             //do database validation and perform the action whatever you want
+//
+//            EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
+//            if (employeeLogin != null) {
+//                EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
+//                EmployeeLevel employeeLevel = new MysqlEmployeeLevelDAO().findEmployeeLevel(employeeLogin.getEmpid());
+//                switch (employeeLevel.getLevel()) {
+//                    case "Receptionist":
+//                        new ReceptionistHomeController(employeeDetails);
+//                        break;
+//                    case "Manager":
+//                        new ManagerHomeController();
+//                        break;
+//                    case "Admin":
+//                        new AdminHomeController();
+//                        break;
+//                    default:
+//                        System.out.println("Unknown Category");
+//                        break;
+//                }
+//            }else {
+//                logInScreenPanel.alertLabel.setText("Please Enter Valid UserId");
+//            }
 
-            EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
-            if (employeeLogin != null) {
-                EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
-                EmployeeLevel employeeLevel = new MysqlEmployeeLevelDAO().findEmployeeLevel(employeeLogin.getEmpid());
-                switch (employeeLevel.getLevel()) {
-                    case "Receptionist":
-                        new ReceptionistHomeController(employeeDetails);
-                        break;
-                    case "Manager":
-                        new ManagerHomeController();
-                        break;
-                    case "Admin":
-                        new AdminHomeController();
-                        break;
-                    default:
-                        System.out.println("Unknown Category");
-                        break;
-                }
-            }else {
-                logInScreenPanel.alertLabel.setText("Please Enter Valid UserId");
-            }
-
-            /*//for just testing
+            //for just testing
             if (logInScreenPanel.edituserId.getText().equals("1") &&
                     String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
                 logInScreenPanel.alertLabel.setText("");
                 //launch the next screen according to usertype
 
-                LogInPanelListeners obj =new LogInPanelListeners();
-                obj.launchAdmin();
+                new AdminHomeController();
 
             } if (logInScreenPanel.edituserId.getText().equals("2") &&
                     String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("2")){
                 logInScreenPanel.alertLabel.setText("");
                 //launch the next screen according to usertype
 
-                LogInPanelListeners obj =new LogInPanelListeners();
-                obj.launchManager();
+                new ManagerHomeController();
 
             } if (logInScreenPanel.edituserId.getText().equals("3") &&
                     String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("3")){
                 logInScreenPanel.alertLabel.setText("");
                 //launch the next screen according to usertype
 
-                LogInPanelListeners obj =new LogInPanelListeners();
-                obj.launchReceptionist();
+                //new ReceptionistHomeController();
+//
 
             }
             else{
                 logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
-            }*/
+            }
 
         } else {
             if (logInScreenPanel.edituserId.getText().trim().length() == 0) {

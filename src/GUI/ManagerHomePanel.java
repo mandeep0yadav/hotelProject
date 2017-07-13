@@ -73,8 +73,8 @@ public class ManagerHomePanel {
     }
 
     private void setBounds() {
-        managerHomePanel.setBounds(5,140,1400,550);
-        showOptionsPanel.setBounds(1100,0,300,550);
+        managerHomePanel.setBounds(5,140,1100,550);
+        showOptionsPanel.setBounds(1100,140,300,550);
 
         addStaff.setBounds(50,250,300,30);
         updateStaff.setBounds(50,300,300,30);
@@ -88,7 +88,7 @@ public class ManagerHomePanel {
         showOptionsPanel.add(updateStaff);
         showOptionsPanel.add(addStaff);
         managerHomePanel.add(welcomeLabel);
-        managerHomePanel.add(showOptionsPanel);
+//        managerHomePanel.add(showOptionsPanel);
     }
 
     public void destroy() {

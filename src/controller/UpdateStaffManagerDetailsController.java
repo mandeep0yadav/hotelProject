@@ -1,6 +1,9 @@
 package controller;
 
-import GUI.*;
+import GUI.AdminHomePanel;
+import GUI.ManagerHomePanel;
+import GUI.UpdateStaffDetails;
+import GUI.UpdateStaffManagerDetailsPanel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -8,21 +11,25 @@ import singleton.JframeSingleTon;
 import javax.swing.*;
 
 /**
- * Created by Dell on 7/12/2017.
+ * Created by Dell on 7/14/2017.
  */
-public class AddStaffManagerController {
+public class UpdateStaffManagerDetailsController {
+
+
+
+
 
     private JFrame initialFrame;
-    private AddStaffManagerPanel addStaffManagerPanel;
+    private UpdateStaffManagerDetailsPanel updateStaffManagerDetailsPanel;
 
-
+    //for showing receptionist options
     private ManagerHomePanel managerHomePanel;
 
-    public AddStaffManagerController(){
+    public UpdateStaffManagerDetailsController(){
 
-        System.out.println("Controls in updateStaff Controller...");
+        System.out.println("Controls in update staffdetails Controller...");
 
-        addStaffManagerPanel = new AddStaffManagerPanel();
+        updateStaffManagerDetailsPanel = new UpdateStaffManagerDetailsPanel();
         managerHomePanel = new ManagerHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
 
@@ -45,9 +52,9 @@ public class AddStaffManagerController {
 
         //adding panel to frame
         initialFrame.add(HeaderSingleTon.getHeaderSingleTon().getHeaderPanel());
-        initialFrame.add(addStaffManagerPanel.getAddStaffManagerPanel());
+        initialFrame.add(updateStaffManagerDetailsPanel.getUpdateStaffManagerDetailsPanel());
         initialFrame.add(managerHomePanel.getShowOptionsPanel());
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
-    }
-}
+
+    }}
