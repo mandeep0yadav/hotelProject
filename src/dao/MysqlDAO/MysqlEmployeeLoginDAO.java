@@ -115,6 +115,37 @@ public class MysqlEmployeeLoginDAO implements EmployeeLoginDAO {
         return null;
     }
 
+    public EmployeeLogin findEmployeeLogin(String userName) {
+
+        mysqlDaoFactory = DAOFactory.getDAOFactory(DAOFactory.MYSQL);
+
+        try {
+            connection = mysqlDaoFactory.createConnection();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        String queryString = "SELECT * FROM EMPLOYEELOGIN where empid=?";
+        //set this values using PreparedStatement = ps.executeQuery(queryString)
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement.setString(1,userName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                EmployeeLogin employeeLogin = new EmployeeLogin();
+                employeeLogin.setEmpid(resultSet.getString(1));
+                return employeeLogin;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Records not found in data base");
+
+        return null;
+    }
 
 
     @Override

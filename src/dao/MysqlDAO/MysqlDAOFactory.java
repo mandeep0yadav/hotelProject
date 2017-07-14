@@ -22,7 +22,7 @@ public class MysqlDAOFactory extends DAOFactory {
 
     public static final String user = "root";
 
-    public static final String pass = "12345";
+    public static final String pass = "nirmit";
 
     private MysqlDAOFactory(){
         System.out.println("createing mysql dao for first time");

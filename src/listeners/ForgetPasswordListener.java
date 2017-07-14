@@ -1,5 +1,6 @@
 package listeners;
 
+import controller.ForgotPasswordController;
 import controller.LoginController;
 
 import javax.swing.*;
@@ -15,7 +16,7 @@ public class ForgetPasswordListener {
     public void changePasswordButtonListener(JButton button){
         this.button = button;
         this.button.addActionListener(e -> {
-
+            ForgotPasswordController.validate();
         });
     }
 }

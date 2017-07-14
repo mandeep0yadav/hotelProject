@@ -64,56 +64,56 @@ public class LoginController {
 
             //do database validation and perform the action whatever you want
 
-//            EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
-//            if (employeeLogin != null) {
-//                EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
-//                EmployeeLevel employeeLevel = new MysqlEmployeeLevelDAO().findEmployeeLevel(employeeLogin.getEmpid());
-//                switch (employeeLevel.getLevel()) {
-//                    case "Receptionist":
-//                        new ReceptionistHomeController(employeeDetails);
-//                        break;
-//                    case "Manager":
-//                        new ManagerHomeController(employeeDetails);
-//                        break;
-//                    case "Admin":
-//                        new AdminHomeController(employeeDetails);
-//                        break;
-//                    default:
-//                        System.out.println("Unknown Category");
-//                        break;
-//                }
-//            }else {
-//                logInScreenPanel.alertLabel.setText("Please Enter Valid UserId");
-//            }
+            EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(logInScreenPanel.edituserId.getText(), String.valueOf(logInScreenPanel.editPassword.getPassword()));
+            if (employeeLogin != null) {
+                EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
+                EmployeeLevel employeeLevel = new MysqlEmployeeLevelDAO().findEmployeeLevel(employeeLogin.getEmpid());
+                switch (employeeLevel.getLevel()) {
+                    case "Receptionist":
+                        new ReceptionistHomeController(employeeDetails);
+                        break;
+                    case "Manager":
+                        new ManagerHomeController(employeeDetails);
+                        break;
+                    case "Admin":
+                        new AdminHomeController(employeeDetails);
+                        break;
+                    default:
+                        System.out.println("Unknown Category");
+                        break;
+                }
+            }else {
+                logInScreenPanel.alertLabel.setText("Please Enter Valid UserId");
+            }
 
             //for just testing
-            if (logInScreenPanel.edituserId.getText().equals("1") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
-                logInScreenPanel.alertLabel.setText("");
-                //launch the next screen according to usertype
-
-                new AdminHomeController(null);
-
-            } if (logInScreenPanel.edituserId.getText().equals("2") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("2")){
-                logInScreenPanel.alertLabel.setText("");
-                //launch the next screen according to usertype
-
-                new ManagerHomeController(null);
-
-            } if (logInScreenPanel.edituserId.getText().equals("3") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("3")){
-                logInScreenPanel.alertLabel.setText("");
-                //launch the next screen according to usertype
-
-             //  new ReceptionistHomeController(employeeDetails);
-               new ReceptionistHomeController(null);
-
-
-            }
-            else{
-                logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
-            }
+//            if (logInScreenPanel.edituserId.getText().equals("1") &&
+//                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
+//                logInScreenPanel.alertLabel.setText("");
+//                //launch the next screen according to usertype
+//
+//                new AdminHomeController(null);
+//
+//            } if (logInScreenPanel.edituserId.getText().equals("2") &&
+//                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("2")){
+//                logInScreenPanel.alertLabel.setText("");
+//                //launch the next screen according to usertype
+//
+//                new ManagerHomeController(null);
+//
+//            } if (logInScreenPanel.edituserId.getText().equals("3") &&
+//                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("3")){
+//                logInScreenPanel.alertLabel.setText("");
+//                //launch the next screen according to usertype
+//
+//             //  new ReceptionistHomeController(employeeDetails);
+//               new ReceptionistHomeController(null);
+//
+//
+//            }
+//            else{
+//                logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
+//            }
 
         } else {
             if (logInScreenPanel.edituserId.getText().trim().length() == 0) {

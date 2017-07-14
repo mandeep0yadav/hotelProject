@@ -2,6 +2,14 @@ package controller;
 
 import GUI.AboutUsPanel;
 import GUI.ForgotPasswordPanel;
+import ValueObjects.CustomerDetails;
+import ValueObjects.CustomerLogin;
+import ValueObjects.EmployeeDetails;
+import ValueObjects.EmployeeLogin;
+import dao.MysqlDAO.MysqlCustomerDetailsDAO;
+import dao.MysqlDAO.MysqlCustomerLoginDAO;
+import dao.MysqlDAO.MysqlEmployeeDetailsDAO;
+import dao.MysqlDAO.MysqlEmployeeLoginDAO;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -14,7 +22,7 @@ import javax.swing.*;
 public class ForgotPasswordController {
 
     private JFrame initialFrame ;
-    private ForgotPasswordPanel forgotPasswordPanel ;
+    private static ForgotPasswordPanel forgotPasswordPanel ;
 
     public ForgotPasswordController(){
 
@@ -47,4 +55,18 @@ public class ForgotPasswordController {
 
     }
 
+    public static void validate(){
+        EmployeeLogin employeeLogin = new MysqlEmployeeLoginDAO().findEmployeeLogin(forgotPasswordPanel.editUserId.getText());
+        EmployeeDetails employeeDetails = new MysqlEmployeeDetailsDAO().findEmployeeDetails(employeeLogin.getEmpid());
+        System.out.println("adasdas");
+        if(employeeDetails.getMobile() == Integer.parseInt(forgotPasswordPanel.editPhoneNo.getText())){
+            System.out.println("sdfsdf");
+                System.out.println("corrected");
+                employeeLogin.setPassword(String.valueOf(forgotPasswordPanel.editNewPassword.getPassword()));
+                new MysqlEmployeeLoginDAO().updateEmployeeLogin(employeeLogin);
+                new LoginController();
+
+        }
+
+    }
 }
