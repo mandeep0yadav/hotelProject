@@ -15,7 +15,7 @@ import java.awt.event.MouseEvent;
  */
 public class CheckInPanelListeners {
     private JButton cancelButton;
-
+    private JButton submitButton;
     public void cancelBottonListener(JButton cancelButton) {
         this.cancelButton = cancelButton;
         this.cancelButton.addActionListener(new ActionListener() {
@@ -23,6 +23,17 @@ public class CheckInPanelListeners {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("listener on cancelbutton");
                 new ReceptionistHomeController(CheckInController.employeeDetails);
+            }
+        });
+    }
+
+    public void submitBottonListener(JButton submitButton) {
+        this.submitButton = submitButton;
+        this.submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("listener on submitbutton");
+                CheckInController.validate();
             }
         });
     }

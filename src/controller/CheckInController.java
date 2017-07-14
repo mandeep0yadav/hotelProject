@@ -56,4 +56,8 @@ public class CheckInController {
 
     }
 
+    public static void validate(){
+
+    }
+
 }
