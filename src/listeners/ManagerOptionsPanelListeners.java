@@ -23,7 +23,7 @@ public class ManagerOptionsPanelListeners {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on add staff Label");
-                new AddStaffManagerController();
+                new AddStaffManagerController(ManagerHomeController.employeeDetails);
 
 
 
@@ -37,7 +37,7 @@ public class ManagerOptionsPanelListeners {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on UpdateStaff Label");
-                new UpdateStaffManagerController();
+                new UpdateStaffManagerController(ManagerHomeController.employeeDetails);
 
 
 

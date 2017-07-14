@@ -4,6 +4,7 @@ import GUI.CheckInPanel;
 import GUI.CheckOutPanel;
 import GUI.IssueBillPanel;
 import GUI.ReceptionistHomePanel;
+import ValueObjects.EmployeeDetails;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -18,18 +19,18 @@ public class CheckInController {
 
     private JFrame initialFrame;
     private CheckInPanel checkInPanel;
-
+    public static EmployeeDetails employeeDetails;
 
     private ReceptionistHomePanel receptionistHomePanel;
 
-    public CheckInController(){
+    public CheckInController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in checkin Controller...");
 
         checkInPanel = new CheckInPanel();
         receptionistHomePanel = new ReceptionistHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails = employeeDetails;
         setproperty();
 
         addComponent();
@@ -54,4 +55,5 @@ public class CheckInController {
         initialFrame.add(FooterSingleTon.getFooterSingleTon().getFooterPanel());
 
     }
+
 }

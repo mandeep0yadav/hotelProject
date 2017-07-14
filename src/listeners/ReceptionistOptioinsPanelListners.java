@@ -65,7 +65,7 @@ public class ReceptionistOptioinsPanelListners {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on checkIn Label");
-                new CheckInController();
+                new CheckInController(ReceptionistHomeController.employeeDetails);
 
 
             }

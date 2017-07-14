@@ -1,9 +1,6 @@
 package listeners;
 
-import controller.AddStaffController;
-import controller.DeleteStaffController;
-import controller.UpdateStaffController;
-import controller.ViewStaffController;
+import controller.*;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -42,7 +39,7 @@ public class AdminOptionPanelListeners {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on add staff Label");
-                new AddStaffController();
+                new AddStaffController(AdminHomeController.employeeDetails);
 
 
 

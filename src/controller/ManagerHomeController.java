@@ -2,6 +2,8 @@ package controller;
 
 import GUI.ManagerHomePanel;
 import GUI.ReceptionistHomePanel;
+import ValueObjects.EmployeeDetails;
+import ValueObjects.EmployeeLevel;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -14,14 +16,14 @@ import javax.swing.*;
 public class ManagerHomeController {
     private JFrame initialFrame;
     private ManagerHomePanel managerHomePanel;
-
-    public ManagerHomeController(){
+    public static   EmployeeDetails employeeDetails;
+    public ManagerHomeController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in Manager Controller...");
 
         managerHomePanel = new ManagerHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails = employeeDetails;
         setproperty();
 
         addComponent();

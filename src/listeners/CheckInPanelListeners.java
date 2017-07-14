@@ -1,6 +1,7 @@
 package listeners;
 
 import controller.AddStaffManagerController;
+import controller.CheckInController;
 import controller.ReceptionistHomeController;
 
 import javax.swing.*;
@@ -21,8 +22,7 @@ public class CheckInPanelListeners {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("listener on cancelbutton");
-
-                new ReceptionistHomeController(null);
+                new ReceptionistHomeController(CheckInController.employeeDetails);
             }
         });
     }

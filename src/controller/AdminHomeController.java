@@ -1,6 +1,7 @@
 package controller;
 
 import GUI.AdminHomePanel;
+import ValueObjects.EmployeeDetails;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -13,15 +14,15 @@ import javax.swing.*;
 public class AdminHomeController {
     private JFrame initialFrame;
     private AdminHomePanel adminHomePanel;
+    public static EmployeeDetails employeeDetails;
 
-
-    public AdminHomeController(){
+    public AdminHomeController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in Admin Controller...");
 
         adminHomePanel = new AdminHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails = employeeDetails;
         setproperty();
 
         addComponent();

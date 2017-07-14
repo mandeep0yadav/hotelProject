@@ -1,6 +1,7 @@
 package listeners;
 
 import controller.AddStaffController;
+import controller.AdminHomeController;
 import controller.UpdateStaffDetailsController;
 
 import javax.swing.*;
@@ -20,7 +21,7 @@ public class UpdateStaffPanelListeners {
         this.updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new UpdateStaffDetailsController();
+                new UpdateStaffDetailsController(AdminHomeController.employeeDetails);
             }
         });
 

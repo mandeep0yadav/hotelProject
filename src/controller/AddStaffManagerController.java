@@ -1,6 +1,7 @@
 package controller;
 
 import GUI.*;
+import ValueObjects.EmployeeDetails;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -14,18 +15,18 @@ public class AddStaffManagerController {
 
     private JFrame initialFrame;
     private AddStaffManagerPanel addStaffManagerPanel;
-
+    public static EmployeeDetails employeeDetails;
 
     private ManagerHomePanel managerHomePanel;
 
-    public AddStaffManagerController(){
+    public AddStaffManagerController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in updateStaff Controller...");
 
         addStaffManagerPanel = new AddStaffManagerPanel();
         managerHomePanel = new ManagerHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails = employeeDetails;
         setproperty();
 
         addComponent();

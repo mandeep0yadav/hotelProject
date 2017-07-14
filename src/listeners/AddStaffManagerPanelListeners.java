@@ -1,6 +1,7 @@
 package listeners;
 
 import GUI.ManagerHomePanel;
+import controller.AddStaffManagerController;
 import controller.AdminHomeController;
 import controller.ManagerHomeController;
 
@@ -22,7 +23,7 @@ public class AddStaffManagerPanelListeners {
             @Override
             public void mousePressed(MouseEvent e) {
                 System.out.println("Listener on add Staff Label");
-                new ManagerHomeController();
+                new ManagerHomeController(AddStaffManagerController.employeeDetails);
 
                 //for color change to show which panel is launched
 
