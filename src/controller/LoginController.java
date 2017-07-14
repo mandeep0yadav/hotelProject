@@ -73,10 +73,10 @@ public class LoginController {
                         new ReceptionistHomeController(employeeDetails);
                         break;
                     case "Manager":
-                        new ManagerHomeController();
+                        new ManagerHomeController(employeeDetails);
                         break;
                     case "Admin":
-                        new AdminHomeController();
+                        new AdminHomeController(employeeDetails);
                         break;
                     default:
                         System.out.println("Unknown Category");

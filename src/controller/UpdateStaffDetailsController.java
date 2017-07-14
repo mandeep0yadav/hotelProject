@@ -3,6 +3,7 @@ package controller;
 import GUI.AddStaffPanel;
 import GUI.AdminHomePanel;
 import GUI.UpdateStaffDetails;
+import ValueObjects.EmployeeDetails;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -19,18 +20,18 @@ public class UpdateStaffDetailsController {
 
     private JFrame initialFrame;
     private UpdateStaffDetails updateStaffDetails;
-
+    public static EmployeeDetails employeeDetails;
     //for showing receptionist options
     private AdminHomePanel adminHomePanel;
 
-    public UpdateStaffDetailsController(){
+    public UpdateStaffDetailsController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in update staffdetails Controller...");
 
         updateStaffDetails = new UpdateStaffDetails();
         adminHomePanel = new AdminHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails = employeeDetails;
         setproperty();
 
         addComponent();

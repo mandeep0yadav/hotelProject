@@ -17,7 +17,7 @@ public class ReceptionistHomeController {
     private JFrame initialFrame;
     private ReceptionistHomePanel receptionistHomePanel;
 
-    private EmployeeDetails employeeDetails;
+    public static EmployeeDetails employeeDetails;
 
 
     public ReceptionistHomeController(EmployeeDetails employeeDetails){

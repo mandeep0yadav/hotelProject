@@ -1,6 +1,7 @@
 package controller;
 
 import GUI.*;
+import ValueObjects.EmployeeDetails;
 import singleton.FooterSingleTon;
 import singleton.HeaderSingleTon;
 import singleton.JframeSingleTon;
@@ -15,18 +16,18 @@ public class AddStaffController {
 
     private JFrame initialFrame;
     private AddStaffPanel addStaffPanel;
-
+    public static EmployeeDetails employeeDetails;
     //for showing receptionist options
     private AdminHomePanel adminHomePanel;
 
-    public AddStaffController(){
+    public AddStaffController(EmployeeDetails employeeDetails){
 
         System.out.println("Controls in Issue Controller...");
 
         addStaffPanel = new AddStaffPanel();
         adminHomePanel = new AdminHomePanel();
         initialFrame = JframeSingleTon.getjFrame();
-
+        this.employeeDetails = employeeDetails;
         setproperty();
 
         addComponent();

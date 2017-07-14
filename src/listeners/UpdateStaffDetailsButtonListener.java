@@ -1,6 +1,7 @@
 package listeners;
 
 import controller.AdminHomeController;
+import controller.UpdateStaffDetailsController;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -21,7 +22,7 @@ public class UpdateStaffDetailsButtonListener {
 
                 //changes of updation will reflect in the dataBase
 
-                new AdminHomeController();
+                new AdminHomeController(UpdateStaffDetailsController.employeeDetails);
             }
         });
 
