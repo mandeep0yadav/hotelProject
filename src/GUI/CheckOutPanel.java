@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.CheckOutListener;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -17,6 +19,7 @@ public class CheckOutPanel {
     private JLabel roomnumberLabel;
     public JTextField editroomNumber;
     private JButton checkoutButton;
+    private CheckOutListener checkOutListener;
 
     public CheckOutPanel() {
 
@@ -30,6 +33,7 @@ public class CheckOutPanel {
         roomnumberLabel = new JLabel();
         editroomNumber = new JTextField();
         checkoutButton = new JButton();
+        checkOutListener=new CheckOutListener();
 
 
 
@@ -39,8 +43,14 @@ public class CheckOutPanel {
 
         addComponentToPanel();
 
+        listeners();
+
         System.out.println("checkout Panel Created...");
 
+    }
+
+    private void listeners() {
+        checkOutListener.issueBilllistener(checkoutButton);
     }
 
     private void setProperty() {

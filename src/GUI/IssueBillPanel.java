@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.IssueBillListener;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,7 +14,7 @@ public class IssueBillPanel {
 
     private JLabel roomNoLabel;
     public JTextField roomNoText;
-
+ private IssueBillListener issueBillListener;
 
     private JButton generateBillButton;
 
@@ -29,14 +31,22 @@ public class IssueBillPanel {
 
         generateBillButton = new JButton();
 
+        issueBillListener=new IssueBillListener();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
 
+        listeners();
+
         System.out.println("Issue Bill Panel Created...");
 
+    }
+
+    private void listeners() {
+        issueBillListener.issueBilllistener(generateBillButton);
     }
 
     private void setProperty() {
