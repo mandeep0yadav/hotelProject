@@ -25,7 +25,7 @@ public class MysqlCustomerDetailsDAO implements CustomerDetailsDAO {
             e.printStackTrace();
         }
 
-        String queryString = "INSERT INTO CUSTOMERDEATILS VALUES(?,?,?,?,?,?,CURDATE(),?,?,?)";
+        String queryString = "INSERT INTO CUSTOMERDETAILS VALUES(?,?,?,?,?,?,CURDATE(),?,?,?)";
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
