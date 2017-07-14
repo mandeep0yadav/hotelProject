@@ -41,25 +41,25 @@ public class CheckInPanel {
 
     //Declaring all  text fields
 
-    public JTextField editCustomerId;
-    public JTextField editFirstName, editLastName;
-    public JTextField editEmail, editContact;
-    public JTextField editCountry, editCity, editPostalCode;
-    public JTextField editHouseNumber;
-    public JTextField editIdnumber;
-    public JTextField editNumberofguest;
-    public JTextField editStreetAddress;
+    public static JTextField editCustomerId;
+    public static JTextField editFirstName, editLastName;
+    public static JTextField editEmail, editContact;
+    public static JTextField editCountry, editCity, editPostalCode;
+    public static JTextField editHouseNumber;
+    public static JTextField editIdnumber;
+    public static JTextField editNumberofguest;
+    public static JTextField editStreetAddress;
 
     //Declaring all comboBox
 
-    public JComboBox selectGender;
-    public JComboBox dobDayList, dobMonthList, dobYearList;
+    public static JComboBox selectGender;
+    public static JComboBox dobDayList, dobMonthList, dobYearList;
 
 
-    public JComboBox selectIdtype;
-    public JComboBox selectRoomtype;
-    public JComboBox checkinDayList, checkinMonthList, checkinYearList;
-    public JComboBox checkoutDayList, checkoutMonthList, checkoutYearList;
+    public static JComboBox selectIdtype;
+    public static JComboBox selectRoomtype;
+    public static JComboBox checkinDayList, checkinMonthList, checkinYearList;
+    public static JComboBox checkoutDayList, checkoutMonthList, checkoutYearList;
 
     private JSeparator checkinLabelSeparator;
     private JSeparator customerLabelSeparator, addressproofLabelSeparator, stayinfoLabelSeparator;
@@ -466,6 +466,7 @@ public class CheckInPanel {
 
     public void addListeners(){
         checkInPanelListeners.cancelBottonListener(cancelButton);
+        checkInPanelListeners.submitBottonListener(checkinButton);
     }
 
 
