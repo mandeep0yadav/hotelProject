@@ -246,7 +246,9 @@ public class AddStaffManagerPanel {
         dobYearList.setSelectedItem(1990);
 
         registerButton.setText("Register");
-        registerButton.setFont(new Font("Century Gothic", Font.BOLD,12));
+        registerButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
+        registerButton.setBackground(Color.red);
+        registerButton.setForeground(Color.WHITE);
 
     }
 
@@ -309,7 +311,7 @@ public class AddStaffManagerPanel {
         editSalary.setBounds(720,440,150,25);
 
 
-        registerButton.setBounds(550,505,100,30);
+        registerButton.setBounds(550,505,200,30);
 
     }
 

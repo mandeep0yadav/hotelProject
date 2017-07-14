@@ -61,7 +61,7 @@ public class UpdateBookingPanel {
         roomNoText.setFont(new Font("Century Gothic", Font.BOLD,15));
 
         updateBookingButton.setText("Update Booking");
-        updateBookingButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
+        updateBookingButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
         updateBookingButton.setBackground(Color.red);
         updateBookingButton.setForeground(Color.WHITE);
 
@@ -74,7 +74,7 @@ public class UpdateBookingPanel {
         roomNoLabel.setBounds(380,200,250,25);
         roomNoText.setBounds(600,200,150,25);
 
-        updateBookingButton.setBounds(450,280,200,25);
+        updateBookingButton.setBounds(450,280,200,30);
 
     }
 

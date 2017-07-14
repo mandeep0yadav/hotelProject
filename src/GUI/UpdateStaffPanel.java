@@ -63,7 +63,7 @@ public class UpdateStaffPanel {
         staffIdTexField.setFont(new Font("Century Gothic", Font.BOLD,15));
 
         updateButton.setText("Update");
-        updateButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
+        updateButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
         updateButton.setBackground(Color.red);
 
 
@@ -78,7 +78,7 @@ public class UpdateStaffPanel {
         staffIdLabel.setBounds(400,200,250,25);
         staffIdTexField.setBounds(600,200,150,25);
 
-        updateButton.setBounds(450,280,200,25);
+        updateButton.setBounds(450,280,200,30);
 
     }
 

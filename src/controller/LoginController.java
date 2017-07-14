@@ -85,36 +85,35 @@ public class LoginController {
             }else {
                 logInScreenPanel.alertLabel.setText("Please Enter Valid UserId");
             }
-
-            /*//for just testing
-            if (logInScreenPanel.edituserId.getText().equals("1") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
-                logInScreenPanel.alertLabel.setText("");
-                //launch the next screen according to usertype
-
-                LogInPanelListeners obj =new LogInPanelListeners();
-                obj.launchAdmin();
-
-            } if (logInScreenPanel.edituserId.getText().equals("2") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("2")){
-                logInScreenPanel.alertLabel.setText("");
-                //launch the next screen according to usertype
-
-                LogInPanelListeners obj =new LogInPanelListeners();
-                obj.launchManager();
-
-            } if (logInScreenPanel.edituserId.getText().equals("3") &&
-                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("3")){
-                logInScreenPanel.alertLabel.setText("");
-                //launch the next screen according to usertype
-
-                LogInPanelListeners obj =new LogInPanelListeners();
-                obj.launchReceptionist();
-
-            }
-            else{
-                logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
-            }*/
+//
+//            //for just testing
+//            if (logInScreenPanel.edituserId.getText().equals("1") &&
+//                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("1")){
+//                logInScreenPanel.alertLabel.setText("");
+//                //launch the next screen according to usertype
+//
+//                new AdminHomeController();
+//
+//            } if (logInScreenPanel.edituserId.getText().equals("2") &&
+//                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("2")){
+//                logInScreenPanel.alertLabel.setText("");
+//                //launch the next screen according to usertype
+//
+//                new ManagerHomeController();
+//
+//            } if (logInScreenPanel.edituserId.getText().equals("3") &&
+//                    String.valueOf(logInScreenPanel.editPassword.getPassword()).equals("3")){
+//                logInScreenPanel.alertLabel.setText("");
+//                //launch the next screen according to usertype
+//
+//             //  new ReceptionistHomeController(employeeDetails);
+//               new ReceptionistHomeController(null);
+//
+//
+//            }
+//            else{
+//                logInScreenPanel.alertLabel.setText("Invalid UserID or Password!");
+//            }
 
         } else {
             if (logInScreenPanel.edituserId.getText().trim().length() == 0) {

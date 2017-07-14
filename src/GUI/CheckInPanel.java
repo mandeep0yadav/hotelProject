@@ -257,7 +257,7 @@ public class CheckInPanel {
         roomtypeLabel.setFont(new Font("comic sans", Font.BOLD, 13));
         roomtypeLabel.setForeground(Color.white);
 
-        numberofguestLabel.setText("Number of Guest");
+        numberofguestLabel.setText("No. of Guest(s)");
         numberofguestLabel.setFont(new Font("comic sans", Font.BOLD, 13));
         numberofguestLabel.setForeground(Color.white);
 
@@ -303,7 +303,14 @@ public class CheckInPanel {
 
 
         cancelButton.setText("Cancel");
+        cancelButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
+        cancelButton.setBackground(Color.red);
+        cancelButton.setForeground(Color.WHITE);
+
         checkinButton.setText("Book Now");
+        checkinButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
+        checkinButton.setBackground(Color.red);
+        checkinButton.setForeground(Color.WHITE);
 
 
     }
@@ -343,7 +350,7 @@ public class CheckInPanel {
         editStreetAddress.setBounds(1020, 160, 150, 25);
 
         cityLabel.setBounds(100, 200, 100, 25);
-        editCity.setBounds(220, 200, 150, 25);
+        editCity.setBounds(230, 200, 150, 25);
         postalCodeLabel.setBounds(500, 200, 100, 25);
         editPostalCode.setBounds(620, 200, 150, 25);
         countryLabel.setBounds(900, 200, 100, 25);
@@ -354,7 +361,7 @@ public class CheckInPanel {
         addressproofLabelSeparator.setBounds(60, 269, 230, 1);
 
         idtypeLabel.setBounds(100, 280, 100, 25);
-        selectIdtype.setBounds(220, 280, 150, 25);
+        selectIdtype.setBounds(230, 280, 150, 25);
         idnumberLabel.setBounds(500, 280, 100, 25);
         editIdnumber.setBounds(620, 280, 150, 25);
 
@@ -362,9 +369,9 @@ public class CheckInPanel {
         stayinfoLabelSeparator.setBounds(60, 349, 230, 1);
 
         checkindateLabel.setBounds(100, 360, 100, 25);
-        checkinDayList.setBounds(220, 360, 40, 25);
-        checkinMonthList.setBounds(260, 360, 40, 25);
-        checkinYearList.setBounds(300, 360, 70, 25);
+        checkinDayList.setBounds(230, 360, 40, 25);
+        checkinMonthList.setBounds(270, 360, 40, 25);
+        checkinYearList.setBounds(310, 360, 70, 25);
         checkoutdateLabel.setBounds(500, 360, 100, 25);
         checkoutDayList.setBounds(620, 360, 40, 25);
         checkoutMonthList.setBounds(660, 360, 40, 25);
@@ -372,11 +379,11 @@ public class CheckInPanel {
         roomtypeLabel.setBounds(900, 360, 100, 25);
         selectRoomtype.setBounds(1020, 360, 150, 25);
         numberofguestLabel.setBounds(100, 400, 100, 25);
-        editNumberofguest.setBounds(240, 400, 150, 25);
+        editNumberofguest.setBounds(230, 400, 150, 25);
 
 
-        cancelButton.setBounds(500, 465, 120, 30);
-        checkinButton.setBounds(650, 465, 120, 30);
+        cancelButton.setBounds(500, 465, 140, 30);
+        checkinButton.setBounds(670, 465, 140, 30);
 
 
     }

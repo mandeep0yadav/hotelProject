@@ -21,6 +21,7 @@ public class UpdateBookingPanelListeners {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new UpdateBookingDetailsController();
+                //new PrintExample();
             }
         });
 
