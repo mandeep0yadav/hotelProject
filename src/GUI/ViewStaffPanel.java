@@ -147,6 +147,7 @@ public class ViewStaffPanel {
         staffTable.setOpaque(false);
         scrollPane.setOpaque(false);
         scrollPane.getViewport().setOpaque(false);
+        scrollPane.setBorder(null);
 
 
 

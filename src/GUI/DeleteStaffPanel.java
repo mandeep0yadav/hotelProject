@@ -65,7 +65,8 @@ public class DeleteStaffPanel {
         staffIdTextField.setFont(new Font("Century Gothic", Font.BOLD,15));
 
         deleteStaffButton.setText("Delete");
-        deleteStaffButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
+
+        deleteStaffButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
         deleteStaffButton.setBackground(Color.red);
         deleteStaffButton.setForeground(Color.WHITE);
 
@@ -78,7 +79,7 @@ public class DeleteStaffPanel {
         staffIDLabel.setBounds(400,200,250,25);
         staffIdTextField.setBounds(600,200,150,25);
 
-        deleteStaffButton.setBounds(450,280,200,25);
+        deleteStaffButton.setBounds(450,280,200,30);
 
     }
 

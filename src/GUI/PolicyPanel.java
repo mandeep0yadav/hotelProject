@@ -17,9 +17,9 @@ public class PolicyPanel {
 
 
     public PolicyPanel() {
-        policyPanel=new JPanel(new GridLayout());
+        policyPanel=new JPanel();
         policyTextArea = new JTextArea();
-        jScrollPane=new JScrollPane(policyTextArea,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane=new JScrollPane(policyTextArea);
 
         setProperty();
 
@@ -166,8 +166,10 @@ public class PolicyPanel {
                 "\n" +
                 "\n" +
                 "\n");
-        policyPanel.setLayout(null);
         policyPanel.setOpaque(false);
+        policyPanel.setLayout(null);
+
+        //policyPanel.add(policyTextArea);
 
         policyTextArea.setFont(new Font("Century Gothic",Font.PLAIN, 15));
         policyTextArea.setForeground(Color.white);
@@ -175,6 +177,7 @@ public class PolicyPanel {
         policyTextArea.setLineWrap(true);
         policyTextArea.setWrapStyleWord(true);
         policyTextArea.setEditable(false);
+
 
 
 

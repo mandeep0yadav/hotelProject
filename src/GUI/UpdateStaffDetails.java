@@ -243,7 +243,9 @@ public class UpdateStaffDetails {
         dobYearList.setSelectedItem(1990);
 
         updateButton.setText("Update");
-        updateButton.setFont(new Font("Century Gothic", Font.BOLD,12));
+        updateButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
+        updateButton.setBackground(Color.red);
+        updateButton.setForeground(Color.WHITE);
 
     }
 
@@ -304,7 +306,7 @@ public class UpdateStaffDetails {
         editSalary.setBounds(720,440,150,25);
 
 
-        updateButton.setBounds(550,505,100,30);
+        updateButton.setBounds(550,505,150,30);
 
     }
 

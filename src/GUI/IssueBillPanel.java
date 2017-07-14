@@ -53,7 +53,7 @@ public class IssueBillPanel {
         roomNoText.setFont(new Font("Century Gothic", Font.BOLD,15));
 
         generateBillButton.setText("Generate Bill");
-        generateBillButton.setFont(new Font("Lithos Pro Regular",Font.BOLD,17));
+        generateBillButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
         generateBillButton.setBackground(Color.red);
         generateBillButton.setForeground(Color.WHITE);
 
@@ -66,7 +66,7 @@ public class IssueBillPanel {
         roomNoLabel.setBounds(400,200,250,25);
         roomNoText.setBounds(600,200,150,25);
 
-        generateBillButton.setBounds(450,280,200,25);
+        generateBillButton.setBounds(450,280,200,30);
 
     }
 
