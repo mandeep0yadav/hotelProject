@@ -1,6 +1,7 @@
 package listeners;
 
 import GUI.BillPrint.PrintExample;
+import GUI.CheckOutPanel;
 import controller.CheckInController;
 import controller.ReceptionistHomeController;
 
@@ -21,7 +22,7 @@ public class IssueBillListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("listener on issue bill button");
-                new PrintExample();
+                new PrintExample(CheckOutPanel.editroomNumber.getText());
             }
         });
     }

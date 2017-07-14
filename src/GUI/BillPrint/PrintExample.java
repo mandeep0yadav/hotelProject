@@ -1,61 +1,66 @@
 package GUI.BillPrint;
 
+import ValueObjects.AllottedRoom;
+import dao.MysqlDAO.MysqlAllottedRoomDAO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class PrintExample extends JFrame implements ActionListener {
 
 
-    private JLabel contactNo1;
-    private JLabel contactNo2;
-    private JLabel contactNo3;
+    public static JLabel contactNo1;
+    public static JLabel contactNo2;
+    public static JLabel contactNo3;
 
-    private JLabel guestId;
-    private JLabel billNo;
-    private JLabel guestname;
-    private JLabel roomNo;
-    private JLabel dated;
-    private JLabel guestFrom;
-    private JLabel checkIndate;
-    private JLabel checkOutDate;
-    private JLabel totalDays;
-    private JLabel mobNo;
-    private JLabel roomType;
-    private JLabel totalAmount;
-    private JLabel paymentMode;
+    public static JLabel guestId;
+    public static JLabel billNo;
+    public static JLabel guestname;
+    public static JLabel roomNo;
+    public static JLabel dated;
+    public static JLabel guestFrom;
+    public static JLabel checkIndate;
+    public static JLabel checkOutDate;
+    public static JLabel totalDays;
+    public static JLabel mobNo;
+    public static JLabel roomType;
+    public static JLabel totalAmount;
+    public static JLabel paymentMode;
 
-    private JLabel guestIdShow;
-    private JLabel billNoShow;
-    private JLabel guestnameShow;
-    private JLabel roomNoShow;
-    private JLabel datedShow;
-    private JLabel guestFromShow;
-    private JLabel checkIndateShow;
-    private JLabel checkOutDateShow;
-    private JLabel totalDaysShow;
-    private JLabel mobNoShow;
-    private JLabel roomTypeShow;
-    private JLabel totalAmountShow;
-    private JLabel paymentModeShow;
-    private JSeparator separatorTotalAmount1;
-    private JSeparator separatorTotalAmount2;
-    private JSeparator separatorBillNo1;
-    private JSeparator separatorBillNo2;
-
-
-    private JLabel logoImageLabel;
-    private ImageIcon hollaLogo;
+    public static JLabel guestIdShow;
+    public static JLabel billNoShow;
+    public static JLabel guestnameShow;
+    public static JLabel roomNoShow;
+    public static JLabel datedShow;
+    public static JLabel guestFromShow;
+    public static JLabel checkIndateShow;
+    public static JLabel checkOutDateShow;
+    public static JLabel totalDaysShow;
+    public static JLabel mobNoShow;
+    public static JLabel roomTypeShow;
+    public static JLabel totalAmountShow;
+    public static JLabel paymentModeShow;
+    public static JSeparator separatorTotalAmount1;
+    public static JSeparator separatorTotalAmount2;
+    public static JSeparator separatorBillNo1;
+    public static JSeparator separatorBillNo2;
 
 
+    public static JLabel logoImageLabel;
+    public static ImageIcon hollaLogo;
 
-    public PrintExample() {
 
+    public static String roomNumber;
 
-        super("Printing Swing Components");
+    public PrintExample(String roomNumber) {
+
+        super("Printing Bill Report for Stay in Hotel Holla");
         //addWindowListener(new ExitListener());
 
+        this.roomNumber = roomNumber;
         contactNo1 = new JLabel("Phone: +917042540979");
         contactNo2 = new JLabel("+919990188039");
         contactNo3 = new JLabel("+919990442959");
@@ -123,7 +128,7 @@ public class PrintExample extends JFrame implements ActionListener {
         addComponents(jPanel);
     }
 
-    private void addComponents(JPanel jPanel) {
+    public static void addComponents(JPanel jPanel) {
 
         jPanel.add(logoImageLabel);
         jPanel.add(contactNo1);
@@ -166,7 +171,7 @@ public class PrintExample extends JFrame implements ActionListener {
 
     }
 
-    private void setbounds(JPanel jPanel) {
+    public static void setbounds(JPanel jPanel) {
         contactNo1.setBounds(550, 10, 200, 10);
         contactNo2.setBounds(590, 25, 200, 10);
         contactNo3.setBounds(590, 40, 200, 10);
@@ -214,14 +219,21 @@ public class PrintExample extends JFrame implements ActionListener {
         separatorTotalAmount2.setBounds(20,568,630,3);
     }
 
-    private void property(JPanel jPanel) {
+    public static void property(JPanel jPanel) {
 
         jPanel.setLayout(null);
         logoImageLabel.setIcon(hollaLogo);
         contactNo1.setHorizontalTextPosition(SwingConstants.NORTH_EAST);
 
-              billNo.setText("Bill No.       ");
-              roomNo.setText("Room No.       ");
+         AllottedRoom allottedRoom =  new MysqlAllottedRoomDAO().findAllottedRoom(roomNumber);
+        if (allottedRoom == null) {
+            System.out.println("Customer Room not alloted");
+            return;
+
+        }
+            billNo.setText("Bill No.       ");
+
+              roomNo.setText("Customer Id.       ");
               guestId.setText("Guest Id");
            guestname.setText("Guest Name      ");
            guestFrom.setText("Guest From     ");
@@ -234,8 +246,8 @@ public class PrintExample extends JFrame implements ActionListener {
         totalAmount.setText("Total Amount");
         paymentMode.setText("Payment Mode");
 
-        billNoShow.setText("12");
-        roomNoShow.setText("007");
+        billNoShow.setText(String.valueOf(allottedRoom.getRoomNumber()));
+        roomNoShow.setText(roomNumber);
         guestIdShow.setText("A31");
         guestnameShow.setText("Naveen Kumar");
         guestFromShow.setText("Dehradun");

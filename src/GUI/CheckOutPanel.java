@@ -17,8 +17,8 @@ public class CheckOutPanel {
     //private JLabel checkOutLabel;
 
     private JLabel roomnumberLabel;
-    public JTextField editroomNumber;
-    private JButton checkoutButton;
+    public static JTextField editroomNumber;
+    public static JButton checkoutButton;
     private CheckOutListener checkOutListener;
 
     public CheckOutPanel() {
