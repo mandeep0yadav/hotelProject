@@ -25,7 +25,7 @@ public class MysqlCustomerDetailsDAO implements CustomerDetailsDAO {
             e.printStackTrace();
         }
 
-        String queryString = "INSERT INTO CUSTOMERDEATILS VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String queryString = "INSERT INTO CUSTOMERDEATILS VALUES(?,?,?,?,?,?,CURDATE(),?,?,?)";
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
@@ -35,10 +35,10 @@ public class MysqlCustomerDetailsDAO implements CustomerDetailsDAO {
             preparedStatement.setString(4,customerDetails.getCity());
             preparedStatement.setInt(5,customerDetails.getPostalCode());
             preparedStatement.setString(6,customerDetails.getCountry());
-            preparedStatement.setDate(7, (Date) customerDetails.getDob());
-            preparedStatement.setString(8,customerDetails.getSex());
-            preparedStatement.setString(9,customerDetails.getEmail());
-            preparedStatement.setInt(10,customerDetails.getMob());
+            //preparedStatement.setDate(7, (Date) customerDetails.getDob());
+            preparedStatement.setString(7,customerDetails.getSex());
+            preparedStatement.setString(8,customerDetails.getEmail());
+            preparedStatement.setInt(9,customerDetails.getMob());
             if(preparedStatement.execute()) {
                 System.out.println("Records inserted in data base");
                 return true;

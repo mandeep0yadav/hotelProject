@@ -25,15 +25,15 @@ public class MysqlCustomerStayInformationDAO implements CustomerStayInformationD
             e.printStackTrace();
         }
 
-        String queryString = "INSERT INTO CUSTOMERSTAYINFORMATION VALUES(?,?,?,?,?)";
+        String queryString = "INSERT INTO CUSTOMERSTAYINFORMATION VALUES(?,CURDATE(),CURDATE(),?,?)";
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
             preparedStatement.setString(1,customerStayInformation.getCustomerid());
-            preparedStatement.setDate(2, (Date) customerStayInformation.getStart_date());
-            preparedStatement.setDate(3, (Date) customerStayInformation.getEnd_date());
-            preparedStatement.setInt(4,customerStayInformation.getNumberOfGuest());
-            preparedStatement.setString(5,customerStayInformation.getRoomType());
+            //preparedStatement.setDate(2, (Date) customerStayInformation.getStart_date());
+            //preparedStatement.setDate(3, (Date) customerStayInformation.getEnd_date());
+            preparedStatement.setInt(2,customerStayInformation.getNumberOfGuest());
+            preparedStatement.setString(3,customerStayInformation.getRoomType());
             if(preparedStatement.execute()) {
                 System.out.println("Records inserted in data base");
                 return true;
