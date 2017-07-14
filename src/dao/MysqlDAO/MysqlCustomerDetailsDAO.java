@@ -65,7 +65,7 @@ public class MysqlCustomerDetailsDAO implements CustomerDetailsDAO {
             e.printStackTrace();
         }
 
-        String queryString = "SELECT * FROM CUSTOMERDEATILS where customerid=?";
+        String queryString = "SELECT * FROM CUSTOMERDETAILS where customerid=?";
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
@@ -107,7 +107,7 @@ public class MysqlCustomerDetailsDAO implements CustomerDetailsDAO {
             e.printStackTrace();
         }
 
-        String queryString = "DELETE FROM CUSTOMERDEATILS WHERE customerid = ?";
+        String queryString = "DELETE FROM CUSTOMERDETAILS WHERE customerid = ?";
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
@@ -137,7 +137,7 @@ public class MysqlCustomerDetailsDAO implements CustomerDetailsDAO {
             e.printStackTrace();
         }
 
-        String queryString = "UPDATE CUSTOMERDEATILS SET housenumber=?" +
+        String queryString = "UPDATE CUSTOMERDETAILS SET housenumber=?" +
                 "street=?" +
                 "city=?" +
                 "postalcode=?" +

@@ -1,7 +1,7 @@
 package GUI.BillPrint;
 
-import ValueObjects.AllottedRoom;
-import dao.MysqlDAO.MysqlAllottedRoomDAO;
+import ValueObjects.*;
+import dao.MysqlDAO.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -229,9 +229,12 @@ public class PrintExample extends JFrame implements ActionListener {
         if (allottedRoom == null) {
             System.out.println("Customer Room not alloted");
             return;
-
         }
-            billNo.setText("Bill No.       ");
+        CustomerLogin customerLogin = new MysqlCustomerLoginDAO().findCustomerLogin(roomNumber);
+        CustomerDetails customerDetails = new MysqlCustomerDetailsDAO().findCustomerDetails(roomNumber);
+        CustomerStayInformation customerStayInformation = new MysqlCustomerStayInformationDAO().findCustomerStayInformation(roomNumber);
+        RoomDetails roomDetails = new MysqlRoomDetailsDAO().findRoomDetails(customerStayInformation.getRoomType());
+        billNo.setText("Bill No.       ");
 
               roomNo.setText("Customer Id.       ");
               guestId.setText("Guest Id");
@@ -249,15 +252,15 @@ public class PrintExample extends JFrame implements ActionListener {
         billNoShow.setText(String.valueOf(allottedRoom.getRoomNumber()));
         roomNoShow.setText(roomNumber);
         guestIdShow.setText("A31");
-        guestnameShow.setText("Naveen Kumar");
-        guestFromShow.setText("Dehradun");
-        mobNoShow.setText("+919736447834");
+        guestnameShow.setText(customerLogin.getCustomerName());
+        guestFromShow.setText(customerDetails.getCity());
+        mobNoShow.setText(String.valueOf(customerDetails.getMob()));
         checkIndateShow.setText("27-jun-2017");
         checkOutDateShow.setText("4-july-2017");
         totalDaysShow.setText("8");
-        roomTypeShow.setText("Luxury");
+        roomTypeShow.setText(customerStayInformation.getRoomType());
 
-        totalAmountShow.setText("24000.00");
+        totalAmountShow.setText(String.valueOf((roomDetails.getBaseprice()* 8)* (1 + Double.parseDouble(String.valueOf(roomDetails.getTaxpercent()))/100)));
         paymentModeShow.setText("Cash");
 
         separatorTotalAmount1.setForeground(Color.black);

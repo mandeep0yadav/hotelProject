@@ -90,6 +90,7 @@ public class MysqlCustomerStayInformationDAO implements CustomerStayInformationD
         }
 
         String queryString = "SELECT * FROM CUSTOMERSTAYINFORMATION where customerid=?";
+        //System.out.println(custid);
         //set this values using PreparedStatement = ps.executeQuery(queryString)
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(queryString);
@@ -102,13 +103,14 @@ public class MysqlCustomerStayInformationDAO implements CustomerStayInformationD
                 customerStayInformation.setEnd_date(resultSet.getDate(3));
                 customerStayInformation.setNumberOfGuest(resultSet.getInt(4));
                 customerStayInformation.setRoomType(resultSet.getString(5));
+                return customerStayInformation;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        System.out.println("Records not found in data base");
+        System.out.println("Records not found wqd in data base");
 
         return null;
     }

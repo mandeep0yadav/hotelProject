@@ -63,7 +63,7 @@ public class CheckOutPanel {
         //checkOutLabel.setForeground(Color.white);
         //checkOutLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
-        roomnumberLabel.setText("Room Number");
+        roomnumberLabel.setText("Customer ID");
         roomnumberLabel.setFont(new Font("Century Gothic", Font.BOLD,18));
         roomnumberLabel.setForeground(Color.white);
 

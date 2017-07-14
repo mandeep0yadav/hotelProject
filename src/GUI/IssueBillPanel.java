@@ -55,7 +55,7 @@ public class IssueBillPanel {
         issueBillPanel.setLayout(null);
 
 
-        roomNoLabel.setText("Room Number");
+        roomNoLabel.setText("Customer ID");
         roomNoLabel.setFont(new Font("Century Gothic", Font.BOLD,18));
         roomNoLabel.setForeground(Color.white);
 
