@@ -41,7 +41,7 @@ public class ReceptionistHomeController {
         initialFrame.setResizable(false);
 
         //setting welcome text
-        receptionistHomePanel.welcome.setText("WELCOME "+ employeeDetails.getName().toUpperCase());
+//        receptionistHomePanel.welcome.setText("WELCOME "+ employeeDetails.getName().toUpperCase());
 
     }
 

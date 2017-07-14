@@ -1,5 +1,7 @@
 package GUI;
 
+import listeners.ForgetPasswordListener;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -24,6 +26,8 @@ public class ForgotPasswordPanel {
 
     private JButton changePasswordButton;
 
+    private ForgetPasswordListener forgetPasswordListener;
+
 
     public ForgotPasswordPanel() {
 
@@ -45,14 +49,23 @@ public class ForgotPasswordPanel {
 
         changePasswordButton = new JButton();
 
+
+        forgetPasswordListener=new ForgetPasswordListener();
+
         setProperty();
 
         setBounds();
 
         addComponentToPanel();
 
+        listener();
+
         System.out.println("Forgot Password Panel Created...");
 
+    }
+
+    private void listener() {
+        forgetPasswordListener.changePasswordButtonListener(changePasswordButton);
     }
 
     private void setProperty() {

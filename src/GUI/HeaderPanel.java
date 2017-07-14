@@ -9,18 +9,17 @@ import java.awt.event.MouseEvent;
 
 /**
  * Created by nirmit on 4/7/17.
- */
-public class HeaderPanel {
+ */ public  class HeaderPanel {
 
     private JPanel HeaderPanel;
 
     //component in the panel
-    private JLabel homeLabel;
-    private JLabel aboutUs;
-    private JLabel faqs;
-    private JLabel contactUs;
-    private JLabel policy;
-    private JLabel logoImageLabel;
+    public static JLabel homeLabel;
+    public static JLabel aboutUs;
+    public static JLabel faqs;
+    public static JLabel contactUs;
+    public static JLabel policy;
+    public static JLabel logoImageLabel;
 
     private ImageIcon hollaLogo;
 
