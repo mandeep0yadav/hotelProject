@@ -6,9 +6,7 @@ import listeners.AddStaffPanelListeners;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by Dell on 7/14/2017.
- */
+
 public class AddStaffManagerPanel {
 
 

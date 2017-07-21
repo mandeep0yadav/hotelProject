@@ -5,9 +5,7 @@ import listeners.AddStaffPanelListeners;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by nirmit on 4/7/17.
- */
+
 public class AddStaffPanel {
 
     private JPanel addStaffPanel;

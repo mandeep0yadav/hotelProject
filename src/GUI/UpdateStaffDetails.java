@@ -5,9 +5,6 @@ import listeners.UpdateStaffDetailsButtonListener;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by Dell on 7/13/2017.
- */
 public class UpdateStaffDetails {
 
 

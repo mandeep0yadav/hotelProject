@@ -5,9 +5,7 @@ import listeners.IssueBillListener;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by Dell on 7/11/2017.
- */
+
 public class IssueBillPanel {
 
     private JPanel issueBillPanel;

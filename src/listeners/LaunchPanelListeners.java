@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by nirmit on 6/7/17.
@@ -34,10 +35,7 @@ public class LaunchPanelListeners{
             launchPanel.destroy();
             new LoginController();
 
-
-
-
-
         });
     }
-}
+
+ }

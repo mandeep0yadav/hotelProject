@@ -5,9 +5,7 @@ import listeners.ReceptionistOptioinsPanelListners;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by nirmit on 4/7/17.
- */
+
 public class ReceptionistHomePanel {
 
     private JPanel receptionistHomePanel;

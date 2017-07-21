@@ -4,9 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Date;
 
-/**
- * Created by Dell on 4/7/17.
- */
+
 public class ViewStaffPanel {
 
     private JPanel viewStaffPanel;

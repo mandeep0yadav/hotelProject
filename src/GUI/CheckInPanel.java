@@ -5,9 +5,6 @@ import listeners.CheckInPanelListeners;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by priyanshu on 7/9/2017.
- */
 
 
 
@@ -37,6 +34,8 @@ public class CheckInPanel {
     private JLabel checkoutdateLabel;
     private JLabel roomtypeLabel;
     private JLabel numberofguestLabel;
+
+    public static JLabel alertLabel;
 
 
     //Declaring all  text fields
@@ -101,6 +100,9 @@ public class CheckInPanel {
         editCustomerId = new JTextField();
         editFirstName = new JTextField();
         editLastName = new JTextField();
+
+
+        alertLabel=new JLabel("",SwingConstants.CENTER);
 
 
         editContact = new JTextField();
@@ -176,7 +178,7 @@ public class CheckInPanel {
 
         customerLabel.setText("Customer Details");
         customerLabel.setFont(new Font("comic sans", Font.BOLD, 15));
-        customerLabel.setForeground(Color.blue);
+        customerLabel.setForeground(Color.white);
 
         customeridlabel.setText("Customer-id");
         customeridlabel.setFont(new Font("comic sans", Font.BOLD, 13));
@@ -230,7 +232,7 @@ public class CheckInPanel {
 
         addressproofLabel.setText("Address proof details");
         addressproofLabel.setFont(new Font("comic sans", Font.BOLD, 15));
-        addressproofLabel.setForeground(Color.blue);
+        addressproofLabel.setForeground(Color.white);
 
         idtypeLabel.setText("Id Type");
         idtypeLabel.setFont(new Font("comic sans", Font.BOLD, 13));
@@ -243,7 +245,7 @@ public class CheckInPanel {
 
         stayinfoLabel.setText("Stay Information");
         stayinfoLabel.setFont(new Font("comic sans", Font.BOLD, 15));
-        stayinfoLabel.setForeground(Color.blue);
+        stayinfoLabel.setForeground(Color.white);
 
         checkindateLabel.setText("Check-in");
         checkindateLabel.setFont(new Font("comic sans", Font.BOLD, 13));
@@ -311,6 +313,10 @@ public class CheckInPanel {
         checkinButton.setFont(new Font("Lithos Pro Regular",Font.PLAIN,17));
         checkinButton.setBackground(Color.red);
         checkinButton.setForeground(Color.WHITE);
+
+        alertLabel.setFont(new Font("Century Gothic",Font.BOLD,15));
+        alertLabel.setForeground(Color.RED);
+        alertLabel.setBackground(Color.black);
 
 
     }
@@ -385,6 +391,8 @@ public class CheckInPanel {
         cancelButton.setBounds(500, 465, 140, 30);
         checkinButton.setBounds(670, 465, 140, 30);
 
+        alertLabel.setBounds(500,430,310,30);
+
 
     }
 
@@ -458,6 +466,8 @@ public class CheckInPanel {
 
         checkinpanel.add(cancelButton);
         checkinpanel.add(checkinButton);
+
+        checkinpanel.add(alertLabel);
 
     }
 
